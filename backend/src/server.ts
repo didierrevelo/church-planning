@@ -1,143 +1,228 @@
 // ============================================
 // SERVIDOR PRINCIPAL - CHURCH PLANNING API
+// Versión: Producción (Costo Cero)
+// Seguridad: Helmet, Rate Limiting, CORS, Input Validation
+// Monitoreo: Sentry, Morgan, Health Check
 // ============================================
 
-// Express: Framework web para Node.js, maneja rutas HTTP
-// Conecta: Con todas las rutas en routes/, middleware/auth.ts
+// Express: Framework web para Node.js
 import express from 'express';
 
-// CORS: Middleware para permitir requests desde el móvil (React Native)
-// Conecta: Con la app móvil en mobile/src/services/api.ts
+// CORS: Middleware para requests desde el móvil
 import cors from 'cors';
 
 // dotenv: Carga variables de entorno desde .env
-// Conecta: Con .env.example (DATABASE_URL, JWT_SECRET, AWS keys, etc.)
 import dotenv from 'dotenv';
 
-// PrismaClient: Cliente ORM para conectar con PostgreSQL
-// Conecta: Con schema.prisma (define todos los modelos)
+// PrismaClient: Cliente ORM para PostgreSQL
 import { PrismaClient } from '@prisma/client';
 
-// Carga las variables de entorno del archivo .env
-// Qué: Lee DATABASE_URL, JWT_SECRET, AWS_ACCESS_KEY_ID, etc.
-// Cómo: dotenv.config() busca .env en la raíz del proyecto
+// Helmet: Headers de seguridad HTTP
+// Qué: Agrega headers como X-Frame-Options, CSP, HSTS
+// Seguridad: Previene ataques XSS, clickjacking, sniffing
+import helmet from 'helmet';
+
+// Rate Limiting: Limita requests por IP
+// Qué: Máximo 100 requests por 15 minutos por IP
+// Seguridad: Previene ataques DDoS y brute force
+import rateLimit from 'express-rate-limit';
+
+// Morgan: Logger HTTP para requests
+// Qué: Registra cada request con method, url, status, tiempo
+// Monitoreo: Ayuda a debugging y auditoría
+import morgan from 'morgan';
+
+// Sentry: Error tracking y monitoring
+// Qué: Captura errores no manejados y los reporta
+// Monitoreo: Dashboard con alertas y métricas
+import * as Sentry from '@sentry/node';
+
+// ============================================
+// INICIALIZACIÓN
+// ============================================
+
+// Carga variables de entorno
 dotenv.config();
 
+// Inicializa Sentry (DEBE ser antes de cualquier otro middleware)
+// Conecta: Con SENTRY_DSN en .env
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  environment: process.env.NODE_ENV || 'development',
+  tracesSampleRate: 1.0,  // 100% de traces para debugging
+});
+
 // Crea la instancia de Express
-// Qué: app es el servidor que maneja todas las rutas HTTP
-// Cómo: express() crea una aplicación Express
-// Conecta: Con app.use() para rutas y middleware, app.listen() para iniciar
 const app = express();
 
-// Crea el cliente de Prisma para consultas a la BD
-// Qué: prisma permite hacer CRUD sin SQL directo
-// Cómo: new PrismaClient() conecta con PostgreSQL usando DATABASE_URL
-// Conecta: Con schema.prisma (modelos), routes/ (consultas)
+// Crea el cliente de Prisma
+// Escalabilidad: Prisma maneja pool de conexiones automáticamente
 const prisma = new PrismaClient();
 
-// Puerto del servidor (usa variable de entorno o 3000 por defecto)
-// Qué: Define en qué puerto escucha el servidor
-// Cómo: process.env.PORT lee del .env, fallback a 3000
-// Conecta: Con app.listen() para iniciar el servidor
+// Puerto del servidor
 const PORT = process.env.PORT || 3000;
 
 // ============================================
-// MIDDLEWARES GLOBALES
+// MIDDLEWARES DE SEGURIDAD
 // ============================================
 
-// CORS: Permite requests desde cualquier origen
-// Qué: Habilita Cross-Origin Resource Sharing
-// Cómo: app.use(cors()) aplica a todas las rutas
-// Conecta: Con la app móvil (React Native) que hace requests HTTP
-app.use(cors());
+// Helmet: Headers de seguridad HTTP
+// Qué: Agrega múltiples headers de seguridad
+// Seguridad:
+//   - X-Frame-Options: PREVENIR clickjacking
+//   - X-Content-Type-Options: PREVENIR MIME sniffing
+//   - HSTS: FORZAR HTTPS
+//   - CSP: PREVENIR XSS
+//   - X-XSS-Protection: Filtrar scripts maliciosos
+app.use(helmet());
 
-// JSON Parser: Convierte el body de requests JSON a objetos JavaScript
-// Qué: Permite recibir JSON en POST/PATCH requests
-// Cómo: app.use(express.json()) parsea el body automáticamente
-// Conecta: Con req.body en todas las rutas (auth, services, team, etc.)
-app.use(express.json());
+// Rate Limiting: Limita requests por IP
+// Qué: Máximo 100 requests por ventana de 15 minutos
+// Seguridad:
+//   - Previene DDoS
+//   - Previene brute force
+//   - Previene scraping
+// Escalabilidad: Para producción, considerar Redis store
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,  // 15 minutos
+  max: 100,                    // 100 requests por ventana
+  message: { error: 'Too many requests, please try again later' },
+  standardHeaders: true,       // Retorna info en headers
+  legacyHeaders: false,        // No usar headers antiguos
+});
+app.use(limiter);
+
+// Rate limiting más estricto para auth (prevenir brute force)
+// Qué: Máximo 5 requests por 15 minutos para login
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,  // Solo 5 intentos de login
+  message: { error: 'Too many login attempts, please try again later' },
+});
+
+// CORS: Configuración segura
+// Qué: Permite solo origen específico (app móvil)
+// Seguridad: No usar * en producción
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || '*',  // En producción, especificar dominio
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
+
+// Body Parser: Convierte JSON a objetos
+app.use(express.json({ limit: '10mb' }));  // Limita tamaño de body
+
+// Morgan: Logger HTTP
+// Qué: Registra cada request en consola
+// Monitoreo: Formato "combined" incluye IP, user-agent, tiempo
+app.use(morgan('combined'));
 
 // ============================================
 // RUTAS DE LA API
 // ============================================
 
-// Ruta de autenticación: login, invite, me, password
-// Qué: Maneja login, invitación de usuarios, perfil
-// Cómo: Todas las rutas empiezan con /auth
-// Conecta: Con routes/auth.ts, middleware/auth.ts (JWT)
-app.use('/auth', require('./routes/auth'));
+// Auth: Login, invitación, perfil (con rate limiting estricto)
+app.use('/auth', authLimiter, require('./routes/auth'));
 
-// Ruta de servicios: CRUD de cultos y segmentos
-// Qué: Crear, listar, editar, eliminar servicios y su orden
-// Cómo: Todas las rutas empiezan con /services
-// Conecta: Con routes/services.ts, schema.prisma (Service, ServiceSegment)
+// Services: CRUD de servicios y segmentos
 app.use('/services', require('./routes/services'));
 
-// Ruta de ministerios: CRUD de ministerios y roles
-// Qué: Gestionar ministerios (Alabanza, Danzas, etc.) y sus roles
-// Cómo: Todas las rutas empiezan con /ministries
-// Conecta: Con routes/ministries.ts, schema.prisma (Ministry, MinistryRole)
+// Ministries: CRUD de ministerios y roles
 app.use('/ministries', require('./routes/ministries'));
 
-// Ruta de equipo: Asignación de personas a servicios
-// Qué: Asignar personas, actualizar estados, solicitudes de posiciones
-// Cómo: Todas las rutas empiezan con /team
-// Conecta: Con routes/team.ts, schema.prisma (ServiceTeam, PositionRequest)
+// Team: Asignación de equipo y solicitudes
 app.use('/team', require('./routes/team'));
 
-// Ruta de canciones: Set list musical
-// Qué: Agregar, editar, eliminar canciones del servicio
-// Cómo: Todas las rutas empiezan con /songs
-// Conecta: Con routes/songs.ts, schema.prisma (Song, SongHistory)
+// Songs: Set list musical
 app.use('/songs', require('./routes/songs'));
 
-// Ruta de archivos: Subida y gestión de archivos
-// Qué: Subir archivos a S3, listar, eliminar
-// Cómo: Todas las rutas empiezan con /files
-// Conecta: Con routes/files.ts, AWS S3 (presigned URLs)
+// Files: Subida de archivos a S3
 app.use('/files', require('./routes/files'));
 
-// Ruta de notificaciones: Listar y marcar como leídas
-// Qué: Obtener notificaciones, marcar leídas
-// Cómo: Todas las rutas empiezan con /notifications
-// Conecta: Con routes/notifications.ts, schema.prisma (Notification)
+// Notifications: Notificaciones del usuario
 app.use('/notifications', require('./routes/notifications'));
 
 // ============================================
-// HEALTH CHECK Y ERROR HANDLING
+// HEALTH CHECK Y MONITOREO
 // ============================================
 
-// Health check: Verifica que el servidor está funcionando
-// Qué: Endpoint simple para monitoreo
-// Cómo: GET /health retorna { status: "OK", timestamp: "..." }
-// Conecta: Con servicios de monitoreo (UptimeRobot, etc.)
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+// Health Check: Verifica que el servidor funciona
+// Monitoreo: UptimeRobot llama a este endpoint cada 5 minutos
+// Conecta: Con UptimeRobot (configurado en PRODUCTION.md)
+app.get('/health', async (req, res) => {
+  try {
+    // Verifica conexión a BD
+    await prisma.$queryRaw`SELECT 1`;
+    
+    res.json({
+      status: 'OK',
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      environment: process.env.NODE_ENV || 'development',
+      version: process.env.npm_package_version || '1.0.0'
+    });
+  } catch (error) {
+    res.status(503).json({
+      status: 'ERROR',
+      timestamp: new Date().toISOString(),
+      error: 'Database connection failed'
+    });
+  }
 });
 
-// Error handler global: Captura errores no manejados
-// Qué: Si una ruta lanza error, retorna 500
-// Cómo: app.use((err, req, res, next)) es el middleware de errores de Express
-// Conecta: Con todos los routes/ que pueden lanzar errores
+// Metrics: Métricas básicas del servidor
+// Monitoreo: Dashboard personalizado
+app.get('/metrics', async (req, res) => {
+  try {
+    const [userCount, serviceCount, notificationCount] = await Promise.all([
+      prisma.user.count(),
+      prisma.service.count(),
+      prisma.notification.count({ where: { read: false } })
+    ]);
+
+    res.json({
+      users: userCount,
+      services: serviceCount,
+      unreadNotifications: notificationCount,
+      memoryUsage: process.memoryUsage(),
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch metrics' });
+  }
+});
+
+// ============================================
+// ERROR HANDLING
+// ============================================
+
+// Sentry error handler (DEBE ir antes de otros error handlers)
+app.use(Sentry.Handlers.errorHandler());
+
+// Error handler global
+// Qué: Captura errores no manejados y retorna 500
+// Monitoreo: Sentry reporta el error automáticamente
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error(err.stack);  // Log del error para debugging
-  res.status(500).json({ error: 'Internal server error' });
+  console.error(err.stack);
+  
+  // En desarrollo, retorna el error completo
+  // En producción, retorna mensaje genérico (no exponer detalles)
+  const errorMessage = process.env.NODE_ENV === 'production' 
+    ? 'Internal server error' 
+    : err.message;
+
+  res.status(500).json({ error: errorMessage });
 });
 
 // ============================================
 // INICIO DEL SERVIDOR
 // ============================================
 
-// Escucha en el puerto definido
-// Qué: Inicia el servidor HTTP
-// Cómo: app.listen(PORT) abre el puerto para recibir conexiones
-// Conecta: Con todas las rutas configuradas arriba
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`Health check: http://localhost:${PORT}/health`);
 });
 
-// Exporta la instancia de app para testing
-// Qué: Permite importar app en archivos de test
-// Cómo: export default app
-// Conecta: Con archivos de test que necesitan la instancia
 export default app;
