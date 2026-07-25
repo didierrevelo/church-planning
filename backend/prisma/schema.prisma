@@ -55,6 +55,8 @@ model User {
   files             File[]                  // Conecta: File.uploadedById → User.id
   // Un usuario recibe notificaciones
   notifications     Notification[]          // Conecta: Notification.userId → User.id
+  // Un usuario puede haber creado servicios
+  createdServices   Service[]               // Conecta: Service.createdBy → User.id
 }
 
 // ============================================

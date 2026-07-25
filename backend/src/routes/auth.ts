@@ -83,9 +83,9 @@ router.post('/login', async (req: express.Request, res: express.Response) => {
     //   - middleware/auth.ts que verifica este token
     // Escalabilidad: Token stateless, no necesita sesión en servidor
     const token = jwt.sign(
-      { userId: user.id },  // Payload: datos codificados en el token
-      process.env.JWT_SECRET!,  // Clave secreta para firmar
-      { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }  // Expira en 7 días
+      { userId: user.id },
+      process.env.JWT_SECRET!,
+      { expiresIn: parseInt(process.env.JWT_EXPIRES_IN!) || 604800 }
     );
 
     // Retorna el token y datos del usuario (sin password)

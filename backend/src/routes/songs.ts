@@ -117,7 +117,7 @@ router.patch('/:id', authenticate, async (req: AuthRequest, res: express.Respons
       // Notifica a músicos del ministerio de Alabanza
       const service = await prisma.service.findUnique({
         where: { id: song.serviceId },
-        include: { team: { include: { user: true } } }
+        include: { team: { include: { user: true, ministry: true } } }
       });
 
       if (service) {
