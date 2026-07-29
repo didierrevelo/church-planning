@@ -106,10 +106,12 @@ app.get('/health', async (req, res) => {
       version: '1.0.0',
       jobsPending: jobQueue.pendingCount,
     });
-  } catch (error) {
+  } catch (error: any) {
+    console.error('[HEALTH] DB error:', error?.message || error);
     res.status(503).json({
       status: 'ERROR',
       error: 'Database connection failed',
+      detail: error?.message || String(error),
     });
   }
 });
