@@ -5,9 +5,60 @@ import jwt from 'jsonwebtoken';
 import { PrismaClient } from '@prisma/client';
 import { authenticate, AuthRequest } from '../middleware/auth';
 import { validate } from '../middleware/validate';
-import { loginSchema, inviteSchema, changePasswordSchema, updateProfileSchema } from '../validation/auth';
+import { loginSchema, registerSchema, inviteSchema, changePasswordSchema, updateProfileSchema } from '../validation/auth';
 
 const prisma = new PrismaClient();
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 50);
+}
+
+router.post('/register', validate(registerSchema), async (req: express.Request, res: express.Response) => {
+  try {
+    const { name, email, password, churchName, churchSlug } = req.body;
+
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) return res.status(400).json({ error: 'Email already registered' });
+
+    let slug = churchSlug || slugify(churchName);
+    let existingChurch = await prisma.church.findUnique({ where: { slug } });
+    if (existingChurch) {
+      slug = `${slug}-${Date.now().toString(36)}`;
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 12);
+    const user = await prisma.user.create({
+      data: { name, email, password: hashedPassword },
+    });
+
+    const church = await prisma.church.create({
+      data: { name: churchName, slug },
+    });
+
+    await prisma.userChurch.create({
+      data: { userId: user.id, churchId: church.id, role: 'admin' },
+    });
+
+    const token = jwt.sign(
+      { userId: user.id },
+      process.env.JWT_SECRET!,
+      { expiresIn: parseInt(process.env.JWT_EXPIRES_IN!) || 604800 },
+    );
+
+    res.status(201).json({
+      token,
+      user: { id: user.id, name: user.name, email: user.email },
+      churches: [{ id: church.id, name: church.name, slug: church.slug, role: 'admin' }],
+    });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 router.post('/login', validate(loginSchema), async (req: express.Request, res: express.Response) => {
   try {

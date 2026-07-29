@@ -23,6 +23,21 @@ export const changePasswordSchema = z.object({
   }),
 });
 
+export const registerSchema = z.object({
+  body: z.object({
+    name: z.string().min(1, 'Name is required').max(100).trim(),
+    email: z.string().email('Invalid email format').max(255),
+    password: z.string().min(8, 'Password must be at least 8 characters').max(128),
+    churchName: z.string().min(1, 'Church name is required').max(200).trim(),
+    churchSlug: z
+      .string()
+      .min(2, 'Slug must be at least 2 characters')
+      .max(50)
+      .regex(/^[a-z0-9-]+$/, 'Slug must be lowercase alphanumeric with hyphens')
+      .optional(),
+  }),
+});
+
 export const updateProfileSchema = z.object({
   body: z.object({
     name: z.string().min(1, 'Name is required').max(100).trim().optional(),

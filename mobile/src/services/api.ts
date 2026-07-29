@@ -54,6 +54,8 @@ api.interceptors.response.use(
 
 export const authAPI = {
   login: (email: string, password: string) => api.post('/auth/login', { email, password }),
+  register: (data: { name: string; email: string; password: string; churchName: string; churchSlug?: string }) =>
+    api.post('/auth/register', data),
   getMe: () => api.get('/auth/me'),
   updateProfile: (data: { name?: string; phone?: string }) => api.put('/auth/me', data),
   invite: (data: { email: string; name: string; phone?: string; churchId: string }) =>

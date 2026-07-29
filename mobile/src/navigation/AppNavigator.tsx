@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 import ChurchSelector from '../screens/ChurchSelector';
 import HomeScreen from '../screens/HomeScreen';
 import ServiceDetailScreen from '../screens/ServiceDetailScreen';
@@ -115,6 +116,7 @@ export default function AppNavigator() {
     <NavigationContainer linking={linking}>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ChurchSelector" component={ChurchSelector} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeTabs} options={{ headerShown: false }} />
         <Stack.Screen name="ServiceDetail" component={ServiceDetailScreen} options={{ title: 'Detalle del Servicio', ...defaultHeader }} />

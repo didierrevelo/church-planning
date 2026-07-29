@@ -3,37 +3,37 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityInd
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { authAPI } from '../services/api';
 
-export default function LoginScreen({ navigation }: any) {
+export default function RegisterScreen({ navigation }: any) {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [churchName, setChurchName] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async () => {
-    if (!email || !password) {
-      Alert.alert('Error', 'Por favor ingresa email y contraseña');
+  const handleRegister = async () => {
+    if (!name || !email || !password || !churchName) {
+      Alert.alert('Error', 'Por favor completa todos los campos');
+      return;
+    }
+    if (password.length < 8) {
+      Alert.alert('Error', 'La contraseña debe tener al menos 8 caracteres');
       return;
     }
 
     setLoading(true);
     try {
-      const response = await authAPI.login(email, password);
+      const response = await authAPI.register({ name, email, password, churchName });
       const { token, user, churches } = response.data;
 
       await AsyncStorage.setItem('token', token);
       await AsyncStorage.setItem('user', JSON.stringify(user));
 
       if (churches && churches.length > 0) {
-        if (churches.length === 1) {
-          await AsyncStorage.setItem('churchId', churches[0].id);
-          navigation.replace('Home');
-        } else {
-          navigation.replace('ChurchSelector', { churches });
-        }
-      } else {
-        navigation.replace('ChurchSelector', { churches: [] });
+        await AsyncStorage.setItem('churchId', churches[0].id);
+        navigation.replace('Home');
       }
     } catch (error: any) {
-      Alert.alert('Error', error.response?.data?.error || 'Credenciales inválidas');
+      Alert.alert('Error', error.response?.data?.error || 'Error al registrarse');
     } finally {
       setLoading(false);
     }
@@ -43,11 +43,18 @@ export default function LoginScreen({ navigation }: any) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.logo}>⛪</Text>
-        <Text style={styles.title}>Church Planning</Text>
-        <Text style={styles.subtitle}>Gestiona tus servicios</Text>
+        <Text style={styles.title}>Crear Iglesia</Text>
+        <Text style={styles.subtitle}>Registra tu iglesia y comienza a gestionar</Text>
       </View>
 
       <View style={styles.form}>
+        <TextInput
+          style={styles.input}
+          placeholder="Tu nombre"
+          value={name}
+          onChangeText={setName}
+          autoCapitalize="words"
+        />
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -58,21 +65,27 @@ export default function LoginScreen({ navigation }: any) {
         />
         <TextInput
           style={styles.input}
-          placeholder="Contraseña"
+          placeholder="Contraseña (mín. 8 caracteres)"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
         />
-        <TouchableOpacity style={styles.button} onPress={handleLogin} disabled={loading}>
+        <TextInput
+          style={styles.input}
+          placeholder="Nombre de la iglesia"
+          value={churchName}
+          onChangeText={setChurchName}
+        />
+        <TouchableOpacity style={styles.button} onPress={handleRegister} disabled={loading}>
           {loading ? (
             <ActivityIndicator color="#fff" />
           ) : (
-            <Text style={styles.buttonText}>Iniciar Sesión</Text>
+            <Text style={styles.buttonText}>Crear Iglesia</Text>
           )}
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.linkButton} onPress={() => navigation.replace('Register')}>
-          <Text style={styles.linkText}>¿No tienes cuenta? Registra tu iglesia</Text>
+        <TouchableOpacity style={styles.linkButton} onPress={() => navigation.replace('Login')}>
+          <Text style={styles.linkText}>¿Ya tienes cuenta? Inicia sesión</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -88,7 +101,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 30,
   },
   logo: {
     fontSize: 64,
@@ -100,9 +113,10 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#666',
     marginTop: 5,
+    textAlign: 'center',
   },
   form: {
     backgroundColor: '#fff',
@@ -127,6 +141,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
+    marginTop: 5,
   },
   buttonText: {
     color: '#fff',
