@@ -91,6 +91,7 @@ app.use('/agent', require('./routes/agent'));
 app.use('/search', require('./routes/search'));
 app.use('/reports', require('./routes/reports'));
 app.use('/admin', require('./routes/admin'));
+app.use('/superadmin', require('./routes/superadmin'));
 
 app.get('/health', async (req, res) => {
   try {

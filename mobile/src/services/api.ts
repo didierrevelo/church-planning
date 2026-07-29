@@ -184,4 +184,11 @@ export const adminAPI = {
   removeMember: (userId: string) => api.delete(`/admin/members/${userId}`),
 };
 
+export const superAdminAPI = {
+  getChurches: () => api.get('/superadmin/churches'),
+  getUsers: () => api.get('/superadmin/users'),
+  updateUserRole: (userId: string, isSuperAdmin: boolean) =>
+    api.patch(`/superadmin/users/${userId}/role`, { isSuperAdmin }),
+};
+
 export default api;

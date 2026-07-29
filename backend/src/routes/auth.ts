@@ -32,8 +32,9 @@ router.post('/register', validate(registerSchema), async (req: express.Request, 
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
+    const userCount = await prisma.user.count();
     const user = await prisma.user.create({
-      data: { name, email, password: hashedPassword },
+      data: { name, email, password: hashedPassword, isSuperAdmin: userCount === 0 },
     });
 
     const church = await prisma.church.create({
@@ -52,7 +53,7 @@ router.post('/register', validate(registerSchema), async (req: express.Request, 
 
     res.status(201).json({
       token,
-      user: { id: user.id, name: user.name, email: user.email },
+      user: { id: user.id, name: user.name, email: user.email, isSuperAdmin: user.isSuperAdmin },
       churches: [{ id: church.id, name: church.name, slug: church.slug, role: 'admin' }],
     });
   } catch (error: any) {
@@ -78,20 +79,34 @@ router.post('/login', validate(loginSchema), async (req: express.Request, res: e
       { expiresIn: parseInt(process.env.JWT_EXPIRES_IN!) || 604800 },
     );
 
-    const churches = await prisma.userChurch.findMany({
+    const membership = await prisma.userChurch.findMany({
       where: { userId: user.id },
       include: { church: true },
     });
 
+    let churches = membership.map((uc) => ({
+      id: uc.church.id,
+      name: uc.church.name,
+      slug: uc.church.slug,
+      role: uc.role,
+    }));
+
+    if (user.isSuperAdmin) {
+      const allChurches = await prisma.church.findMany({
+        select: { id: true, name: true, slug: true },
+      });
+      const memberIds = new Set(churches.map((c) => c.id));
+      for (const c of allChurches) {
+        if (!memberIds.has(c.id)) {
+          churches.push({ ...c, role: 'superadmin' });
+        }
+      }
+    }
+
     res.json({
       token,
-      user: { id: user.id, name: user.name, email: user.email },
-      churches: churches.map((uc) => ({
-        id: uc.church.id,
-        name: uc.church.name,
-        slug: uc.church.slug,
-        role: uc.role,
-      })),
+      user: { id: user.id, name: user.name, email: user.email, isSuperAdmin: user.isSuperAdmin },
+      churches,
     });
   } catch (error: any) {
     res.status(500).json({ error: 'Authentication failed' });
@@ -102,22 +117,36 @@ router.get('/me', authenticate, async (req: AuthRequest, res: express.Response) 
   try {
     const user = await prisma.user.findUnique({
       where: { id: req.userId },
-      select: { id: true, name: true, email: true, phone: true, createdAt: true },
+      select: { id: true, name: true, email: true, phone: true, isSuperAdmin: true, createdAt: true },
     });
 
-    const churches = await prisma.userChurch.findMany({
+    const membership = await prisma.userChurch.findMany({
       where: { userId: req.userId },
       include: { church: true },
     });
 
+    let churches = membership.map((uc) => ({
+      id: uc.church.id,
+      name: uc.church.name,
+      slug: uc.church.slug,
+      role: uc.role,
+    }));
+
+    if (user?.isSuperAdmin) {
+      const allChurches = await prisma.church.findMany({
+        select: { id: true, name: true, slug: true },
+      });
+      const memberIds = new Set(churches.map((c) => c.id));
+      for (const c of allChurches) {
+        if (!memberIds.has(c.id)) {
+          churches.push({ ...c, role: 'superadmin' });
+        }
+      }
+    }
+
     res.json({
       ...user,
-      churches: churches.map((uc) => ({
-        id: uc.church.id,
-        name: uc.church.name,
-        slug: uc.church.slug,
-        role: uc.role,
-      })),
+      churches,
     });
   } catch (error: any) {
     res.status(500).json({ error: error.message });

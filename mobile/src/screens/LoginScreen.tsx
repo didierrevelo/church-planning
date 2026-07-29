@@ -23,11 +23,11 @@ export default function LoginScreen({ navigation }: any) {
       await AsyncStorage.setItem('user', JSON.stringify(user));
 
       if (churches && churches.length > 0) {
-        if (churches.length === 1) {
+        if (churches.length === 1 && !user.isSuperAdmin) {
           await AsyncStorage.setItem('churchId', churches[0].id);
           navigation.replace('Home');
         } else {
-          navigation.replace('ChurchSelector', { churches });
+          navigation.replace('ChurchSelector', { churches, isSuperAdmin: user.isSuperAdmin });
         }
       } else {
         navigation.replace('ChurchSelector', { churches: [] });

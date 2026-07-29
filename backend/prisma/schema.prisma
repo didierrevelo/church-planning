@@ -27,15 +27,16 @@ model Church {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  name      String
-  email     String   @unique
-  phone     String?
-  password  String
-  isActive  Boolean  @default(true)
-  fcmToken  String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  phone         String?
+  password      String
+  isActive      Boolean  @default(true)
+  isSuperAdmin  Boolean  @default(false)
+  fcmToken      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
   churches         UserChurch[]
   ministryRoles    UserMinistryRole[]

@@ -29,8 +29,12 @@ export default function RegisterScreen({ navigation }: any) {
       await AsyncStorage.setItem('user', JSON.stringify(user));
 
       if (churches && churches.length > 0) {
-        await AsyncStorage.setItem('churchId', churches[0].id);
-        navigation.replace('Home');
+        if (churches.length === 1 && !user.isSuperAdmin) {
+          await AsyncStorage.setItem('churchId', churches[0].id);
+          navigation.replace('Home');
+        } else {
+          navigation.replace('ChurchSelector', { churches, isSuperAdmin: user.isSuperAdmin });
+        }
       }
     } catch (error: any) {
       Alert.alert('Error', error.response?.data?.error || 'Error al registrarse');

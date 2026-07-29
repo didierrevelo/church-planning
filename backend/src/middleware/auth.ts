@@ -38,7 +38,7 @@ export const authenticate = async (
 
     const user = await prisma.user.findUnique({
       where: { id: decoded.userId },
-      select: { id: true, name: true, email: true, isActive: true },
+      select: { id: true, name: true, email: true, isActive: true, isSuperAdmin: true },
     });
 
     if (!user || !user.isActive) {
@@ -48,6 +48,12 @@ export const authenticate = async (
 
     req.userId = user.id;
     req.user = user;
+
+    if (user.isSuperAdmin) {
+      req.churchRole = 'admin';
+      next();
+      return;
+    }
 
     const churchId = req.headers['x-church-id'] as string;
     if (churchId) {
@@ -87,6 +93,18 @@ export const requireChurchAdmin = (
 ): void => {
   if (req.churchRole !== 'admin') {
     res.status(403).json({ error: 'Church admin access required' });
+    return;
+  }
+  next();
+};
+
+export const requireSuperAdmin = (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+): void => {
+  if (!req.user?.isSuperAdmin) {
+    res.status(403).json({ error: 'Super admin access required' });
     return;
   }
   next();
