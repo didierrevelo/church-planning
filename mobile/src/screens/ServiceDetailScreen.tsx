@@ -1,49 +1,21 @@
-// ============================================
-// PANTALLA: DETALLE DEL SERVICIO
-// ============================================
-// Qué: Muestra todo el detalle de un servicio: orden, equipo, songs, archivos
-// Cómo: Carga servicio por ID → renderiza secciones → permite actualizar estados
-// Conecta: Con api.ts (servicesAPI, teamAPI), con HomeScreen
-// Seguridad: Cada usuario ve solo lo que le corresponde
-
-import React, { useState, useEffect } from 'react';
-
-// React Native components
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-
-// Ionicons: Iconos vectoriales
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, Text, ScrollView, StyleSheet, Alert, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
-// API services
-import { servicesAPI, teamAPI } from '../services/api';
-
-// Types
+import { servicesAPI, teamAPI, reorderAPI } from '../services/api';
 import { Service, ServiceTeamMember } from '../types';
+import { LoadingScreen, SectionHeader, SegmentItem, MemberCard, SongCard, FileCard } from '../components';
+import { useToast } from '../contexts/ToastContext';
 
 export default function ServiceDetailScreen({ route, navigation }: any) {
-  // ============================================
-  // PARÁMETROS
-  // ============================================
   const { serviceId } = route.params;
-
-  // ============================================
-  // ESTADOS
-  // ============================================
+  const { showToast } = useToast();
   const [service, setService] = useState<Service | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // ============================================
-  // EFECTO: Cargar servicio al montar
-  // ============================================
   useEffect(() => {
     loadService();
   }, []);
 
-  // ============================================
-  // FUNCIÓN: loadService
-  // ============================================
-  // Qué: Carga el servicio completo con todas sus relaciones
-  // Conecta: Con servicesAPI.getById() → routes/services.ts (GET /services/:id)
   const loadService = async () => {
     try {
       const response = await servicesAPI.getById(serviceId);
@@ -55,366 +27,165 @@ export default function ServiceDetailScreen({ route, navigation }: any) {
     }
   };
 
-  // ============================================
-  // FUNCIÓN: handleStatusUpdate
-  // ============================================
-  // Qué: Actualiza el estado de un miembro del equipo
-  // Estados: pending → confirmed | cannot_attend | schedule_conflict
-  // Conecta: Con teamAPI.updateStatus() → routes/team.ts (PATCH /team/:id/status)
-  // Seguridad: Cada usuario solo puede actualizar su propio estado
-  const handleStatusUpdate = async (memberId: string, status: string, note?: string) => {
+  const handleStatusUpdate = async (memberId: string, status: string) => {
     try {
-      await teamAPI.updateStatus(memberId, { status, note });
-      loadService();  // Recarga para ver cambios
+      await teamAPI.updateStatus(memberId, { status });
+      loadService();
     } catch (error) {
       Alert.alert('Error', 'No se pudo actualizar el estado');
     }
   };
 
-  // ============================================
-  // FUNCIONES DE UTILIDAD
-  // ============================================
-  
-  // Icono del estado
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case 'confirmed': return { name: 'checkmark-circle', color: '#4CAF50' };
-      case 'cannot_attend': return { name: 'close-circle', color: '#f44336' };
-      case 'schedule_conflict': return { name: 'warning', color: '#FF9800' };
-      default: return { name: 'help-circle', color: '#9E9E9E' };
+  const handleMoveSegment = async (index: number, direction: 'up' | 'down') => {
+    if (!service?.segments) return;
+    const segments = [...service.segments];
+    const newIndex = direction === 'up' ? index - 1 : index + 1;
+    if (newIndex < 0 || newIndex >= segments.length) return;
+
+    [segments[index], segments[newIndex]] = [segments[newIndex], segments[index]];
+    const newOrder = segments.map((s) => s.id);
+
+    try {
+      await reorderAPI.segments(serviceId, newOrder);
+      showToast('Segmento reordenado', 'success');
+      loadService();
+    } catch (error: any) {
+      showToast('Error al reordenar', 'error');
     }
   };
 
-  // Texto del estado
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case 'confirmed': return 'Confirmado';
-      case 'cannot_attend': return 'No puede asistir';
-      case 'schedule_conflict': return 'Conflicto de horario';
-      default: return 'Pendiente';
-    }
-  };
-
-  // ============================================
-  // RENDER: Loading
-  // ============================================
   if (loading || !service) {
-    return (
-      <View style={styles.loading}>
-        <Text>Cargando...</Text>
-      </View>
-    );
+    return <LoadingScreen />;
   }
 
-  // ============================================
-  // RENDER: Pantalla completa
-  // ============================================
   return (
     <ScrollView style={styles.container}>
-      {/* Header del servicio */}
       <View style={styles.header}>
         <Text style={styles.title}>{service.title}</Text>
-        <Text style={styles.date}>{new Date(service.date).toLocaleDateString('es-ES')}</Text>
+        <Text style={styles.date}>
+          {new Date(service.date).toLocaleDateString('es-ES')}
+        </Text>
         <Text style={styles.time}>{service.time}</Text>
       </View>
 
-      {/* Sección: Orden del culto */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Orden del Culto</Text>
+        <SectionHeader title="Orden del Culto" />
         {service.segments?.map((segment, index) => (
-          <View key={segment.id} style={styles.segment}>
-            <View style={styles.segmentNumber}>
-              <Text style={styles.segmentNumberText}>{index + 1}</Text>
+          <View key={segment.id} style={styles.segmentRow}>
+            <View style={styles.segmentMove}>
+              <TouchableOpacity
+                onPress={() => handleMoveSegment(index, 'up')}
+                disabled={index === 0}
+              >
+                <Ionicons
+                  name="chevron-up"
+                  size={20}
+                  color={index === 0 ? '#ccc' : '#5B5EA6'}
+                />
+              </TouchableOpacity>
+              <Text style={styles.segmentOrder}>{index + 1}</Text>
+              <TouchableOpacity
+                onPress={() => handleMoveSegment(index, 'down')}
+                disabled={index === (service.segments?.length || 1) - 1}
+              >
+                <Ionicons
+                  name="chevron-down"
+                  size={20}
+                  color={index === (service.segments?.length || 1) - 1 ? '#ccc' : '#5B5EA6'}
+                />
+              </TouchableOpacity>
             </View>
             <View style={styles.segmentContent}>
-              <Text style={styles.segmentTitle}>{segment.title}</Text>
-              {segment.durationMin && (
-                <Text style={styles.segmentDuration}>{segment.durationMin} min</Text>
-              )}
-              {segment.ministry && (
-                <Text style={styles.segmentMinistry}>{segment.ministry.name}</Text>
-              )}
+              <SegmentItem segment={segment} index={index} />
             </View>
           </View>
         ))}
+        <TouchableOpacity
+          style={styles.addBtn}
+          onPress={() => showToast('Usa una plantilla desde Perfil > Nuevo Servicio', 'info')}
+        >
+          <Ionicons name="albums" size={20} color="#5B5EA6" />
+          <Text style={styles.addBtnText}>Aplicar plantilla</Text>
+        </TouchableOpacity>
       </View>
 
-      {/* Sección: Equipo por ministerio */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Equipo</Text>
+        <SectionHeader title="Equipo" />
         {Object.entries(service.teamByMinistry || {}).map(([ministryName, data]) => (
           <View key={ministryName} style={styles.ministryGroup}>
             <Text style={styles.ministryName}>{ministryName}</Text>
-            {data.members.map((member: ServiceTeamMember) => {
-              const statusInfo = getStatusIcon(member.status);
-              return (
-                <View key={member.id} style={styles.memberCard}>
-                  <View style={styles.memberInfo}>
-                    <Text style={styles.memberName}>{member.user?.name}</Text>
-                    <Text style={styles.memberRole}>{member.ministryRole?.name}</Text>
-                  </View>
-                  <View style={styles.memberStatus}>
-                    <Ionicons name={statusInfo.name as any} size={24} color={statusInfo.color} />
-                    <Text style={[styles.statusText, { color: statusInfo.color }]}>
-                      {getStatusText(member.status)}
-                    </Text>
-                  </View>
-                  {/* Botones de acción para pendientes */}
-                  {member.status === 'pending' && (
-                    <View style={styles.actionButtons}>
-                      <TouchableOpacity 
-                        style={[styles.actionBtn, styles.confirmBtn]}
-                        onPress={() => handleStatusUpdate(member.id, 'confirmed')}
-                      >
-                        <Text style={styles.actionBtnText}>Confirmar</Text>
-                      </TouchableOpacity>
-                      <TouchableOpacity 
-                        style={[styles.actionBtn, styles.declineBtn]}
-                        onPress={() => handleStatusUpdate(member.id, 'cannot_attend')}
-                      >
-                        <Text style={styles.actionBtnText}>No puede</Text>
-                      </TouchableOpacity>
-                    </View>
-                  )}
-                </View>
-              );
-            })}
+            {(data as any).members?.map((member: ServiceTeamMember) => (
+              <MemberCard
+                key={member.id}
+                member={member}
+                showActions={member.status === 'pending'}
+                onConfirm={() => handleStatusUpdate(member.id, 'confirmed')}
+                onDecline={() => handleStatusUpdate(member.id, 'cannot_attend')}
+              />
+            ))}
           </View>
         ))}
       </View>
 
-      {/* Sección: Set list */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Set List</Text>
+        <SectionHeader title="Set List" />
         {service.songs?.map((song, index) => (
-          <View key={song.id} style={styles.songCard}>
-            <View style={styles.songNumber}>
-              <Text style={styles.songNumberText}>{index + 1}</Text>
-            </View>
-            <View style={styles.songInfo}>
-              <Text style={styles.songTitle}>{song.title}</Text>
-              {song.key && <Text style={styles.songKey}>Tono: {song.key}</Text>}
-            </View>
-            {song.youtubeLink && (
-              <TouchableOpacity style={styles.youtubeBtn}>
-                <Ionicons name="logo-youtube" size={24} color="#FF0000" />
-              </TouchableOpacity>
-            )}
-          </View>
+          <SongCard key={song.id} song={song} index={index} />
         ))}
+        <TouchableOpacity
+          style={styles.addBtn}
+          onPress={() => navigation.navigate('AddSong', { serviceId: service.id })}
+        >
+          <Ionicons name="add-circle" size={20} color="#5B5EA6" />
+          <Text style={styles.addBtnText}>Agregar canción</Text>
+        </TouchableOpacity>
       </View>
 
-      {/* Sección: Archivos */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Archivos</Text>
+        <SectionHeader title="Archivos" />
         {service.files?.map((file) => (
-          <View key={file.id} style={styles.fileCard}>
-            <Ionicons name="document" size={24} color="#5B5EA6" />
-            <View style={styles.fileInfo}>
-              <Text style={styles.fileName}>{file.name}</Text>
-              <Text style={styles.fileMeta}>
-                {file.uploadedBy?.name} • {new Date(file.createdAt).toLocaleDateString()}
-              </Text>
-            </View>
-          </View>
+          <FileCard key={file.id} file={file} />
         ))}
+        <TouchableOpacity
+          style={styles.addBtn}
+          onPress={() => Alert.alert('Próximamente', 'Subir archivos desde el dispositivo')}
+        >
+          <Ionicons name="cloud-upload-outline" size={20} color="#5B5EA6" />
+          <Text style={styles.addBtnText}>Subir archivo</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
 }
 
-// ============================================
-// ESTILOS
-// ============================================
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  loading: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  container: { flex: 1, backgroundColor: '#f5f5f5' },
   header: {
     backgroundColor: '#5B5EA6',
     padding: 20,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  date: {
-    fontSize: 16,
-    color: '#fff',
-    opacity: 0.9,
-    marginTop: 8,
-  },
-  time: {
-    fontSize: 14,
-    color: '#fff',
-    opacity: 0.8,
-    marginTop: 4,
-  },
-  section: {
-    padding: 16,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 12,
-  },
-  segment: {
-    flexDirection: 'row',
+  title: { fontSize: 24, fontWeight: 'bold', color: '#fff' },
+  date: { fontSize: 16, color: '#fff', opacity: 0.9, marginTop: 8 },
+  time: { fontSize: 14, color: '#fff', opacity: 0.8, marginTop: 4 },
+  section: { padding: 16 },
+  segmentRow: { flexDirection: 'row', marginBottom: 8 },
+  segmentMove: {
     alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  segmentNumber: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    backgroundColor: '#5B5EA6',
     justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 12,
+    marginRight: 8,
+    width: 30,
   },
-  segmentNumberText: {
-    color: '#fff',
-    fontWeight: '600',
+  segmentOrder: {
+    fontSize: 12, fontWeight: '700', color: '#5B5EA6',
+    marginVertical: 2,
   },
-  segmentContent: {
-    flex: 1,
+  segmentContent: { flex: 1 },
+  ministryGroup: { marginBottom: 16 },
+  ministryName: { fontSize: 16, fontWeight: '600', color: '#5B5EA6', marginBottom: 8 },
+  addBtn: {
+    flexDirection: 'row', alignItems: 'center', padding: 12,
+    borderWidth: 1, borderColor: '#5B5EA6', borderRadius: 8,
+    borderStyle: 'dashed', marginTop: 8,
   },
-  segmentTitle: {
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  segmentDuration: {
-    fontSize: 12,
-    color: '#666',
-    marginTop: 2,
-  },
-  segmentMinistry: {
-    fontSize: 12,
-    color: '#5B5EA6',
-    marginTop: 2,
-  },
-  ministryGroup: {
-    marginBottom: 16,
-  },
-  ministryName: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#5B5EA6',
-    marginBottom: 8,
-  },
-  memberCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  memberInfo: {
-    flex: 1,
-  },
-  memberName: {
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  memberRole: {
-    fontSize: 12,
-    color: '#666',
-  },
-  memberStatus: {
-    alignItems: 'center',
-    marginRight: 12,
-  },
-  statusText: {
-    fontSize: 10,
-    marginTop: 2,
-  },
-  actionButtons: {
-    flexDirection: 'row',
-  },
-  actionBtn: {
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    borderRadius: 4,
-    marginLeft: 4,
-  },
-  confirmBtn: {
-    backgroundColor: '#4CAF50',
-  },
-  declineBtn: {
-    backgroundColor: '#f44336',
-  },
-  actionBtnText: {
-    color: '#fff',
-    fontSize: 10,
-    fontWeight: '600',
-  },
-  songCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  songNumber: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    backgroundColor: '#FF9800',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 12,
-  },
-  songNumberText: {
-    color: '#fff',
-    fontWeight: '600',
-  },
-  songInfo: {
-    flex: 1,
-  },
-  songTitle: {
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  songKey: {
-    fontSize: 12,
-    color: '#666',
-    marginTop: 2,
-  },
-  youtubeBtn: {
-    padding: 8,
-  },
-  fileCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  fileInfo: {
-    marginLeft: 12,
-    flex: 1,
-  },
-  fileName: {
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  fileMeta: {
-    fontSize: 12,
-    color: '#666',
-    marginTop: 2,
-  },
+  addBtnText: { marginLeft: 8, fontSize: 14, color: '#5B5EA6', fontWeight: '600' },
 });

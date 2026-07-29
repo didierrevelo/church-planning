@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Church Planning",
+    "slug": "church-planning",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "churchplanning",
+    "platforms": ["ios", "android", "web"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.churchplanning.app",
+      "associatedDomains": ["applinks:church-planning.app"]
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#5B5EA6"
+      },
+      "package": "com.churchplanning.app",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            { "scheme": "churchplanning", "host": "*" },
+            { "scheme": "https", "host": "church-planning.app" }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "apiUrl": "https://church-planning-production.up.railway.app"
+    }
+  }
+}

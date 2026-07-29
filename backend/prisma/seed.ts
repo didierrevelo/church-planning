@@ -6,72 +6,64 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('Seeding database...');
 
-  // Create admin user
-  const adminPassword = await bcrypt.hash('admin123', 10);
+  const password = await bcrypt.hash('admin123', 10);
+
+  const church = await prisma.church.upsert({
+    where: { slug: 'iglesia-central' },
+    update: {},
+    create: {
+      name: 'Iglesia Central',
+      slug: 'iglesia-central',
+    },
+  });
+  console.log('Church created:', church.name);
+
   const admin = await prisma.user.upsert({
-    where: { email: 'admin@church.com' },
+    where: { email: 'admin@iglesia.com' },
     update: {},
     create: {
       name: 'Admin',
-      email: 'admin@church.com',
-      password: adminPassword,
-      isAdmin: true
-    }
+      email: 'admin@iglesia.com',
+      password,
+    },
   });
   console.log('Admin user created:', admin.email);
 
-  // Create ministries
+  await prisma.userChurch.upsert({
+    where: { userId_churchId: { userId: admin.id, churchId: church.id } },
+    update: {},
+    create: {
+      userId: admin.id,
+      churchId: church.id,
+      role: 'admin',
+    },
+  });
+  console.log('Admin linked to church');
+
   const ministries = [
-    { name: 'Alabanza' },
-    { name: 'Danzas' },
-    { name: 'Producción' },
-    { name: 'Predicación' },
-    { name: 'Niños' },
-    { name: 'Ujieres' }
+    { name: 'Alabanza', roles: ['Vocalista', 'Batería', 'Bajo', 'Guitarra', 'Teclado', 'Director de Alabanza'] },
+    { name: 'Danzas', roles: ['Bailarín', 'Coreógrafo'] },
+    { name: 'Producción', roles: ['Sonido', 'Video', 'Luces', 'Transmisión'] },
+    { name: 'Predicación', roles: ['Predicador', 'Invitado'] },
+    { name: 'Niños', roles: ['Maestro', 'Ayudante'] },
+    { name: 'Ujieres', roles: ['Ujier', 'Coordinador'] },
   ];
 
-  for (const ministry of ministries) {
-    await prisma.ministry.upsert({
-      where: { id: ministry.name.toLowerCase() },
-      update: {},
-      create: { id: ministry.name.toLowerCase(), name: ministry.name }
+  for (const m of ministries) {
+    const ministry = await prisma.ministry.create({
+      data: {
+        churchId: church.id,
+        name: m.name,
+      },
     });
+    for (const role of m.roles) {
+      await prisma.ministryRole.create({
+        data: { name: role, ministryId: ministry.id },
+      });
+    }
   }
-  console.log('Ministries created');
+  console.log('Ministries and roles created');
 
-  // Create roles for Alabanza
-  const alabanzaRoles = ['Vocalista', 'Batería', 'Bajo', 'Guitarra', 'Teclado', 'Director de Alabanza'];
-  for (const role of alabanzaRoles) {
-    await prisma.ministryRole.create({
-      data: { name: role, ministryId: 'alabanza' }
-    });
-  }
-
-  // Create roles for Danzas
-  const danzasRoles = ['Bailarín', 'Coreógrafo'];
-  for (const role of danzasRoles) {
-    await prisma.ministryRole.create({
-      data: { name: role, ministryId: 'danzas' }
-    });
-  }
-
-  // Create roles for Producción
-  const produccionRoles = ['Sonido', 'Video', 'Luces', 'Transmisión'];
-  for (const role of produccionRoles) {
-    await prisma.ministryRole.create({
-      data: { name: role, ministryId: 'producción' }
-    });
-  }
-
-  // Create roles for Predicación
-  const predicacionRoles = ['Predicador', 'Invitado'];
-  for (const role of predicacionRoles) {
-    await prisma.ministryRole.create({
-      data: { name: role, ministryId: 'predicación' }
-    });
-  }
-
-  console.log('Roles created');
   console.log('Seeding completed!');
 }
 

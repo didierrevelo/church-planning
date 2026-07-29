@@ -1,86 +1,88 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, Text, FlatList, StyleSheet, RefreshControl } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
-import { teamAPI } from '../services/api';
-import { ServiceTeamMember } from '../types';
+import { churchesAPI } from '../services/api';
+import { FilterBar, EmptyState } from '../components';
 
-export default function TeamScreen({ navigation }: any) {
-  const [members, setMembers] = useState<ServiceTeamMember[]>([]);
+const FILTERS = [
+  { key: 'all', label: 'Todos' },
+  { key: 'admin', label: 'Admin' },
+  { key: 'leader', label: 'Líderes' },
+  { key: 'member', label: 'Miembros' },
+];
+
+const ROLE_COLORS: Record<string, string> = {
+  admin: '#f44336',
+  leader: '#FF9800',
+  member: '#4CAF50',
+};
+
+const ROLE_LABELS: Record<string, string> = {
+  admin: 'Admin',
+  leader: 'Líder',
+  member: 'Miembro',
+};
+
+export default function TeamScreen() {
+  const [members, setMembers] = useState<any[]>([]);
   const [filter, setFilter] = useState('all');
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     loadMembers();
   }, []);
 
   const loadMembers = async () => {
-    // This would load team members from the current user's services
-    // For now, using mock data
-    setMembers([]);
-  };
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'confirmed': return '#4CAF50';
-      case 'cannot_attend': return '#f44336';
-      case 'schedule_conflict': return '#FF9800';
-      default: return '#9E9E9E';
+    try {
+      const churchId = await AsyncStorage.getItem('churchId');
+      if (!churchId) return;
+      const response = await churchesAPI.getMembers(churchId);
+      setMembers(response.data);
+    } catch (error) {
+      console.error('Error loading members:', error);
     }
   };
 
-  const renderMember = ({ item }: { item: ServiceTeamMember }) => (
-    <View style={styles.card}>
-      <View style={styles.avatar}>
-        <Text style={styles.avatarText}>{item.user?.name?.charAt(0) || '?'}</Text>
-      </View>
-      <View style={styles.info}>
-        <Text style={styles.name}>{item.user?.name}</Text>
-        <Text style={styles.role}>{item.ministryRole?.name} • {item.ministry?.name}</Text>
-      </View>
-      <View style={[styles.statusBadge, { backgroundColor: getStatusColor(item.status) }]}>
-        <Text style={styles.statusText}>
-          {item.status === 'confirmed' ? '✓' : item.status === 'cannot_attend' ? '✗' : '?'}
-        </Text>
-      </View>
-    </View>
-  );
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    await loadMembers();
+    setRefreshing(false);
+  }, []);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Mi Equipo</Text>
+        <Text style={styles.headerTitle}>Miembros</Text>
       </View>
 
-      <View style={styles.filters}>
-        <TouchableOpacity 
-          style={[styles.filterBtn, filter === 'all' && styles.filterActive]}
-          onPress={() => setFilter('all')}
-        >
-          <Text style={[styles.filterText, filter === 'all' && styles.filterTextActive]}>Todos</Text>
-        </TouchableOpacity>
-        <TouchableOpacity 
-          style={[styles.filterBtn, filter === 'confirmed' && styles.filterActive]}
-          onPress={() => setFilter('confirmed')}
-        >
-          <Text style={[styles.filterText, filter === 'confirmed' && styles.filterTextActive]}>Confirmados</Text>
-        </TouchableOpacity>
-        <TouchableOpacity 
-          style={[styles.filterBtn, filter === 'pending' && styles.filterActive]}
-          onPress={() => setFilter('pending')}
-        >
-          <Text style={[styles.filterText, filter === 'pending' && styles.filterTextActive]}>Pendientes</Text>
-        </TouchableOpacity>
-      </View>
+      <FilterBar options={FILTERS} active={filter} onSelect={setFilter} />
 
       <FlatList
-        data={members.filter(m => filter === 'all' || m.status === filter)}
-        renderItem={renderMember}
+        data={members.filter((m) => filter === 'all' || m.role === filter)}
+        renderItem={({ item }) => (
+          <View style={styles.card}>
+            <View style={styles.avatar}>
+              <Text style={styles.avatarText}>
+                {item.user?.name?.charAt(0) || '?'}
+              </Text>
+            </View>
+            <View style={styles.info}>
+              <Text style={styles.name}>{item.user?.name}</Text>
+              <Text style={styles.email}>{item.user?.email}</Text>
+            </View>
+            <View style={[styles.roleBadge, { backgroundColor: ROLE_COLORS[item.role] || '#999' }]}>
+              <Text style={styles.roleText}>{ROLE_LABELS[item.role] || item.role}</Text>
+            </View>
+          </View>
+        )}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.list}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         ListEmptyComponent={
-          <View style={styles.empty}>
-            <Ionicons name="people-outline" size={64} color="#ccc" />
-            <Text style={styles.emptyText}>No hay miembros asignados</Text>
-          </View>
+          <EmptyState icon="people-outline" message="No hay miembros en esta iglesia" />
         }
       />
     </View>
@@ -88,44 +90,14 @@ export default function TeamScreen({ navigation }: any) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
+  container: { flex: 1, backgroundColor: '#f5f5f5' },
   header: {
     backgroundColor: '#5B5EA6',
     padding: 20,
     paddingTop: 50,
   },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  filters: {
-    flexDirection: 'row',
-    padding: 16,
-    backgroundColor: '#fff',
-  },
-  filterBtn: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-    marginRight: 8,
-    backgroundColor: '#f0f0f0',
-  },
-  filterActive: {
-    backgroundColor: '#5B5EA6',
-  },
-  filterText: {
-    color: '#666',
-  },
-  filterTextActive: {
-    color: '#fff',
-  },
-  list: {
-    padding: 16,
-  },
+  headerTitle: { fontSize: 24, fontWeight: 'bold', color: '#fff' },
+  list: { padding: 16 },
   card: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -143,43 +115,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 12,
   },
-  avatarText: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: '600',
+  avatarText: { color: '#fff', fontSize: 20, fontWeight: '600' },
+  info: { flex: 1 },
+  name: { fontSize: 16, fontWeight: '600' },
+  email: { fontSize: 12, color: '#666', marginTop: 2 },
+  roleBadge: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
   },
-  info: {
-    flex: 1,
-  },
-  name: {
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  role: {
-    fontSize: 12,
-    color: '#666',
-    marginTop: 2,
-  },
-  statusBadge: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  statusText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  empty: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 40,
-  },
-  emptyText: {
-    marginTop: 16,
-    fontSize: 16,
-    color: '#999',
-  },
+  roleText: { color: '#fff', fontSize: 11, fontWeight: '600' },
 });

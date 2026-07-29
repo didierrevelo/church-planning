@@ -1,268 +1,185 @@
-// ============================================
-// SERVICIO API - CHURCH PLANNING MOBILE
-// ============================================
-// Qué: Cliente HTTP para comunicar la app con el backend
-// Cómo: Usa Axios con interceptores para auth automática
-// Conecta: Con backend routes/, con AsyncStorage para tokens
-// Seguridad: Token JWT en cada request, HTTPS
-
-// Axios: Library HTTP para hacer requests al backend
-// Conecta: Con backend routes/ (auth, services, team, songs, files, notifications)
 import axios from 'axios';
-
-// AsyncStorage: Almacenamiento local en React Native
-// Conecta: Con LoginScreen (guarda token), con ProfileScreen (lee usuario)
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Constants from 'expo-constants';
+import { offlineCache } from '../utils/offlineCache';
 
-// URL base del backend
-// En desarrollo: localhost
-// En producción: URL de Railway
-// Conecta: Con PRODUCTION.md (Railway URL)
-const API_URL = __DEV__ 
-  ? 'http://localhost:3000' 
-  : 'https://church-planning-api.up.railway.app';
+const API_URL = __DEV__
+  ? 'http://localhost:3000'
+  : (Constants.expoConfig?.extra?.apiUrl as string) || 'https://church-planning-production.up.railway.app';
 
-// ============================================
-// INSTANCIA DE AXIOS
-// ============================================
-// Qué: Crea cliente HTTP con configuración base
-// Seguridad: HTTPS en producción
+const CACHEABLE_GETS = ['/services', '/ministries', '/notifications', '/team', '/songs/'];
+
 const api = axios.create({
   baseURL: API_URL,
   headers: { 'Content-Type': 'application/json' },
-  timeout: 10000,  // 10 segundos timeout
+  timeout: 15000,
 });
 
-// ============================================
-// INTERCEPTOR DE REQUESTS
-// ============================================
-// Qué: Agrega token JWT a cada request automáticamente
-// Cómo: Lee token de AsyncStorage y lo agrega al header
-// Seguridad: Token se renueva con refresh
-// Conecta: Con authAPI.login (guarda token), con middleware/auth.ts (verifica)
 api.interceptors.request.use(async (config) => {
   const token = await AsyncStorage.getItem('token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+  const churchId = await AsyncStorage.getItem('churchId');
+  if (churchId) {
+    config.headers['X-Church-Id'] = churchId;
+  }
   return config;
 });
 
-// ============================================
-// INTERCEPTOR DE RESPONSES
-// ============================================
-// Qué: Maneja errores 401 (token expirado)
-// Cómo: Limpia storage y redirige a login
 api.interceptors.response.use(
-  (response) => response,
+  async (response) => {
+    if (response.config.method === 'get') {
+      const url = response.config.url || '';
+      const shouldCache = CACHEABLE_GETS.some((prefix) => url.startsWith(prefix));
+      if (shouldCache) {
+        await offlineCache.set(url, response.data);
+      }
+    }
+    return response;
+  },
   async (error) => {
+    if (!error.response && error.config?.method === 'get') {
+      const cached = await offlineCache.get(error.config.url);
+      if (cached) {
+        return Promise.resolve({ data: cached, cached: true });
+      }
+    }
     if (error.response?.status === 401) {
-      await AsyncStorage.multiRemove(['token', 'user']);
-      // El navigator se encarga de redirigir a Login
+      await AsyncStorage.multiRemove(['token', 'user', 'churchId']);
     }
     return Promise.reject(error);
   }
 );
 
-// ============================================
-// AUTH API
-// ============================================
-// Qué: Login, obtener perfil, invitar usuarios
-// Conecta: Con routes/auth.ts, con LoginScreen.tsx, ProfileScreen.tsx
 export const authAPI = {
-  // Login: Retorna token y datos de usuario
-  login: (email: string, password: string) =>
-    api.post('/auth/login', { email, password }),
-  
-  // Obtener perfil del usuario autenticado
+  login: (email: string, password: string) => api.post('/auth/login', { email, password }),
   getMe: () => api.get('/auth/me'),
-  
-  // Invitar usuario (solo admin)
-  invite: (data: { email: string; name: string; phone?: string; ministryIds?: string[]; roleIds?: string[] }) =>
-    api.post('/auth/invite', data)
+  updateProfile: (data: { name?: string; phone?: string }) => api.put('/auth/me', data),
+  invite: (data: { email: string; name: string; phone?: string; churchId: string }) =>
+    api.post('/auth/invite', data),
+  changePassword: (data: { currentPassword: string; newPassword: string }) =>
+    api.put('/auth/password', data),
 };
 
-// ============================================
-// SERVICES API
-// ============================================
-// Qué: CRUD de servicios y segmentos
-// Conecta: Con routes/services.ts, con HomeScreen.tsx, ServiceDetailScreen.tsx
+export const churchesAPI = {
+  getAll: () => api.get('/churches'),
+  create: (name: string) => api.post('/churches', { name }),
+  getMembers: (churchId: string) => api.get(`/churches/${churchId}/members`),
+  addMember: (churchId: string, data: { userId: string; role?: string }) =>
+    api.post(`/churches/${churchId}/members`, data),
+  removeMember: (churchId: string, userId: string) =>
+    api.delete(`/churches/${churchId}/members/${userId}`),
+  update: (churchId: string, data: { name: string }) =>
+    api.patch(`/churches/${churchId}`, data),
+};
+
 export const servicesAPI = {
-  // Listar todos los servicios
   getAll: () => api.get('/services'),
-  
-  // Obtener detalle de un servicio (con equipo, songs, files)
   getById: (id: string) => api.get(`/services/${id}`),
-  
-  // Crear servicio (solo admin)
   create: (data: { title: string; date: string; time: string; type?: string; notes?: string }) =>
     api.post('/services', data),
-  
-  // Actualizar servicio
-  update: (id: string, data: any) =>
-    api.patch(`/services/${id}`, data),
-  
-  // Eliminar servicio
-  delete: (id: string) => api.delete(`/services/${id}`)
+  update: (id: string, data: any) => api.patch(`/services/${id}`, data),
+  delete: (id: string) => api.delete(`/services/${id}`),
 };
 
-// ============================================
-// SEGMENTS API
-// ============================================
-// Qué: CRUD de segmentos del orden del culto
-// Conecta: Con routes/services.ts (segments endpoints)
 export const segmentsAPI = {
-  // Listar segmentos de un servicio
-  getByService: (serviceId: string) =>
-    api.get(`/services/${serviceId}/segments`),
-  
-  // Crear segmento
-  create: (serviceId: string, data: any) =>
-    api.post(`/services/${serviceId}/segments`, data),
-  
-  // Actualizar segmento (reordenar, editar)
-  update: (id: string, data: any) =>
-    api.patch(`/services/segments/${id}`, data),
-  
-  // Eliminar segmento
-  delete: (id: string) =>
-    api.delete(`/services/segments/${id}`)
+  getByService: (serviceId: string) => api.get(`/services/${serviceId}/segments`),
+  create: (serviceId: string, data: any) => api.post(`/services/${serviceId}/segments`, data),
+  update: (id: string, data: any) => api.patch(`/services/segments/${id}`, data),
+  delete: (id: string) => api.delete(`/services/segments/${id}`),
 };
 
-// ============================================
-// TEAM API
-// ============================================
-// Qué: Asignación de personas a servicios
-// Conecta: Con routes/team.ts, con ServiceDetailScreen.tsx
 export const teamAPI = {
-  // Obtener equipo agrupado por ministerio
-  getByService: (serviceId: string) =>
-    api.get(`/team/${serviceId}`),
-  
-  // Asignar persona al equipo
+  getByService: (serviceId: string) => api.get(`/team/${serviceId}`),
   addMember: (serviceId: string, data: { userId: string; ministryId: string; ministryRoleId: string }) =>
     api.post(`/team/${serviceId}`, data),
-  
-  // Actualizar estado (confirmado/no puede/inconveniente)
   updateStatus: (id: string, data: { status: string; note?: string }) =>
     api.patch(`/team/${id}/status`, data),
-  
-  // Eliminar persona del equipo
-  removeMember: (id: string) => api.delete(`/team/${id}`)
+  removeMember: (id: string) => api.delete(`/team/${id}`),
 };
 
-// ============================================
-// POSITIONS API
-// ============================================
-// Qué: Solicitudes de instrumentos/posiciones
-// Conecta: Con routes/team.ts (positions endpoints)
 export const positionsAPI = {
-  // Listar posiciones solicitadas
-  getByService: (serviceId: string) =>
-    api.get(`/team/positions/${serviceId}`),
-  
-  // Crear solicitud de posición
+  getByService: (serviceId: string) => api.get(`/team/positions/${serviceId}`),
   create: (serviceId: string, data: { ministryRoleId: string; userId?: string }) =>
     api.post(`/team/positions/${serviceId}`, data),
-  
-  // Responder solicitud (aceptar/rechazar)
   respond: (id: string, status: 'accepted' | 'rejected') =>
-    api.patch(`/team/positions/${id}/respond`, { status })
+    api.patch(`/team/positions/${id}/respond`, { status }),
 };
 
-// ============================================
-// SONGS API
-// ============================================
-// Qué: Set list musical
-// Conecta: Con routes/songs.ts, con SongsScreen.tsx
 export const songsAPI = {
-  // Listar canciones del servicio
-  getByService: (serviceId: string) =>
-    api.get(`/songs/${serviceId}`),
-  
-  // Agregar canción al set list
-  create: (serviceId: string, data: any) =>
-    api.post(`/songs/${serviceId}`, data),
-  
-  // Actualizar canción (tono, letra, partitura)
-  update: (id: string, data: any) =>
-    api.patch(`/songs/${id}`, data),
-  
-  // Obtener historial de cambios
-  getHistory: (id: string) =>
-    api.get(`/songs/${id}/history`),
-  
-  // Eliminar canción
-  delete: (id: string) => api.delete(`/songs/${id}`)
+  getByService: (serviceId: string) => api.get(`/songs/${serviceId}`),
+  create: (serviceId: string, data: any) => api.post(`/songs/${serviceId}`, data),
+  update: (id: string, data: any) => api.patch(`/songs/${id}`, data),
+  getHistory: (id: string) => api.get(`/songs/${id}/history`),
+  delete: (id: string) => api.delete(`/songs/${id}`),
 };
 
-// ============================================
-// MINISTRIES API
-// ============================================
-// Qué: CRUD de ministerios y roles
-// Conecta: Con routes/ministries.ts
 export const ministriesAPI = {
-  // Listar ministerios activos
   getAll: () => api.get('/ministries'),
-  
-  // Crear ministerio (solo admin)
-  create: (name: string) =>
-    api.post('/ministries', { name }),
-  
-  // Actualizar ministerio
-  update: (id: string, data: any) =>
-    api.patch(`/ministries/${id}`, data),
-  
-  // Listar roles de un ministerio
-  getRoles: (id: string) =>
-    api.get(`/ministries/${id}/roles`),
-  
-  // Crear rol en ministerio
+  create: (name: string) => api.post('/ministries', { name }),
+  update: (id: string, data: any) => api.patch(`/ministries/${id}`, data),
+  getRoles: (id: string) => api.get(`/ministries/${id}/roles`),
   createRole: (ministryId: string, name: string) =>
     api.post(`/ministries/${ministryId}/roles`, { name }),
-  
-  // Actualizar rol
-  updateRole: (id: string, data: any) =>
-    api.patch(`/ministries/roles/${id}`, data)
+  updateRole: (id: string, data: any) => api.patch(`/ministries/roles/${id}`, data),
 };
 
-// ============================================
-// FILES API
-// ============================================
-// Qué: Subida y gestión de archivos
-// Conecta: Con routes/files.ts, con AWS S3 (presigned URLs)
 export const filesAPI = {
-  // Listar archivos del servicio
-  getByService: (serviceId: string) =>
-    api.get(`/files/${serviceId}`),
-  
-  // Obtener presigned URL para subir a S3
+  getByService: (serviceId: string) => api.get(`/files/${serviceId}`),
   upload: (serviceId: string, data: { filename: string; filetype: string; filesize: number; ministryId?: string }) =>
     api.post(`/files/${serviceId}/upload`, data),
-  
-  // Eliminar archivo
-  delete: (id: string) => api.delete(`/files/${id}`)
+  delete: (id: string) => api.delete(`/files/${id}`),
 };
 
-// ============================================
-// NOTIFICATIONS API
-// ============================================
-// Qué: Notificaciones del usuario
-// Conecta: Con routes/notifications.ts, con ProfileScreen.tsx
+export const templatesAPI = {
+  getAll: () => api.get('/templates'),
+  getById: (id: string) => api.get(`/templates/${id}`),
+  create: (data: { name: string; description?: string; segments: { title: string; durationMin?: number; notes?: string; ministryId?: string }[] }) =>
+    api.post('/templates', data),
+  update: (id: string, data: any) => api.patch(`/templates/${id}`, data),
+  delete: (id: string) => api.delete(`/templates/${id}`),
+  apply: (templateId: string, serviceId: string) =>
+    api.post(`/templates/${templateId}/apply/${serviceId}`),
+};
+
+export const agentAPI = {
+  assignTeam: (serviceId: string) => api.post('/agent/assign-team', { serviceId }),
+  getHistory: (page = 1) => api.get(`/agent/history?page=${page}&limit=20`),
+};
+
+export const reorderAPI = {
+  segments: (serviceId: string, segmentIds: string[]) =>
+    api.patch(`/services/${serviceId}/reorder-segments`, { segmentIds }),
+};
+
 export const notificationsAPI = {
-  // Listar notificaciones
-  getAll: () => api.get('/notifications'),
-  
-  // Contar no leídas (para badge)
+  getAll: (page = 1, limit = 20) => api.get(`/notifications?page=${page}&limit=${limit}`),
   getUnreadCount: () => api.get('/notifications/unread-count'),
-  
-  // Marcar una como leída
-  markRead: (id: string) =>
-    api.patch(`/notifications/${id}/read`),
-  
-  // Marcar todas como leídas
-  markAllRead: () =>
-    api.patch('/notifications/read-all')
+  markRead: (id: string) => api.patch(`/notifications/${id}/read`),
+  markAllRead: () => api.patch('/notifications/read-all'),
+  registerToken: (token: string, platform = 'expo') =>
+    api.post('/notifications/register-token', { token, platform }),
+  unregisterToken: (token: string) =>
+    api.delete('/notifications/unregister-token', { data: { token } }),
+};
+
+export const searchAPI = {
+  search: (q: string, types?: string) =>
+    api.get(`/search?q=${encodeURIComponent(q)}${types ? `&types=${types}` : ''}`),
+};
+
+export const reportsAPI = {
+  getDashboard: () => api.get('/reports/dashboard'),
+  getMonthly: (year?: number) => api.get(`/reports/monthly${year ? `?year=${year}` : ''}`),
+};
+
+export const adminAPI = {
+  getChurch: () => api.get('/admin/church'),
+  getMembers: () => api.get('/admin/members'),
+  updateRole: (userId: string, role: string) =>
+    api.patch(`/admin/members/${userId}/role`, { role }),
+  removeMember: (userId: string) => api.delete(`/admin/members/${userId}`),
 };
 
 export default api;

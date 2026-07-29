@@ -1,32 +1,26 @@
-// ============================================
-// RUTAS DE CANCIONES (SET LIST)
-// Módulo: Songs
-// Responsabilidad: CRUD de canciones, historial de cambios, notificación de tono
-// Escalabilidad: Historial de cambios, notificaciones automáticas
-// ============================================
-
 import express from 'express';
 const router = express.Router();
 import { PrismaClient } from '@prisma/client';
-import { authenticate, AuthRequest } from '../middleware/auth';
+import { authenticate, requireChurchAdmin, requireChurch, AuthRequest, publicUserSelect } from '../middleware/auth';
+import { validate } from '../middleware/validate';
+import { createSongSchema, updateSongSchema } from '../validation/songs';
 
 const prisma = new PrismaClient();
 
-// ============================================
-// GET /songs/:serviceId
-// ============================================
-// Qué: Lista el set list de un servicio
-// Conecta:
-//   - Output: Array de songs ordenados por order
-//   - Frontend: mobile/src/screens/SongsScreen.tsx
-router.get('/:serviceId', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.get('/:serviceId', authenticate, requireChurch, async (req: AuthRequest, res: express.Response) => {
   try {
+    const service = await prisma.service.findUnique({
+      where: { id: req.params.serviceId },
+      select: { churchId: true },
+    });
+    if (!service || service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
     const songs = await prisma.song.findMany({
       where: { serviceId: req.params.serviceId },
       orderBy: { order: 'asc' },
-      include: {
-        updatedBy: { select: { id: true, name: true } }
-      }
+      include: { updatedBy: { select: publicUserSelect } },
     });
     res.json(songs);
   } catch (error: any) {
@@ -34,107 +28,92 @@ router.get('/:serviceId', authenticate, async (req: AuthRequest, res: express.Re
   }
 });
 
-// ============================================
-// POST /songs/:serviceId
-// ============================================
-// Qué: Agrega una canción al set list
-// Cómo: Auto-incrementa order → crea canción
-// Conecta:
-//   - Input: { title, key, lyricsUrl, sheetMusicUrl, youtubeLink }
-//   - Output: Song creada
-router.post('/:serviceId', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.post('/:serviceId', authenticate, requireChurch, validate(createSongSchema), async (req: AuthRequest, res: express.Response) => {
   try {
-    const { title, key, lyricsUrl, sheetMusicUrl, youtubeLink } = req.body;
+    const service = await prisma.service.findUnique({
+      where: { id: req.params.serviceId },
+      select: { churchId: true },
+    });
+    if (!service || service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
 
-    // Calcula siguiente orden
+    const { title, key, lyricsUrl, sheetMusicUrl, youtubeLink } = req.body;
     const lastSong = await prisma.song.findFirst({
       where: { serviceId: req.params.serviceId },
-      orderBy: { order: 'desc' }
+      orderBy: { order: 'desc' },
     });
     const nextOrder = (lastSong?.order || 0) + 1;
-
     const song = await prisma.song.create({
       data: {
         serviceId: req.params.serviceId,
         order: nextOrder,
         title,
-        key,
-        lyricsUrl,
-        sheetMusicUrl,
-        youtubeLink,
-        updatedById: req.userId
-      }
+        key: key || null,
+        lyricsUrl: lyricsUrl || null,
+        sheetMusicUrl: sheetMusicUrl || null,
+        youtubeLink: youtubeLink || null,
+        updatedById: req.userId,
+      },
     });
-
     res.status(201).json(song);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// ============================================
-// PATCH /songs/:id
-// ============================================
-// Qué: Actualiza una canción (tono, letra, partitura, link)
-// Cómo: Registra cambio en historial → notifica si cambió el tono
-// Conecta:
-//   - Input: { title, order, key, lyricsUrl, sheetMusicUrl, youtubeLink }
-//   - Historial: SongHistory si cambia key
-//   - Notificación: A músicos si cambia tono
-router.patch('/:id', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.patch('/:id', authenticate, requireChurch, validate(updateSongSchema), async (req: AuthRequest, res: express.Response) => {
   try {
+    const currentSong = await prisma.song.findUnique({
+      where: { id: req.params.id },
+      include: { service: { select: { churchId: true } } },
+    });
+    if (!currentSong || currentSong.service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
     const { title, order, key, lyricsUrl, sheetMusicUrl, youtubeLink } = req.body;
-
-    // Obtiene canción actual para comparar
-    const currentSong = await prisma.song.findUnique({ where: { id: req.params.id } });
-
     const song = await prisma.song.update({
       where: { id: req.params.id },
       data: {
         ...(title && { title }),
         ...(order !== undefined && { order }),
-        ...(key && { key }),
+        ...(key !== undefined && { key }),
         ...(lyricsUrl !== undefined && { lyricsUrl }),
         ...(sheetMusicUrl !== undefined && { sheetMusicUrl }),
         ...(youtubeLink !== undefined && { youtubeLink }),
-        updatedById: req.userId
-      }
+        updatedById: req.userId,
+      },
     });
 
-    // Registra cambio de tono en historial
-    // Conecta: Con schema.prisma (model SongHistory)
-    if (key && currentSong && key !== currentSong.key) {
+    if (key && currentSong.key && key !== currentSong.key) {
       await prisma.songHistory.create({
         data: {
           songId: song.id,
           field: 'key',
           oldValue: currentSong.key,
           newValue: key,
-          modifiedById: req.userId
-        }
+          modifiedById: req.userId,
+        },
       });
 
-      // Notifica a músicos del ministerio de Alabanza
       const service = await prisma.service.findUnique({
         where: { id: song.serviceId },
-        include: { team: { include: { user: true, ministry: true } } }
+        include: { team: { include: { user: true, ministry: true } } },
       });
 
       if (service) {
-        const musicians = service.team.filter(t => 
-          t.ministry.name === 'Alabanza' || t.ministry.name === 'Worship'
-        );
-        
-        for (const musician of musicians) {
-          await prisma.notification.create({
-            data: {
-              userId: musician.userId,
-              type: 'song_key_change',
-              message: `El tono de "${song.title}" cambió de ${currentSong.key} a ${key}`,
-              referenceId: song.id,
-              referenceType: 'song'
-            }
-          });
+        const musicians = service.team.filter((t) => t.ministry.name === 'Alabanza');
+        const notifications = musicians.map((m) => ({
+          userId: m.userId,
+          churchId: service.churchId,
+          type: 'song_key_change' as const,
+          message: `El tono de "${song.title}" cambió de ${currentSong.key} a ${key}`,
+          referenceId: song.id,
+          referenceType: 'song' as const,
+        }));
+        if (notifications.length > 0) {
+          await prisma.notification.createMany({ data: notifications });
         }
       }
     }
@@ -145,19 +124,20 @@ router.patch('/:id', authenticate, async (req: AuthRequest, res: express.Respons
   }
 });
 
-// ============================================
-// GET /songs/:id/history
-// ============================================
-// Qué: Historial de cambios de una canción
-// Conecta: Con SongHistory.modifiedBy → User
-router.get('/:id/history', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.get('/:id/history', authenticate, requireChurch, async (req: AuthRequest, res: express.Response) => {
   try {
+    const song = await prisma.song.findUnique({
+      where: { id: req.params.id },
+      include: { service: { select: { churchId: true } } },
+    });
+    if (!song || song.service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
     const history = await prisma.songHistory.findMany({
       where: { songId: req.params.id },
       orderBy: { createdAt: 'desc' },
-      include: {
-        modifiedBy: { select: { id: true, name: true } }
-      }
+      include: { modifiedBy: { select: publicUserSelect } },
     });
     res.json(history);
   } catch (error: any) {
@@ -165,12 +145,15 @@ router.get('/:id/history', authenticate, async (req: AuthRequest, res: express.R
   }
 });
 
-// ============================================
-// DELETE /songs/:id
-// ============================================
-// Qué: Elimina una canción del set list
-router.delete('/:id', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.delete('/:id', authenticate, requireChurch, async (req: AuthRequest, res: express.Response) => {
   try {
+    const song = await prisma.song.findUnique({
+      where: { id: req.params.id },
+      include: { service: { select: { churchId: true } } },
+    });
+    if (!song || song.service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
     await prisma.song.delete({ where: { id: req.params.id } });
     res.json({ message: 'Song deleted' });
   } catch (error: any) {

@@ -1,104 +1,92 @@
-// ============================================
-// RUTAS DE SERVICIOS (CULTOS)
-// Módulo: Services
-// Responsabilidad: CRUD de servicios, segmentos del orden del culto
-// Escalabilidad: Paginación, filtros por fecha/estado, índices en BD
-// ============================================
-
 import express from 'express';
 const router = express.Router();
 import { PrismaClient } from '@prisma/client';
-import { authenticate, requireAdmin, AuthRequest } from '../middleware/auth';
+import { authenticate, requireChurchAdmin, requireChurch, AuthRequest, publicUserSelect } from '../middleware/auth';
+import { validate } from '../middleware/validate';
+import { createServiceSchema, updateServiceSchema, createSegmentSchema } from '../validation/services';
+import { reorderSegmentsSchema } from '../validation/templates';
+import { jobQueue } from '../services/background';
 
 const prisma = new PrismaClient();
 
-// ============================================
-// GET /services
-// ============================================
-// Qué: Lista todos los servicios próximos
-// Cómo: Consulta BD ordenados por fecha ascendente
-// Conecta:
-//   - Output: Array de services con conteo de team, songs, files
-//   - Frontend: mobile/src/screens/HomeScreen.tsx (servicesAPI.getAll)
-//   - Escalabilidad: Agregar paginación con skip/take para muchos registros
-router.get('/', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.get('/', authenticate, requireChurch, async (req: AuthRequest, res: express.Response) => {
   try {
-    // Busca todos los servicios ordenados por fecha (más próximo primero)
-    // Conecta: Con schema.prisma (model Service)
-    const services = await prisma.service.findMany({
-      orderBy: { date: 'asc' },
-      include: {
-        // Cuenta cuántos miembros, canciones y archivos tiene cada servicio
-        // Escalabilidad: Conteo eficiente sin cargar datos completos
-        _count: {
-          select: { team: true, songs: true, files: true }
-        }
-      }
+    const { page = '1', limit = '20', status, dateFrom, dateTo } = req.query;
+    const pageNum = Math.max(1, parseInt(page as string, 10) || 1);
+    const limitNum = Math.min(100, Math.max(1, parseInt(limit as string, 10) || 20));
+    const skip = (pageNum - 1) * limitNum;
+
+    const where: any = { churchId: req.churchId };
+    if (status) where.status = status;
+    if (dateFrom || dateTo) {
+      where.date = {};
+      if (dateFrom) where.date.gte = new Date(dateFrom as string);
+      if (dateTo) where.date.lte = new Date(dateTo as string);
+    }
+
+    const [services, total] = await Promise.all([
+      prisma.service.findMany({
+        where,
+        orderBy: { date: 'asc' },
+        skip,
+        take: limitNum,
+        include: {
+          _count: { select: { team: true, songs: true, files: true } },
+        },
+      }),
+      prisma.service.count({ where }),
+    ]);
+
+    res.json({
+      data: services,
+      pagination: {
+        page: pageNum,
+        limit: limitNum,
+        total,
+        pages: Math.ceil(total / limitNum),
+      },
     });
-    res.json(services);
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
 });
 
-// ============================================
-// GET /services/:id
-// ============================================
-// Qué: Detalle completo de un servicio
-// Cómo: Carga servicio con todos los datos relacionados y agrupa equipo por ministerio
-// Conecta:
-//   - Input: id (parámetro de URL)
-//   - Output: Service con segments, team, songs, files, teamByMinistry
-//   - Frontend: mobile/src/screens/ServiceDetailScreen.tsx
-//   - Escalabilidad:select solo los campos necesarios
-router.get('/:id', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.get('/:id', authenticate, requireChurch, async (req: AuthRequest, res: express.Response) => {
   try {
-    // Busca el servicio con todas sus relaciones
     const service = await prisma.service.findUnique({
       where: { id: req.params.id },
       include: {
-        // Segmentos ordenados por posición
         segments: {
           orderBy: { order: 'asc' },
-          include: { ministry: true, responsible: true }
+          include: { ministry: true, responsible: true },
         },
-        // Equipo del servicio con datos de usuario, ministerio y rol
         team: {
           include: {
-            user: { select: { id: true, name: true, email: true } },
+            user: { select: publicUserSelect },
             ministry: true,
-            ministryRole: true
-          }
+            ministryRole: true,
+          },
         },
-        // Set list musical ordenado
         songs: { orderBy: { order: 'asc' } },
-        // Archivos subidos
         files: {
           orderBy: { createdAt: 'desc' },
-          include: { uploadedBy: { select: { id: true, name: true } } }
+          include: { uploadedBy: { select: publicUserSelect } },
         },
-        // Solicitudes de posiciones
         positionRequests: {
           include: {
             ministryRole: true,
-            user: { select: { id: true, name: true } }
-          }
-        }
-      }
+            user: { select: publicUserSelect },
+          },
+        },
+      },
     });
 
-    if (!service) {
-      return res.status(404).json({ error: 'Service not found' });
-    }
+    if (!service) return res.status(404).json({ error: 'Service not found' });
+    if (service.churchId !== req.churchId) return res.status(403).json({ error: 'Access denied' });
 
-    // Agrupa el equipo por ministerio para la vista
-    // Qué: Transforma array plano en objeto { "Alabanza": [...], "Producción": [...] }
-    // Conecta: Con mobile/src/screens/ServiceDetailScreen.tsx que renderiza por ministerio
     const teamByMinistry = service.team.reduce((acc: any, member) => {
       const ministryName = member.ministry.name;
-      if (!acc[ministryName]) {
-        acc[ministryName] = [];
-      }
+      if (!acc[ministryName]) acc[ministryName] = [];
       acc[ministryName].push(member);
       return acc;
     }, {});
@@ -109,31 +97,17 @@ router.get('/:id', authenticate, async (req: AuthRequest, res: express.Response)
   }
 });
 
-// ============================================
-// POST /services
-// ============================================
-// Qué: Crea un nuevo servicio/culto
-// Cómo: Valida datos → crea en BD → retorna servicio creado
-// Conecta:
-//   - Input: { title, date, time, type, notes }
-//   - Output: Service creado
-//   - Security: Solo admin (requireAdmin)
-//   - Frontend: Formulario de creación de servicio
-router.post('/', authenticate, requireAdmin, async (req: AuthRequest, res: express.Response) => {
+router.post('/', authenticate, requireChurch, requireChurchAdmin, validate(createServiceSchema), async (req: AuthRequest, res: express.Response) => {
   try {
-    const { title, date, time, type, notes } = req.body;
-
-    // Crea el servicio con el ID del creador
-    // Conecta: Con Service.createdBy → User.id
+    const { title, date, templateId } = req.body;
     const service = await prisma.service.create({
       data: {
         title,
-        date: new Date(date),  // Convierte string a Date
-        time,
-        type,
-        notes,
-        createdBy: req.userId!  // Admin que creó el servicio
-      }
+        churchId: req.churchId!,
+        date: new Date(date),
+        createdBy: req.userId!,
+        ...(templateId && { templateId }),
+      },
     });
 
     res.status(201).json(service);
@@ -142,51 +116,40 @@ router.post('/', authenticate, requireAdmin, async (req: AuthRequest, res: expre
   }
 });
 
-// ============================================
-// PATCH /services/:id
-// ============================================
-// Qué: Actualiza un servicio existente
-// Cómo: Actualiza solo los campos enviados (merge parcial)
-// Conecta:
-//   - Input: Campos opcionales { title, date, time, type, status, notes }
-//   - Output: Service actualizado
-//   - Security: Solo admin
-router.patch('/:id', authenticate, requireAdmin, async (req: AuthRequest, res: express.Response) => {
+router.patch('/:id', authenticate, requireChurch, requireChurchAdmin, validate(updateServiceSchema), async (req: AuthRequest, res: express.Response) => {
   try {
-    const { title, date, time, type, status, notes } = req.body;
+    const service = await prisma.service.findUnique({ where: { id: req.params.id } });
+    if (!service || service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
 
-    // Actualiza solo los campos enviados (spread condicional)
-    // Escalabilidad: No sobrescribe campos no enviados
-    const service = await prisma.service.update({
+    const { title, date, status, notes } = req.body;
+    const updated = await prisma.service.update({
       where: { id: req.params.id },
       data: {
         ...(title && { title }),
         ...(date && { date: new Date(date) }),
-        ...(time && { time }),
-        ...(type && { type }),
         ...(status && { status }),
-        ...(notes !== undefined && { notes })
-      }
+        ...(notes !== undefined && { notes }),
+      },
     });
 
-    res.json(service);
+    if (status === 'confirmed') {
+      jobQueue.enqueue('notify-team', { serviceId: service.id, churchId: req.churchId });
+    }
+
+    res.json(updated);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// ============================================
-// DELETE /services/:id
-// ============================================
-// Qué: Elimina un servicio
-// Cómo: Elimina en cascada todos los datos relacionados
-// Conecta:
-//   - Input: id del servicio
-//   - Output: { message }
-//   - Security: Solo admin
-//   - Conexión en cascada: ServiceSegment, ServiceTeam, Song, File se eliminan
-router.delete('/:id', authenticate, requireAdmin, async (req: AuthRequest, res: express.Response) => {
+router.delete('/:id', authenticate, requireChurch, requireChurchAdmin, async (req: AuthRequest, res: express.Response) => {
   try {
+    const service = await prisma.service.findUnique({ where: { id: req.params.id } });
+    if (!service || service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
     await prisma.service.delete({ where: { id: req.params.id } });
     res.json({ message: 'Service deleted' });
   } catch (error: any) {
@@ -194,20 +157,12 @@ router.delete('/:id', authenticate, requireAdmin, async (req: AuthRequest, res: 
   }
 });
 
-// ============================================
-// GET /services/:id/segments
-// ============================================
-// Qué: Lista los segmentos del orden del culto
-// Cómo: Consulta ServiceSegment ordenados por posición
-// Conecta:
-//   - Output: Array de segments con ministry y responsible
-//   - Frontend: ServiceDetailScreen (sección "Orden del Culto")
-router.get('/:id/segments', authenticate, async (req: AuthRequest, res: express.Response) => {
+router.get('/:id/segments', authenticate, requireChurch, async (req: AuthRequest, res: express.Response) => {
   try {
     const segments = await prisma.serviceSegment.findMany({
       where: { serviceId: req.params.id },
       orderBy: { order: 'asc' },
-      include: { ministry: true, responsible: true }
+      include: { ministry: true, responsible: true },
     });
     res.json(segments);
   } catch (error: any) {
@@ -215,56 +170,33 @@ router.get('/:id/segments', authenticate, async (req: AuthRequest, res: express.
   }
 });
 
-// ============================================
-// POST /services/:id/segments
-// ============================================
-// Qué: Agrega un segmento al orden del culto
-// Cómo: Calcula siguiente orden → crea segmento
-// Conecta:
-//   - Input: { title, durationMin, notes, ministryId, responsibleId }
-//   - Output: Segment creado
-//   - Auto-incremento: order = último + 1
-router.post('/:id/segments', authenticate, requireAdmin, async (req: AuthRequest, res: express.Response) => {
+router.post('/:id/segments', authenticate, requireChurch, requireChurchAdmin, validate(createSegmentSchema), async (req: AuthRequest, res: express.Response) => {
   try {
-    const { title, durationMin, notes, ministryId, responsibleId } = req.body;
-    
-    // Obtiene el último número de orden
-    const lastSegment = await prisma.serviceSegment.findFirst({
+    const { title, order, duration, notes } = req.body;
+    const lastSegment = order !== undefined ? null : await prisma.serviceSegment.findFirst({
       where: { serviceId: req.params.id },
-      orderBy: { order: 'desc' }
+      orderBy: { order: 'desc' },
     });
-    const nextOrder = (lastSegment?.order || 0) + 1;
+    const nextOrder = order ?? ((lastSegment?.order || 0) + 1);
 
     const segment = await prisma.serviceSegment.create({
       data: {
         serviceId: req.params.id,
         order: nextOrder,
         title,
-        durationMin,
+        durationMin: duration,
         notes,
-        ministryId,
-        responsibleId
-      }
+      },
     });
-
     res.status(201).json(segment);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// ============================================
-// PATCH /services/segments/:id
-// ============================================
-// Qué: Actualiza un segmento (reordenar, editar título, etc.)
-// Cómo: Actualiza campos enviados
-// Conecta:
-//   - Input: { order, title, durationMin, notes, ministryId, responsibleId }
-//   - Output: Segment actualizado
-router.patch('/segments/:id', authenticate, requireAdmin, async (req: AuthRequest, res: express.Response) => {
+router.patch('/segments/:id', authenticate, requireChurch, requireChurchAdmin, async (req: AuthRequest, res: express.Response) => {
   try {
     const { order, title, durationMin, notes, ministryId, responsibleId } = req.body;
-
     const segment = await prisma.serviceSegment.update({
       where: { id: req.params.id },
       data: {
@@ -273,25 +205,46 @@ router.patch('/segments/:id', authenticate, requireAdmin, async (req: AuthReques
         ...(durationMin !== undefined && { durationMin }),
         ...(notes !== undefined && { notes }),
         ...(ministryId !== undefined && { ministryId }),
-        ...(responsibleId !== undefined && { responsibleId })
-      }
+        ...(responsibleId !== undefined && { responsibleId }),
+      },
     });
-
     res.json(segment);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// ============================================
-// DELETE /services/segments/:id
-// ============================================
-// Qué: Elimina un segmento del orden del culto
-// Conecta: Con ServiceSegment.onDelete: Cascade en schema.prisma
-router.delete('/segments/:id', authenticate, requireAdmin, async (req: AuthRequest, res: express.Response) => {
+router.delete('/segments/:id', authenticate, requireChurch, requireChurchAdmin, async (req: AuthRequest, res: express.Response) => {
   try {
     await prisma.serviceSegment.delete({ where: { id: req.params.id } });
     res.json({ message: 'Segment deleted' });
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+router.patch('/:id/reorder-segments', authenticate, requireChurch, requireChurchAdmin, validate(reorderSegmentsSchema), async (req: AuthRequest, res: express.Response) => {
+  try {
+    const { segmentIds } = req.body;
+    const service = await prisma.service.findUnique({ where: { id: req.params.id } });
+    if (!service || service.churchId !== req.churchId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
+    const updates = segmentIds.map((id: string, index: number) =>
+      prisma.serviceSegment.update({
+        where: { id },
+        data: { order: index + 1 },
+      })
+    );
+
+    await prisma.$transaction(updates);
+
+    const segments = await prisma.serviceSegment.findMany({
+      where: { serviceId: req.params.id },
+      orderBy: { order: 'asc' },
+    });
+    res.json(segments);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
