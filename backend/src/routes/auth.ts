@@ -107,7 +107,6 @@ router.post('/login', validate(loginSchema), async (req: express.Request, res: e
       churches,
     });
   } catch (error: any) {
-    console.error('[AUTH] Login error:', error?.message || error);
     res.status(500).json({ error: 'Authentication failed' });
   }
 });

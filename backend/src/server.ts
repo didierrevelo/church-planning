@@ -105,12 +105,10 @@ app.get('/health', async (req, res) => {
       version: '1.0.0',
       jobsPending: jobQueue.pendingCount,
     });
-  } catch (error: any) {
-    console.error('[HEALTH] DB error:', error?.message || error);
+  } catch (error) {
     res.status(503).json({
       status: 'ERROR',
       error: 'Database connection failed',
-      detail: error?.message || String(error),
     });
   }
 });
@@ -118,10 +116,10 @@ app.get('/health', async (req, res) => {
 app.use(Sentry.Handlers.errorHandler());
 
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error('[ERROR]', err.stack || err.message);
   const errorMessage = process.env.NODE_ENV === 'production'
     ? 'Internal server error'
     : err.message;
+  if (process.env.NODE_ENV !== 'production') console.error('[ERROR]', err.stack);
   res.status(500).json({ error: errorMessage });
 });
 
