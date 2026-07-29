@@ -1,10 +1,10 @@
 {
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "npm config set cache /tmp/npm-cache && npm install --include=dev --prefer-offline --no-audit --no-fund && npx prisma generate && npx prisma db push && npm run build"
+    "buildCommand": "NODE_ENV=development npm install && npx prisma generate && npm run build"
   },
   "deploy": {
-    "startCommand": "npm start",
+    "startCommand": "npx prisma db push && npm start",
     "healthcheckPath": "/health",
     "healthcheckTimeout": 300,
     "restartPolicyType": "on_failure"
