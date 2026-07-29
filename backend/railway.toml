@@ -1,0 +1,3 @@
+[build]
+builder = "nixpacks"
+buildCommand = "NODE_ENV=development npm install && npx prisma generate && npm run build"
