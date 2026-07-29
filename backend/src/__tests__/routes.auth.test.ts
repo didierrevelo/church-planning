@@ -1,8 +1,6 @@
 import express from 'express';
 import request from 'supertest';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '../lib/prisma';
 let app: express.Express | null = null;
 
 beforeAll(async () => {

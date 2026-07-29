@@ -2,12 +2,10 @@ import express from 'express';
 const router = express.Router();
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { PrismaClient } from '@prisma/client';
 import { authenticate, AuthRequest } from '../middleware/auth';
 import { validate } from '../middleware/validate';
 import { loginSchema, registerSchema, inviteSchema, changePasswordSchema, updateProfileSchema } from '../validation/auth';
-
-const prisma = new PrismaClient();
+import { prisma } from '../lib/prisma';
 
 function slugify(text: string): string {
   return text

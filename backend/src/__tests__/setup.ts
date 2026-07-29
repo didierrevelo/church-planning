@@ -1,6 +1,4 @@
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '../lib/prisma';
 
 beforeAll(async () => {
   // Ensure DB is reachable; skip integration tests if not

@@ -1,10 +1,8 @@
 import express from 'express';
 const router = express.Router();
-import { PrismaClient } from '@prisma/client';
 import { authenticate, requireChurch, requireChurchAdmin, AuthRequest, publicUserSelect } from '../middleware/auth';
 import { assignTeam } from '../services/agent';
-
-const prisma = new PrismaClient();
+import { prisma } from '../lib/prisma';
 
 router.post('/assign-team', authenticate, requireChurch, requireChurchAdmin, async (req: AuthRequest, res: express.Response) => {
   try {

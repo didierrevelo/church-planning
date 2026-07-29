@@ -1,6 +1,5 @@
 import express from 'express';
 const router = express.Router();
-import { PrismaClient } from '@prisma/client';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { v4 as uuidv4 } from 'uuid';
@@ -8,8 +7,7 @@ import { authenticate, requireChurch, AuthRequest, publicUserSelect } from '../m
 import { validate } from '../middleware/validate';
 import { uploadFileSchema } from '../validation/files';
 import { jobQueue } from '../services/background';
-
-const prisma = new PrismaClient();
+import { prisma } from '../lib/prisma';
 
 const s3 = process.env.AWS_ACCESS_KEY_ID
   ? new S3Client({

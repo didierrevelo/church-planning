@@ -1,11 +1,9 @@
 import express from 'express';
 const router = express.Router();
-import { PrismaClient } from '@prisma/client';
 import { authenticate, requireChurchAdmin, requireChurch, AuthRequest, publicUserSelect } from '../middleware/auth';
 import { validate } from '../middleware/validate';
 import { createSongSchema, updateSongSchema } from '../validation/songs';
-
-const prisma = new PrismaClient();
+import { prisma } from '../lib/prisma';
 
 router.get('/:serviceId', authenticate, requireChurch, async (req: AuthRequest, res: express.Response) => {
   try {
