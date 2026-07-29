@@ -128,12 +128,10 @@ app.get('/health', async (req, res) => {
 app.use(Sentry.Handlers.errorHandler());
 
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error('[ERROR]', err.stack || err.message);
   const errorMessage = process.env.NODE_ENV === 'production'
     ? 'Internal server error'
     : err.message;
-  if (process.env.NODE_ENV !== 'production') {
-    console.error('[ERROR]', err.stack);
-  }
   res.status(500).json({ error: errorMessage });
 });
 
