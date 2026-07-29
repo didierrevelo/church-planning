@@ -1,18 +1,13 @@
 import { PrismaClient } from '@prisma/client';
 
-function getDatabaseUrl(): string {
-  const url = process.env.DATABASE_URL || '';
-  if (url.includes('pooler.supabase.com') && !url.includes('pgbouncer=true')) {
-    const sep = url.includes('?') ? '&' : '?';
-    return `${url}${sep}pgbouncer=true`;
-  }
-  return url;
+const url = process.env.DATABASE_URL || '';
+if (url.includes('pooler.supabase.com') && !url.includes('prepareThreshold=0')) {
+  const sep = url.includes('?') ? '&' : '?';
+  process.env.DATABASE_URL = `${url}${sep}pgbouncer=true&prepareThreshold=0`;
 }
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined };
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient({
-  datasourceUrl: getDatabaseUrl(),
-});
+export const prisma = globalForPrisma.prisma ?? new PrismaClient();
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
