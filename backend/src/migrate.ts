@@ -7,7 +7,7 @@ const url = process.env.DATABASE_URL || '';
 const match = url.match(/postgresql:\/\/postgres\.([^:]+):([^@]+)@([^:]+):\d+\/(.+)/);
 if (match) {
   const [, ref, pass, , db] = match;
-  const directUrl = `postgresql://postgres.${ref}:${pass}@db.${ref}.supabase.co:5432/${db}`;
+  const directUrl = `postgresql://postgres:${pass}@db.${ref}.supabase.co:5432/${db}`;
   process.env.DATABASE_URL = directUrl;
   console.log('[MIGRATE] Using direct connection for schema push');
 } else {
