@@ -19,8 +19,17 @@ Sentry.init({
   enabled: !!process.env.SENTRY_DSN,
 });
 
+function getDatabaseUrl(): string {
+  const url = process.env.DATABASE_URL || '';
+  if (url.includes('pooler.supabase.com') && !url.includes('pgbouncer=true')) {
+    const sep = url.includes('?') ? '&' : '?';
+    return `${url}${sep}pgbouncer=true`;
+  }
+  return url;
+}
+
 const app = express();
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ datasourceUrl: getDatabaseUrl() });
 const PORT = process.env.PORT || 3000;
 
 app.set('trust proxy', 1);
