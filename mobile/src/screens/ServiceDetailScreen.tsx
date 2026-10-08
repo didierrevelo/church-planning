@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { View, Text, ScrollView, StyleSheet, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Alert, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { servicesAPI, teamAPI, reorderAPI } from '../services/api';
 import { Service, ServiceTeamMember } from '../types';
@@ -9,6 +9,7 @@ import {
   calculateSegmentTimes,
   calculateTotalServiceDuration,
 } from '@shared/domain/servicePlanning';
+import { styles } from './ServiceDetailScreen.styles';
 
 export default function ServiceDetailScreen({ route, navigation }: any) {
   const { serviceId } = route.params;
@@ -198,34 +199,3 @@ export default function ServiceDetailScreen({ route, navigation }: any) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f5f5f5' },
-  header: {
-    backgroundColor: '#5B5EA6',
-    padding: 20,
-  },
-  title: { fontSize: 24, fontWeight: 'bold', color: '#fff' },
-  date: { fontSize: 16, color: '#fff', opacity: 0.9, marginTop: 8 },
-  time: { fontSize: 14, color: '#fff', opacity: 0.8, marginTop: 4 },
-  section: { padding: 16 },
-  segmentRow: { flexDirection: 'row', marginBottom: 8 },
-  segmentMove: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 8,
-    width: 30,
-  },
-  segmentOrder: {
-    fontSize: 12, fontWeight: '700', color: '#5B5EA6',
-    marginVertical: 2,
-  },
-  segmentContent: { flex: 1 },
-  ministryGroup: { marginBottom: 16 },
-  ministryName: { fontSize: 16, fontWeight: '600', color: '#5B5EA6', marginBottom: 8 },
-  addBtn: {
-    flexDirection: 'row', alignItems: 'center', padding: 12,
-    borderWidth: 1, borderColor: '#5B5EA6', borderRadius: 8,
-    borderStyle: 'dashed', marginTop: 8,
-  },
-  addBtnText: { marginLeft: 8, fontSize: 14, color: '#5B5EA6', fontWeight: '600' },
-});
