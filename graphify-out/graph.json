@@ -604,8 +604,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "backend_package_devdependencies_types_bcryptjs",
-      "community": 19,
-      "community_name": "devDependencies",
+      "community": 106,
+      "community_name": "jest",
       "norm_label": "@types/bcryptjs"
     },
     {
@@ -615,8 +615,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "types_bcryptjs",
-      "community": 19,
-      "community_name": "devDependencies",
+      "community": 106,
+      "community_name": "jest",
       "norm_label": "@types/bcryptjs"
     },
     {
@@ -824,8 +824,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "backend_package_devdependencies_jest",
-      "community": 106,
-      "community_name": "jest",
+      "community": 19,
+      "community_name": "devDependencies",
       "norm_label": "jest"
     },
     {
@@ -835,8 +835,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "backend_package_json_jest",
-      "community": 106,
-      "community_name": "jest",
+      "community": 19,
+      "community_name": "devDependencies",
       "norm_label": "jest"
     },
     {
@@ -3563,8 +3563,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "mobile_package_dependencies_expo",
-      "community": 40,
-      "community_name": "ServicesRepository",
+      "community": 107,
+      "community_name": "expo",
       "norm_label": "expo"
     },
     {
@@ -3574,8 +3574,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "expo",
-      "community": 40,
-      "community_name": "ServicesRepository",
+      "community": 107,
+      "community_name": "expo",
       "norm_label": "expo"
     },
     {
@@ -3629,8 +3629,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "mobile_package_dependencies_expo_image_manipulator",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 40,
+      "community_name": "ServicesRepository",
       "norm_label": "expo-image-manipulator"
     },
     {
@@ -3640,8 +3640,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "expo_image_manipulator",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 40,
+      "community_name": "ServicesRepository",
       "norm_label": "expo-image-manipulator"
     },
     {
@@ -4509,8 +4509,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 6,
+      "community_name": "AdminScreen.tsx",
       "norm_label": "loadingscreen.tsx"
     },
     {
@@ -4520,8 +4520,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen_loadingscreenprops",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 6,
+      "community_name": "AdminScreen.tsx",
       "norm_label": "loadingscreenprops"
     },
     {
@@ -4531,8 +4531,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen_loadingscreen",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 6,
+      "community_name": "AdminScreen.tsx",
       "norm_label": "loadingscreen()"
     },
     {
@@ -4542,8 +4542,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen_styles",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 6,
+      "community_name": "AdminScreen.tsx",
       "norm_label": "styles"
     },
     {
@@ -4553,8 +4553,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_membercard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "membercard.tsx"
     },
     {
@@ -4564,8 +4564,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_status_config",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "status_config"
     },
     {
@@ -4575,8 +4575,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_membercardprops",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "membercardprops"
     },
     {
@@ -4586,8 +4586,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_membercard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "membercard()"
     },
     {
@@ -4597,8 +4597,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_styles",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "styles"
     },
     {
@@ -4652,8 +4652,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_sectionheader",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 75,
+      "community_name": "expo-image-manipulator",
       "norm_label": "sectionheader.tsx"
     },
     {
@@ -4663,8 +4663,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_components_sectionheader_sectionheaderprops",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 75,
+      "community_name": "expo-image-manipulator",
       "norm_label": "sectionheaderprops"
     },
     {
@@ -4674,8 +4674,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "mobile_src_components_sectionheader_sectionheader",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 75,
+      "community_name": "expo-image-manipulator",
       "norm_label": "sectionheader()"
     },
     {
@@ -4685,8 +4685,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_components_sectionheader_styles",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 75,
+      "community_name": "expo-image-manipulator",
       "norm_label": "styles"
     },
     {
@@ -4751,8 +4751,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "servicecard.tsx"
     },
     {
@@ -4762,8 +4762,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_formatdate",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "formatdate()"
     },
     {
@@ -4773,8 +4773,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_servicecardprops",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "servicecardprops"
     },
     {
@@ -4784,8 +4784,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_servicecard",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "servicecard()"
     },
     {
@@ -4795,8 +4795,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_styles",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "styles"
     },
     {
@@ -4861,8 +4861,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_songcard",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "songcard.tsx"
     },
     {
@@ -4872,8 +4872,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_songcard_songcardprops",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "songcardprops"
     },
     {
@@ -4883,8 +4883,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_components_songcard_songcard",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "songcard()"
     },
     {
@@ -4894,8 +4894,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "mobile_src_components_songcard_styles",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "styles"
     },
     {
@@ -4905,8 +4905,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "statusbadge.tsx"
     },
     {
@@ -4916,8 +4916,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_colors",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "colors"
     },
     {
@@ -4927,8 +4927,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_labels",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "labels"
     },
     {
@@ -4938,8 +4938,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_statusbadgeprops",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "statusbadgeprops"
     },
     {
@@ -4949,8 +4949,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_statusbadge",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "statusbadge()"
     },
     {
@@ -4960,8 +4960,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_styles",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "styles"
     },
     {
@@ -5092,8 +5092,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_contexts_toastcontext_toastprovider",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 6,
+      "community_name": "AdminScreen.tsx",
       "norm_label": "toastprovider()"
     },
     {
@@ -5323,8 +5323,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": "sqljsmemorydatabase"
     },
     {
@@ -5334,8 +5334,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_init",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": ".init()"
     },
     {
@@ -5345,8 +5345,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_execasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": ".execasync()"
     },
     {
@@ -5356,8 +5356,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_runasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": ".runasync()"
     },
     {
@@ -5367,8 +5367,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_getallasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": ".getallasync()"
     },
     {
@@ -5378,8 +5378,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_getfirstasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": ".getfirstasync()"
     },
     {
@@ -5389,8 +5389,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_withtransactionasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": ".withtransactionasync()"
     },
     {
@@ -5400,8 +5400,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_closeasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": ".closeasync()"
     },
     {
@@ -6225,8 +6225,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository",
-      "community": 60,
-      "community_name": "AgentRepository",
+      "community": 83,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "searchrepository"
     },
     {
@@ -6236,8 +6236,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_constructor",
-      "community": 60,
-      "community_name": "AgentRepository",
+      "community": 83,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".constructor()"
     },
     {
@@ -6247,8 +6247,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_db",
-      "community": 60,
-      "community_name": "AgentRepository",
+      "community": 83,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".db()"
     },
     {
@@ -6258,8 +6258,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_search",
-      "community": 60,
-      "community_name": "AgentRepository",
+      "community": 83,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".search()"
     },
     {
@@ -6489,8 +6489,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_songsrepository",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "songsrepository.ts"
     },
     {
@@ -6500,8 +6500,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_songsrepository_songrecord",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "songrecord"
     },
     {
@@ -6511,8 +6511,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_songsrepository_songhistoryrecord",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "songhistoryrecord"
     },
     {
@@ -6907,8 +6907,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_usersrepository",
-      "community": 9,
-      "community_name": "generateUUID",
+      "community": 55,
+      "community_name": "shared/validation/auth.ts",
       "norm_label": "usersrepository.ts"
     },
     {
@@ -6918,8 +6918,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_usersrepository_userrecord",
-      "community": 9,
-      "community_name": "generateUUID",
+      "community": 55,
+      "community_name": "shared/validation/auth.ts",
       "norm_label": "userrecord"
     },
     {
@@ -7138,8 +7138,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto",
-      "community": 9,
-      "community_name": "generateUUID",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "crypto.ts"
     },
     {
@@ -7226,8 +7226,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_generatesalthex",
-      "community": 9,
-      "community_name": "generateUUID",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "generatesalthex()"
     },
     {
@@ -7248,8 +7248,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_hashpasswordwithpbkdf2",
-      "community": 9,
-      "community_name": "generateUUID",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "hashpasswordwithpbkdf2()"
     },
     {
@@ -7259,8 +7259,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_verifypasswordwithpbkdf2",
-      "community": 9,
-      "community_name": "generateUUID",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "verifypasswordwithpbkdf2()"
     },
     {
@@ -7270,8 +7270,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_defaultcrypto",
-      "community": 9,
-      "community_name": "generateUUID",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "defaultcrypto"
     },
     {
@@ -8304,8 +8304,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "dashboardscreen.tsx"
     },
     {
@@ -8315,8 +8315,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen_dashboarddata",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "dashboarddata"
     },
     {
@@ -8326,8 +8326,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen_dashboardscreen",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "dashboardscreen()"
     },
     {
@@ -8337,8 +8337,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen_styles",
-      "community": 83,
-      "community_name": "DashboardScreen.tsx",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "styles"
     },
     {
@@ -8480,8 +8480,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "mobile_src_screens_livestagescreen_livestagescreenprops",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "livestagescreenprops"
     },
     {
@@ -8931,8 +8931,8 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "mobile_src_services_api_churchesapi",
-      "community": 12,
-      "community_name": "types/index.ts",
+      "community": 10,
+      "community_name": "api.ts",
       "norm_label": "churchesapi"
     },
     {
@@ -9173,8 +9173,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_src_types_index_service",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "service"
     },
     {
@@ -9195,8 +9195,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "mobile_src_types_index_serviceteammember",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "serviceteammember"
     },
     {
@@ -9206,8 +9206,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "mobile_src_types_index_song",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "song"
     },
     {
@@ -9415,8 +9415,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "responsive.ts"
     },
     {
@@ -9426,8 +9426,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive_breakpoints",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "breakpoints"
     },
     {
@@ -9838,14 +9838,25 @@
       "norm_label": "shared/__tests__/background.test.ts"
     },
     {
+      "label": "bandSessionController.test.ts",
+      "file_type": "code",
+      "source_file": "shared/__tests__/bandSessionController.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "shared_tests_bandsessioncontroller_test",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessioncontroller.test.ts"
+    },
+    {
       "label": "bandSync.test.ts",
       "file_type": "code",
       "source_file": "shared/__tests__/bandSync.test.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_tests_bandsync_test",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "bandsync.test.ts"
     },
     {
@@ -10102,14 +10113,190 @@
       "norm_label": "waitforall()"
     },
     {
+      "label": "bandSessionController.ts",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessioncontroller.ts"
+    },
+    {
+      "label": "SessionStateListener",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_sessionstatelistener",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "sessionstatelistener"
+    },
+    {
+      "label": "BandSessionController",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessioncontroller"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_constructor",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".getState()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_getstate",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".getstate()"
+    },
+    {
+      "label": ".getMember()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_getmember",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".getmember()"
+    },
+    {
+      "label": ".getSongs()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_getsongs",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".getsongs()"
+    },
+    {
+      "label": ".subscribe()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_subscribe",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".subscribe()"
+    },
+    {
+      "label": ".notifyListeners()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L109",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".notifylisteners()"
+    },
+    {
+      "label": ".changeSong()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_changesong",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".changesong()"
+    },
+    {
+      "label": ".transposeKey()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L150",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_transposekey",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".transposekey()"
+    },
+    {
+      "label": ".toggleAutoScroll()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L170",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_toggleautoscroll",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".toggleautoscroll()"
+    },
+    {
+      "label": ".setScrollSpeed()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L190",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_setscrollspeed",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".setscrollspeed()"
+    },
+    {
+      "label": ".receiveMessage()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L210",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_receivemessage",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".receivemessage()"
+    },
+    {
+      "label": ".exportCurrentSongSlides()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L241",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportcurrentsongslides",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".exportcurrentsongslides()"
+    },
+    {
+      "label": ".exportAllSetlistSlides()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L261",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportallsetlistslides",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": ".exportallsetlistslides()"
+    },
+    {
       "label": "bandSync.ts",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_domain_bandsync",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "bandsync.ts"
     },
     {
@@ -10119,8 +10306,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandmemberrole",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "bandmemberrole"
     },
     {
@@ -10130,8 +10317,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandmember",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "bandmember"
     },
     {
@@ -10141,8 +10328,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandsessionstate",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "bandsessionstate"
     },
     {
@@ -10152,8 +10339,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandsyncmessagetype",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "bandsyncmessagetype"
     },
     {
@@ -10163,8 +10350,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandsyncmessage",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "bandsyncmessage"
     },
     {
@@ -10174,8 +10361,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "shared_domain_bandsync_createbandsession",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "createbandsession()"
     },
     {
@@ -10185,8 +10372,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "shared_domain_bandsync_createsyncmessage",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "createsyncmessage()"
     },
     {
@@ -10196,8 +10383,8 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "shared_domain_bandsync_serializesyncpacket",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "serializesyncpacket()"
     },
     {
@@ -10207,8 +10394,8 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "shared_domain_bandsync_valid_message_types",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "valid_message_types"
     },
     {
@@ -10218,8 +10405,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "shared_domain_bandsync_parsesyncpacket",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "parsesyncpacket()"
     },
     {
@@ -10229,8 +10416,8 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "shared_domain_bandsync_reducebandsession",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "reducebandsession()"
     },
     {
@@ -11153,8 +11340,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_validation_songs",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "shared/validation/songs.ts"
     },
     {
@@ -11164,8 +11351,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "shared_validation_songs_createsongschema",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "createsongschema"
     },
     {
@@ -11175,8 +11362,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "shared_validation_songs_updatesongschema",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "updatesongschema"
     },
     {
@@ -29744,6 +29931,78 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionController.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessioncontroller_test",
+      "target": "shared_domain_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionController.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessioncontroller_test",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionController.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessioncontroller_test",
+      "target": "shared_domain_bandsync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionController.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessioncontroller_test",
+      "target": "shared_domain_bandsync_bandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionController.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessioncontroller_test",
+      "target": "shared_domain_setlistexport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionController.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessioncontroller_test",
+      "target": "shared_domain_setlistexport_exportablesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "shared/__tests__/bandSync.test.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -30671,6 +30930,759 @@
       "_origin": "ast",
       "source": "shared_domain_background_backgroundjobqueue_enqueue",
       "target": "shared_domain_background_backgroundjobqueue_processnext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_sessionstatelistener",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync_bandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync_bandsessionstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync_bandsyncmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync_createbandsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync_createsyncmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync_parsesyncpacket",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_bandsync_reducebandsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_setlistexport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_setlistexport_exportablesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_setlistexport_exporttofreeshowformat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_setlistexport_freeshowexport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller",
+      "target": "shared_domain_setlistexport_slideoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_changesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L261",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportallsetlistslides",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L241",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportcurrentsongslides",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_getmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_getsongs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_getstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L210",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_receivemessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_setscrollspeed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_subscribe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L170",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_toggleautoscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_transposekey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsync_bandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_bandsync_bandsessionstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "target": "shared_domain_setlistexport_exportablesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_constructor",
+      "target": "shared_domain_bandsync_bandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_constructor",
+      "target": "shared_domain_bandsync_createbandsession"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_constructor",
+      "target": "shared_domain_setlistexport_exportablesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_getstate",
+      "target": "shared_domain_bandsync_bandsessionstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_getstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_getmember",
+      "target": "shared_domain_bandsync_bandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_getsongs",
+      "target": "shared_domain_setlistexport_exportablesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_changesong",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L228",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_receivemessage",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L200",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_setscrollspeed",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_toggleautoscroll",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_transposekey",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_notifylisteners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_changesong",
+      "target": "shared_domain_bandsync_bandsyncmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_changesong",
+      "target": "shared_domain_bandsync_createsyncmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_changesong",
+      "target": "shared_domain_bandsync_reducebandsession"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_transposekey",
+      "target": "shared_domain_bandsync_bandsyncmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L155",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_transposekey",
+      "target": "shared_domain_bandsync_createsyncmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L159",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_transposekey",
+      "target": "shared_domain_bandsync_reducebandsession"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L170",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_toggleautoscroll",
+      "target": "shared_domain_bandsync_bandsyncmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L175",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_toggleautoscroll",
+      "target": "shared_domain_bandsync_createsyncmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L179",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_toggleautoscroll",
+      "target": "shared_domain_bandsync_reducebandsession"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_setscrollspeed",
+      "target": "shared_domain_bandsync_bandsyncmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L195",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_setscrollspeed",
+      "target": "shared_domain_bandsync_createsyncmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_setscrollspeed",
+      "target": "shared_domain_bandsync_reducebandsession"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L210",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_receivemessage",
+      "target": "shared_domain_bandsync_bandsyncmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_receivemessage",
+      "target": "shared_domain_bandsync_parsesyncpacket"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L225",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_receivemessage",
+      "target": "shared_domain_bandsync_reducebandsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L252",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportcurrentsongslides",
+      "target": "shared_domain_setlistexport_exporttofreeshowformat"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L241",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportcurrentsongslides",
+      "target": "shared_domain_setlistexport_freeshowexport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L241",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportcurrentsongslides",
+      "target": "shared_domain_setlistexport_slideoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L262",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportallsetlistslides",
+      "target": "shared_domain_setlistexport_exporttofreeshowformat"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L261",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportallsetlistslides",
+      "target": "shared_domain_setlistexport_freeshowexport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionController.ts",
+      "source_location": "L261",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessioncontroller_bandsessioncontroller_exportallsetlistslides",
+      "target": "shared_domain_setlistexport_slideoptions",
       "confidence_score": 1.0
     },
     {
@@ -32787,5 +33799,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4880fa4bbc2d262c295ce5132d6345a65041bb27"
+  "built_at_commit": "f74c8a8c76c2aa36f1a5709d9e83334b97def747"
 }

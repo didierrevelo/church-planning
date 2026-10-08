@@ -768,5 +768,15 @@
     "mtime": 1791422114.4283879,
     "ast_hash": "73c2457fb5bedd3153eb87237a25bcd1",
     "semantic_hash": ""
+  },
+  "shared/__tests__/quickActions.test.ts": {
+    "mtime": 1791423303.6182787,
+    "ast_hash": "07938dbb241f5e4389d4060c35895734",
+    "semantic_hash": ""
+  },
+  "shared/domain/quickActions.ts": {
+    "mtime": 1791423034.1379566,
+    "ast_hash": "b796210ee54021a7a7930819ad6fc89d",
+    "semantic_hash": ""
   }
 }

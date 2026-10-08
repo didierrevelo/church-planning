@@ -105,5 +105,6 @@
   "103": "@noble/hashes",
   "104": "push.ts",
   "105": "react-native-web",
-  "106": "jest"
+  "106": "jest",
+  "107": "expo"
 }
