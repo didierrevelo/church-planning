@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { View, Text, ScrollView, StyleSheet, Alert, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { servicesAPI, teamAPI, reorderAPI } from '../services/api';
 import { Service, ServiceTeamMember } from '../types';
 import { LoadingScreen, SectionHeader, SegmentItem, MemberCard, SongCard, FileCard } from '../components';
 import { useToast } from '../contexts/ToastContext';
+import {
+  calculateSegmentTimes,
+  calculateTotalServiceDuration,
+  formatDurationMinutes,
+} from '@shared/domain/servicePlanning';
 
 export default function ServiceDetailScreen({ route, navigation }: any) {
   const { serviceId } = route.params;
@@ -54,6 +59,26 @@ export default function ServiceDetailScreen({ route, navigation }: any) {
     }
   };
 
+  const scheduledSegments = useMemo(() => {
+    if (!service?.segments) return [];
+    return calculateSegmentTimes(
+      service.segments.map((s) => ({
+        id: s.id,
+        title: s.title,
+        durationMin: s.durationMin || 0,
+      })),
+      service.time
+    );
+  }, [service?.segments, service?.time]);
+
+  const totalDurationStr = useMemo(() => {
+    if (!service?.segments || service.segments.length === 0) return '';
+    const totalMin = calculateTotalServiceDuration(
+      service.segments.map((s) => ({ durationMin: s.durationMin || 0 }))
+    );
+    return formatDurationMinutes(totalMin);
+  }, [service?.segments]);
+
   if (loading || !service) {
     return <LoadingScreen />;
   }
@@ -69,37 +94,47 @@ export default function ServiceDetailScreen({ route, navigation }: any) {
       </View>
 
       <View style={styles.section}>
-        <SectionHeader title="Orden del Culto" />
-        {service.segments?.map((segment, index) => (
-          <View key={segment.id} style={styles.segmentRow}>
-            <View style={styles.segmentMove}>
-              <TouchableOpacity
-                onPress={() => handleMoveSegment(index, 'up')}
-                disabled={index === 0}
-              >
-                <Ionicons
-                  name="chevron-up"
-                  size={20}
-                  color={index === 0 ? '#ccc' : '#5B5EA6'}
+        <SectionHeader
+          title={`Orden del Culto${totalDurationStr ? ` (${totalDurationStr})` : ''}`}
+        />
+        {service.segments?.map((segment, index) => {
+          const scheduled = scheduledSegments[index];
+          return (
+            <View key={segment.id} style={styles.segmentRow}>
+              <View style={styles.segmentMove}>
+                <TouchableOpacity
+                  onPress={() => handleMoveSegment(index, 'up')}
+                  disabled={index === 0}
+                >
+                  <Ionicons
+                    name="chevron-up"
+                    size={20}
+                    color={index === 0 ? '#ccc' : '#5B5EA6'}
+                  />
+                </TouchableOpacity>
+                <Text style={styles.segmentOrder}>{index + 1}</Text>
+                <TouchableOpacity
+                  onPress={() => handleMoveSegment(index, 'down')}
+                  disabled={index === (service.segments?.length || 1) - 1}
+                >
+                  <Ionicons
+                    name="chevron-down"
+                    size={20}
+                    color={index === (service.segments?.length || 1) - 1 ? '#ccc' : '#5B5EA6'}
+                  />
+                </TouchableOpacity>
+              </View>
+              <View style={styles.segmentContent}>
+                <SegmentItem
+                  segment={segment}
+                  index={index}
+                  startTime={scheduled?.startTime}
+                  endTime={scheduled?.endTime}
                 />
-              </TouchableOpacity>
-              <Text style={styles.segmentOrder}>{index + 1}</Text>
-              <TouchableOpacity
-                onPress={() => handleMoveSegment(index, 'down')}
-                disabled={index === (service.segments?.length || 1) - 1}
-              >
-                <Ionicons
-                  name="chevron-down"
-                  size={20}
-                  color={index === (service.segments?.length || 1) - 1 ? '#ccc' : '#5B5EA6'}
-                />
-              </TouchableOpacity>
+              </View>
             </View>
-            <View style={styles.segmentContent}>
-              <SegmentItem segment={segment} index={index} />
-            </View>
-          </View>
-        ))}
+          );
+        })}
         <TouchableOpacity
           style={styles.addBtn}
           onPress={() => showToast('Usa una plantilla desde Perfil > Nuevo Servicio', 'info')}
