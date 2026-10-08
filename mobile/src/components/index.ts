@@ -11,4 +11,5 @@ export { default as FilterBar } from './FilterBar';
 export { default as ResponsiveContainer } from './ResponsiveContainer';
 export { default as Toast } from './Toast';
 export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as ChordViewer } from './ChordViewer';
 export { SkeletonCard, SkeletonMember, SkeletonHeader } from './Skeleton';

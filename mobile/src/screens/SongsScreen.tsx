@@ -1,13 +1,25 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Linking, RefreshControl } from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  Linking,
+  RefreshControl,
+  Modal,
+  SafeAreaView,
+} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { songsAPI } from '../services/api';
 import { Song } from '../types';
-import { EmptyState } from '../components';
+import { EmptyState, ChordViewer } from '../components';
 
 export default function SongsScreen() {
   const [songs, setSongs] = useState<Song[]>([]);
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [selectedSong, setSelectedSong] = useState<Song | null>(null);
+  const [isStageMode, setIsStageMode] = useState<boolean>(false);
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
@@ -57,20 +69,34 @@ export default function SongsScreen() {
       <FlatList
         data={songs}
         renderItem={({ item, index }) => (
-          <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            activeOpacity={0.7}
+            onPress={() => setSelectedSong(item)}
+          >
             <View style={styles.numberContainer}>
               <Text style={styles.number}>{index + 1}</Text>
             </View>
             <View style={styles.info}>
               <Text style={styles.title}>{item.title}</Text>
-              {item.key && <Text style={styles.key}>Tono: {item.key}</Text>}
+              <View style={styles.metaRow}>
+                {item.key && <Text style={styles.key}>Tono: {item.key}</Text>}
+                {item.bpm && <Text style={styles.bpm}>{item.bpm} BPM</Text>}
+                {item.timeSignature && <Text style={styles.timeSig}>{item.timeSignature}</Text>}
+              </View>
               <Text style={styles.updated}>
                 Actualizado por {item.updatedBy?.name || 'N/A'}
               </Text>
             </View>
             <View style={styles.actions}>
               {item.youtubeLink && (
-                <TouchableOpacity style={styles.actionBtn} onPress={() => openYouTube(item.youtubeLink!)}>
+                <TouchableOpacity
+                  style={styles.actionBtn}
+                  onPress={(e) => {
+                    e.stopPropagation();
+                    openYouTube(item.youtubeLink!);
+                  }}
+                >
                   <Ionicons name="logo-youtube" size={24} color="#FF0000" />
                 </TouchableOpacity>
               )}
@@ -85,7 +111,7 @@ export default function SongsScreen() {
                 </TouchableOpacity>
               )}
             </View>
-          </View>
+          </TouchableOpacity>
         )}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.list}
@@ -96,6 +122,72 @@ export default function SongsScreen() {
           <EmptyState icon="musical-notes-outline" message="No hay canciones en el set list" />
         }
       />
+
+      {/* Full-screen Chord Viewer Modal */}
+      {selectedSong && (
+        <Modal
+          visible={true}
+          animationType="slide"
+          onRequestClose={() => setSelectedSong(null)}
+        >
+          <SafeAreaView
+            style={[
+              styles.modalContainer,
+              { backgroundColor: isStageMode ? '#121212' : '#FFFFFF' },
+            ]}
+          >
+            <View
+              style={[
+                styles.modalHeader,
+                { borderBottomColor: isStageMode ? '#2D3748' : '#E2E8F0' },
+              ]}
+            >
+              <TouchableOpacity
+                style={styles.modalCloseBtn}
+                onPress={() => setSelectedSong(null)}
+              >
+                <Ionicons
+                  name="chevron-down"
+                  size={26}
+                  color={isStageMode ? '#FFFFFF' : '#333333'}
+                />
+              </TouchableOpacity>
+              <View style={styles.modalTitleContainer}>
+                <Text
+                  style={[
+                    styles.modalTitle,
+                    { color: isStageMode ? '#FFFFFF' : '#1A202C' },
+                  ]}
+                  numberOfLines={1}
+                >
+                  {selectedSong.title}
+                </Text>
+              </View>
+              <TouchableOpacity
+                style={styles.stageToggleBtn}
+                onPress={() => setIsStageMode(!isStageMode)}
+              >
+                <Ionicons
+                  name={isStageMode ? 'sunny' : 'moon'}
+                  size={20}
+                  color={isStageMode ? '#FFD54F' : '#5B5EA6'}
+                />
+              </TouchableOpacity>
+            </View>
+
+            <ChordViewer
+              chordContent={
+                selectedSong.chordContent ||
+                `{title: ${selectedSong.title}}\n{key: ${selectedSong.key || 'C'}}\n{comment: Letra}\nNo hay cifrado cargado para esta canción.`
+              }
+              initialKey={selectedSong.key}
+              isDarkMode={isStageMode}
+              bpm={selectedSong.bpm}
+              timeSignature={selectedSong.timeSignature}
+            />
+          </SafeAreaView>
+        </Modal>
+      )}
     </View>
   );
 }
@@ -147,10 +239,25 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
+  metaRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 3,
+    gap: 8,
+  },
   key: {
     fontSize: 12,
+    color: '#E65100',
+    fontWeight: '600',
+  },
+  bpm: {
+    fontSize: 12,
+    color: '#0288D1',
+    fontWeight: '600',
+  },
+  timeSig: {
+    fontSize: 12,
     color: '#666',
-    marginTop: 2,
   },
   updated: {
     fontSize: 10,
@@ -163,5 +270,31 @@ const styles = StyleSheet.create({
   actionBtn: {
     padding: 8,
     marginLeft: 4,
+  },
+  modalContainer: {
+    flex: 1,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+  },
+  modalCloseBtn: {
+    padding: 4,
+  },
+  modalTitleContainer: {
+    flex: 1,
+    marginHorizontal: 12,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+  },
+  stageToggleBtn: {
+    padding: 6,
+    borderRadius: 8,
   },
 });

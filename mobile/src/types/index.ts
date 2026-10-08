@@ -77,6 +77,9 @@ export interface Song {
   order: number;
   title: string;
   key?: string;
+  chordContent?: string;
+  bpm?: number;
+  timeSignature?: string;
   lyricsUrl?: string;
   sheetMusicUrl?: string;
   youtubeLink?: string;
