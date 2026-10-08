@@ -25,6 +25,7 @@ import AgentScreen from '../screens/AgentScreen';
 import SearchScreen from '../screens/SearchScreen';
 import AdminScreen from '../screens/AdminScreen';
 import DashboardScreen from '../screens/DashboardScreen';
+import LiveStageScreen from '../screens/LiveStageScreen';
 import { BREAKPOINTS } from '../utils/responsive';
 
 const Stack = createNativeStackNavigator();
@@ -32,7 +33,7 @@ const Tab = createBottomTabNavigator();
 const ProfileStack = createNativeStackNavigator();
 
 const linking: LinkingOptions<any> = {
-  prefixes: ['churchplanning://', 'https://church-planning-production.up.railway.app'],
+  prefixes: ['churchplanning://'],
   config: {
     screens: {
       Login: 'login',
@@ -121,6 +122,7 @@ export default function AppNavigator() {
         <Stack.Screen name="Home" component={HomeTabs} options={{ headerShown: false }} />
         <Stack.Screen name="ServiceDetail" component={ServiceDetailScreen} options={{ title: 'Detalle del Servicio', ...defaultHeader }} />
         <Stack.Screen name="AddSong" component={AddSongScreen} options={{ title: 'Agregar Canción', ...defaultHeader }} />
+        <Stack.Screen name="LiveStage" component={LiveStageScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

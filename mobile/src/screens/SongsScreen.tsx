@@ -15,7 +15,7 @@ import { songsAPI } from '../services/api';
 import { Song } from '../types';
 import { EmptyState, ChordViewer } from '../components';
 
-export default function SongsScreen() {
+export default function SongsScreen({ navigation }: any) {
   const [songs, setSongs] = useState<Song[]>([]);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
@@ -64,6 +64,16 @@ export default function SongsScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Set List</Text>
+        {songs.length > 0 && (
+          <TouchableOpacity
+            style={styles.stageModeBtn}
+            onPress={() => navigation?.navigate('LiveStage', { songs, initialIndex: 0 })}
+            activeOpacity={0.8}
+          >
+            <Ionicons name="tablet-landscape-outline" size={16} color="#FFF" />
+            <Text style={styles.stageModeBtnText}>Modo Atril</Text>
+          </TouchableOpacity>
+        )}
       </View>
 
       <FlatList
@@ -201,11 +211,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#5B5EA6',
     padding: 20,
     paddingTop: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#fff',
+  },
+  stageModeBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#3E4280',
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 8,
+    gap: 6,
+  },
+  stageModeBtnText: {
+    color: '#FFF',
+    fontSize: 13,
+    fontWeight: '700',
   },
   list: {
     padding: 16,
