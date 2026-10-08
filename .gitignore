@@ -8,3 +8,6 @@ backend/node_modules/
 mobile/node_modules/
 backend/dist/
 mobile/dist/
+graphify-out/cache/
+graphify-out/.graphify_python
+
