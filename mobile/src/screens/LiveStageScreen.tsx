@@ -24,8 +24,12 @@ import {
   DEFAULT_SCROLL_SPEED,
   MIN_SCROLL_SPEED,
   MAX_SCROLL_SPEED,
+} from '@shared/domain/stageMode';
+import { BandSessionController } from '@shared/domain/bandSessionController';
+import { createLocalBandMember } from '@shared/domain/bandSessionModalHelper';
+import type { BandMemberRole } from '@shared/domain/bandSync';
 import { styles } from './LiveStageScreen.styles';
-import { ExportSlidesModal } from '../components/ExportSlidesModal';
+import { ExportSlidesModal, BandSessionModal } from '../components';
 
 export interface LiveStageScreenProps {
   route: {
@@ -56,6 +60,8 @@ export default function LiveStageScreen({ route, navigation }: LiveStageScreenPr
   const [scrollSpeed, setScrollSpeed] = useState<number>(DEFAULT_SCROLL_SPEED);
   const [beatActive, setBeatActive] = useState<boolean>(false);
   const [showExportModal, setShowExportModal] = useState<boolean>(false);
+  const [showBandModal, setShowBandModal] = useState<boolean>(false);
+  const [bandController, setBandController] = useState<BandSessionController | null>(null);
 
   const scrollRef = useRef<ScrollView>(null);
   const scrollOffsetRef = useRef<number>(0);
@@ -110,12 +116,46 @@ export default function LiveStageScreen({ route, navigation }: LiveStageScreenPr
   const baseKey = currentSong?.key || parsedSong.metadata.key || '';
   const currentKey = baseKey ? transposeKey(baseKey, semitones) : '';
 
+  // Subscribe to live band session controller events
+  useEffect(() => {
+    if (!bandController) return;
+    return bandController.subscribe((state) => {
+      if (state.activeSongIndex !== currentIndex && state.activeSongIndex < songs.length) {
+        setCurrentIndex(state.activeSongIndex);
+      }
+      if (state.isAutoScrolling !== isScrolling) {
+        setIsScrolling(state.isAutoScrolling);
+      }
+      if (state.speed !== scrollSpeed) {
+        setScrollSpeed(state.speed);
+      }
+    });
+  }, [bandController, currentIndex, isScrolling, scrollSpeed, songs.length]);
+
   const handleNextSong = () => {
-    setCurrentIndex(getNextSongIndex(currentIndex, songs.length));
+    const nextIdx = getNextSongIndex(currentIndex, songs.length);
+    setCurrentIndex(nextIdx);
+    if (bandController?.getMember().isHost) {
+      bandController.changeSong(nextIdx);
+    }
   };
 
   const handlePrevSong = () => {
-    setCurrentIndex(getPrevSongIndex(currentIndex, songs.length));
+    const prevIdx = getPrevSongIndex(currentIndex, songs.length);
+    setCurrentIndex(prevIdx);
+    if (bandController?.getMember().isHost) {
+      bandController.changeSong(prevIdx);
+    }
+  };
+
+  const handleStartSession = (role: BandMemberRole, isHost: boolean) => {
+    const member = createLocalBandMember('local-musician', 'Músico', role, isHost);
+    const controller = new BandSessionController('live-stage-session', member, songs);
+    setBandController(controller);
+  };
+
+  const handleLeaveSession = () => {
+    setBandController(null);
   };
 
   if (!currentSong) {
@@ -194,6 +234,17 @@ export default function LiveStageScreen({ route, navigation }: LiveStageScreenPr
             activeOpacity={0.7}
           >
             <Ionicons name="tv-outline" size={18} color="#BB86FC" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.iconActionBtn, bandController ? styles.bandActiveBtn : null]}
+            onPress={() => setShowBandModal(true)}
+            activeOpacity={0.7}
+          >
+            <Ionicons
+              name="wifi"
+              size={18}
+              color={bandController ? '#00E676' : '#9E9E9E'}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -321,6 +372,14 @@ export default function LiveStageScreen({ route, navigation }: LiveStageScreenPr
         visible={showExportModal}
         onClose={() => setShowExportModal(false)}
         songs={songs}
+      />
+
+      <BandSessionModal
+        visible={showBandModal}
+        onClose={() => setShowBandModal(false)}
+        controller={bandController}
+        onStartSession={handleStartSession}
+        onLeaveSession={handleLeaveSession}
       />
     </SafeAreaView>
   );

@@ -15,7 +15,15 @@ export const MAX_SCROLL_SPEED = 5;
 /**
  * Roles a band member can assume in a live session.
  */
-export type BandMemberRole = 'director' | 'musician' | 'vocalist' | 'tech';
+export type BandMemberRole =
+  | 'director'
+  | 'musician'
+  | 'vocalist'
+  | 'tech'
+  | 'guitar'
+  | 'bass'
+  | 'piano'
+  | 'drums';
 
 /**
  * Connected band member metadata.

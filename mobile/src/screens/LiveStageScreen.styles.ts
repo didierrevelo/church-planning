@@ -92,6 +92,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 4,
   },
+  bandActiveBtn: {
+    backgroundColor: 'rgba(0, 230, 118, 0.2)',
+    borderWidth: 1,
+    borderColor: '#00E676',
+  },
   controlSubBar: {
     flexDirection: 'row',
     alignItems: 'center',
