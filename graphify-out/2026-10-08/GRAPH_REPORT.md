@@ -1,16 +1,16 @@
 # Graph Report - church-planning  (2026-10-08)
 
 ## Corpus Check
-- 164 files · ~57,862 words
+- 168 files · ~59,496 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1131 nodes · 1923 edges · 102 communities (51 shown, 51 thin omitted)
+- 1143 nodes · 1980 edges · 113 communities (57 shown, 56 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `460bd270`
+- Built from commit: `e285549a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -103,24 +103,35 @@
 - mobile/jest.config.js
 - react-dom
 - @react-native-async-storage/async-storage
+- BackgroundJobQueue
 - @react-navigation/bottom-tabs
 - @react-navigation/native
 - @react-navigation/native-stack
 - yjs
 - zod
+- ResponsiveContainer.tsx
+- NativeFileStorage
+- Toast.tsx
 - songsRepository.ts
+- routes/songs.ts
+- FilterBar.tsx
 - expo
 - @noble/hashes
 - push.ts
 - react-native-web
 - jest
+- NativeLanTransport
+- NativeMdnsDiscovery
+- prisma
+- expo-file-system
+- react-native-safe-area-context
 - expo-image-manipulator
 
 ## God Nodes (most connected - your core abstractions)
 1. `Database` - 43 edges
 2. `generateUUID()` - 32 edges
 3. `getDatabase()` - 25 edges
-4. `BandSessionController` - 18 edges
+4. `BandSessionController` - 21 edges
 5. `AuthRequest` - 16 edges
 6. `authenticate()` - 16 edges
 7. `compilerOptions` - 15 edges
@@ -135,19 +146,19 @@
   shared/domain/agent.ts → mobile/src/platform/crypto.ts
 - `AppContent()` --calls--> `getDatabase()`  [EXTRACTED]
   mobile/App.tsx → mobile/src/db/database.ts
-- `ChordViewer()` --calls--> `parseChordPro()`  [EXTRACTED]
-  mobile/src/components/ChordViewer.tsx → shared/domain/music.ts
-- `ChordViewer()` --calls--> `transposeChord()`  [EXTRACTED]
-  mobile/src/components/ChordViewer.tsx → shared/domain/music.ts
+- `BandSessionModalProps` --references--> `BandSessionController`  [EXTRACTED]
+  mobile/src/components/BandSessionModal.tsx → shared/domain/bandSessionController.ts
+- `BandSessionModalProps` --references--> `BandMemberRole`  [EXTRACTED]
+  mobile/src/components/BandSessionModal.tsx → shared/domain/bandSync.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (102 total, 51 thin omitted)
+## Communities (113 total, 56 thin omitted)
 
 ### Community 0 - "middleware/auth.ts"
-Cohesion: 0.06
-Nodes (52): globalForPrisma, authenticate(), AuthRequest, memberUserSelect, publicUserSelect, requireChurch(), requireChurchAdmin(), requireSuperAdmin() (+44 more)
+Cohesion: 0.14
+Nodes (17): globalForPrisma, authenticate(), AuthRequest, memberUserSelect, publicUserSelect, requireChurch(), requireChurchAdmin(), requireSuperAdmin() (+9 more)
 
 ### Community 2 - "expo"
 Cohesion: 0.05
@@ -158,8 +169,8 @@ Cohesion: 0.06
 Nodes (35): @aws-sdk/client-s3, @aws-sdk/s3-request-presigner, dependencies, @aws-sdk/client-s3, @aws-sdk/s3-request-presigner, bcryptjs, cors, dotenv (+27 more)
 
 ### Community 4 - "NativeFileStorage"
-Cohesion: 0.05
-Nodes (10): FileStorageInterface, NativeFileStorage, WebFileStorage, DiscoveredPeer, MdnsDiscoveryInterface, NativeMdnsDiscovery, WebMdnsDiscovery, NativeSecureStorage (+2 more)
+Cohesion: 0.22
+Nodes (3): NativeSecureStorage, SecureStorageInterface, WebSecureStorage
 
 ### Community 5 - "devDependencies"
 Cohesion: 0.07
@@ -190,32 +201,32 @@ Cohesion: 0.10
 Nodes (20): compilerOptions, declaration, declarationMap, esModuleInterop, forceConsistentCasingInFileNames, lib, module, outDir (+12 more)
 
 ### Community 12 - "types/index.ts"
-Cohesion: 0.11
-Nodes (13): MemberCardProps, STATUS_CONFIG, styles, styles, styles, styles, styles, Church (+5 more)
+Cohesion: 0.14
+Nodes (9): styles, styles, styles, styles, Church, MinistryRole, Notification, PositionRequest (+1 more)
 
 ### Community 13 - "LanTransportInterface"
-Cohesion: 0.16
-Nodes (11): formatDate(), ServiceCard(), ServiceCardProps, styles, COLORS, LABELS, StatusBadge(), StatusBadgeProps (+3 more)
+Cohesion: 0.30
+Nodes (6): router, changePasswordSchema, inviteSchema, loginSchema, registerSchema, updateProfileSchema
 
 ### Community 14 - "MdnsDiscoveryInterface"
-Cohesion: 0.26
-Nodes (12): ServiceDetailScreen(), styles, reorderAPI, ActiveSegmentOptions, ActiveSegmentResult, CalculatedSegment, calculateSegmentTimes(), calculateTotalServiceDuration() (+4 more)
+Cohesion: 0.08
+Nodes (31): FileCard(), FileCardProps, formatDate(), styles, MemberCardProps, STATUS_CONFIG, styles, formatDate() (+23 more)
 
 ### Community 15 - "EmptyState"
-Cohesion: 0.14
-Nodes (9): EmptyState(), EmptyStateProps, styles, FILTERS, ROLE_COLORS, ROLE_LABELS, styles, styles (+1 more)
+Cohesion: 0.12
+Nodes (10): EmptyState(), EmptyStateProps, styles, styles, FILTERS, ROLE_COLORS, ROLE_LABELS, styles (+2 more)
 
 ### Community 17 - "Database"
-Cohesion: 0.21
-Nodes (6): Database, migration_001, migration_002, Migration, MIGRATIONS, runMigrations()
+Cohesion: 0.13
+Nodes (8): Database, migration_001, migration_002, Migration, MIGRATIONS, runMigrations(), ReportsRepository, SearchRepository
 
 ### Community 18 - "segmentsRepository.ts"
-Cohesion: 0.17
-Nodes (11): ServiceSegmentRecord, ServiceRecord, PositionRequestRecord, ServiceTeamMemberRecord, createSegmentSchema, createServiceSchema, createTeamMemberSchema, updateSegmentSchema (+3 more)
+Cohesion: 0.29
+Nodes (7): ServiceRecord, PositionRequestRecord, ServiceTeamMemberRecord, createServiceSchema, createTeamMemberSchema, updateServiceSchema, updateTeamMemberSchema
 
 ### Community 19 - "devDependencies"
 Cohesion: 0.15
-Nodes (13): devDependencies, prisma, supertest, ts-node, @types/express, @types/multer, @types/node, prisma (+5 more)
+Nodes (13): devDependencies, supertest, ts-node, @types/express, @types/morgan, @types/multer, @types/node, supertest (+5 more)
 
 ### Community 20 - "authAPI"
 Cohesion: 0.11
@@ -234,52 +245,44 @@ Cohesion: 0.23
 Nodes (5): FileRecord, FilesRepository, ALLOWED_TYPES, deleteFileSchema, uploadFileSchema
 
 ### Community 24 - "dependencies"
-Cohesion: 0.11
-Nodes (13): FilterBarProps, FilterOption, styles, SectionHeaderProps, styles, SkeletonCard(), SkeletonHeader(), SkeletonMember() (+5 more)
-
-### Community 28 - "UsersRepository"
-Cohesion: 0.21
-Nodes (7): UserRecord, UsersRepository, defaultCrypto, generateSaltHex(), generateUUID(), hashPasswordWithPbkdf2(), verifyPasswordWithPbkdf2()
+Cohesion: 0.14
+Nodes (11): LoadingScreen(), LoadingScreenProps, styles, SectionHeaderProps, styles, SkeletonCard(), SkeletonHeader(), SkeletonMember() (+3 more)
 
 ### Community 30 - "server.ts"
-Cohesion: 0.12
-Nodes (10): app, authLimiter, globalLimiter, BackgroundJobQueue, Job, JobHandler, jobQueue, OPTIONAL_ENV_VARS (+2 more)
+Cohesion: 0.16
+Nodes (9): app, authLimiter, globalLimiter, Job, JobHandler, jobQueue, OPTIONAL_ENV_VARS, REQUIRED_ENV_VARS (+1 more)
 
 ### Community 31 - "ErrorBoundary.tsx"
-Cohesion: 0.12
-Nodes (11): AppContent(), ErrorBoundary, Props, State, styles, Props, ResponsiveContainer(), styles (+3 more)
+Cohesion: 0.17
+Nodes (6): AppContent(), ErrorBoundary, Props, State, styles, ToastProvider()
 
 ### Community 32 - "DashboardScreen.tsx"
-Cohesion: 0.25
-Nodes (5): LoadingScreen(), LoadingScreenProps, styles, DashboardData, styles
+Cohesion: 0.18
+Nodes (3): DiscoveredPeer, MdnsDiscoveryInterface, WebMdnsDiscovery
 
 ### Community 35 - "BackgroundJobQueue"
-Cohesion: 0.09
-Nodes (35): ExportSlidesModal(), ExportSlidesModalProps, styles, BandSessionController, SessionStateListener, BandMember, BandMemberRole, BandSessionState (+27 more)
+Cohesion: 0.08
+Nodes (42): AVAILABLE_ROLES, BandSessionModal(), BandSessionModalProps, styles, ExportSlidesModal(), ExportSlidesModalProps, styles, BandSessionController (+34 more)
 
 ### Community 36 - "SearchScreen.tsx"
-Cohesion: 0.32
-Nodes (6): react, SearchResults, SearchScreen(), styles, useDebounce(), react
+Cohesion: 0.47
+Nodes (4): SearchResults, SearchScreen(), styles, useDebounce()
 
 ### Community 37 - "SqlJsMemoryDatabase"
-Cohesion: 0.47
-Nodes (5): FileCard(), FileCardProps, formatDate(), styles, File
-
-### Community 40 - "ServicesRepository"
-Cohesion: 0.29
-Nodes (7): expo-constants, expo-file-system, dependencies, expo-constants, expo-file-system, react-native-safe-area-context, react-native-safe-area-context
+Cohesion: 0.32
+Nodes (5): validate(), router, ALLOWED_TYPES, deleteFileSchema, uploadFileSchema
 
 ### Community 42 - "ResponsiveContainer.tsx"
 Cohesion: 0.05
 Nodes (42): 1.1 Crear Cuenta, 1.2 Obtener Credenciales, 1.3 Ejecutar Schema, 2.1 Crear Cuenta, 2.2 Conectar Repositorio, 2.3 Configurar Variables, 2.4 Configurar Build, 3.1 Crear Cuenta (+34 more)
 
 ### Community 45 - "templatesRepository.ts"
-Cohesion: 0.38
-Nodes (5): ServiceTemplateRecord, ServiceTemplateSegmentRecord, applyTemplateSchema, createTemplateSchema, updateTemplateSchema
+Cohesion: 0.15
+Nodes (15): ServiceSegmentRecord, ServiceTemplateRecord, ServiceTemplateSegmentRecord, UserRecord, defaultCrypto, generateSaltHex(), generateUUID(), hashPasswordWithPbkdf2() (+7 more)
 
 ### Community 46 - "crypto.ts"
-Cohesion: 0.17
-Nodes (21): ChordViewer(), ChordViewerProps, styles, LiveStageScreen(), styles, ChordProItem, ChordProLine, ChordProSong (+13 more)
+Cohesion: 0.14
+Nodes (26): ChordViewer(), ChordViewerProps, styles, LiveStageScreen(), styles, createLocalBandMember(), ChordProItem, ChordProLine (+18 more)
 
 ### Community 47 - "CryptoService"
 Cohesion: 0.22
@@ -294,8 +297,8 @@ Cohesion: 0.47
 Nodes (3): SegmentItemProps, styles, ServiceSegment
 
 ### Community 50 - "MemberCard.tsx"
-Cohesion: 0.60
-Nodes (4): calculateAutoScrollInterval(), calculateMetronomeInterval(), getNextSongIndex(), getPrevSongIndex()
+Cohesion: 0.36
+Nodes (6): router, createSegmentSchema, createServiceSchema, createTeamMemberSchema, updateServiceSchema, updateTeamMemberSchema
 
 ### Community 51 - "Toast.tsx"
 Cohesion: 0.14
@@ -314,12 +317,16 @@ Cohesion: 0.33
 Nodes (5): buildCommand, devCommand, framework, outputDirectory, rewrites
 
 ### Community 55 - "shared/validation/auth.ts"
-Cohesion: 0.15
+Cohesion: 0.14
 Nodes (15): ChurchMemberRecord, ChurchRecord, SongHistoryRecord, SongRecord, changePasswordSchema, inviteSchema, loginSchema, registerSchema (+7 more)
 
 ### Community 56 - "backend/package.json"
 Cohesion: 0.40
 Nodes (4): description, main, name, version
+
+### Community 57 - "push.ts"
+Cohesion: 0.48
+Nodes (5): router, addMemberSchema, createChurchSchema, updateChurchSchema, updateMemberSchema
 
 ### Community 58 - "metro.config.js"
 Cohesion: 0.40
@@ -329,13 +336,41 @@ Nodes (4): config, { getDefaultConfig }, path, workspaceRoot
 Cohesion: 0.15
 Nodes (12): API Endpoints, Autor, Backend, Características, Church Planning App, Estructura, Fase 1 (MVP), Fase 2 (+4 more)
 
+### Community 63 - "expo-secure-store"
+Cohesion: 0.29
+Nodes (7): @expo/metro-runtime, expo-secure-store, dependencies, @expo/metro-runtime, expo-secure-store, react, react
+
+### Community 68 - "@types/morgan"
+Cohesion: 0.48
+Nodes (5): router, createMinistrySchema, createRoleSchema, updateMinistrySchema, updateRoleSchema
+
 ### Community 75 - "expo-image-manipulator"
-Cohesion: 0.13
-Nodes (4): LanTransportInterface, NativeLanTransport, PeerInfo, WebLanTransport
+Cohesion: 0.18
+Nodes (3): LanTransportInterface, PeerInfo, WebLanTransport
+
+### Community 79 - "expo-print"
+Cohesion: 0.43
+Nodes (5): router, applyTemplateSchema, createTemplateSchema, reorderSegmentsSchema, updateTemplateSchema
 
 ### Community 83 - "DashboardScreen.tsx"
 Cohesion: 0.39
 Nodes (7): createHandshakeRequest(), extractDeltaSince(), HandshakeValidationResult, mergeEntityDeltas(), P2PHandshakeRequest, SyncableEntity, validateHandshake()
+
+### Community 96 - "ResponsiveContainer.tsx"
+Cohesion: 0.38
+Nodes (5): Props, ResponsiveContainer(), styles, BREAKPOINTS, useResponsive()
+
+### Community 98 - "Toast.tsx"
+Cohesion: 0.33
+Nodes (4): COLORS, ICONS, styles, ToastProps
+
+### Community 100 - "routes/songs.ts"
+Cohesion: 0.60
+Nodes (3): router, createSongSchema, updateSongSchema
+
+### Community 101 - "FilterBar.tsx"
+Cohesion: 0.40
+Nodes (3): FilterBarProps, FilterOption, styles
 
 ### Community 104 - "push.ts"
 Cohesion: 0.60
@@ -344,22 +379,22 @@ Nodes (4): createInAppNotification(), notifyAndPush(), PushPayload, sendPushToUs
 ## Knowledge Gaps
 - **365 isolated node(s):** `name`, `version`, `description`, `main`, `build` (+360 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **51 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **56 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `ServicesRepository` to `devDependencies`, `SearchScreen.tsx`, `expo-print`, `expo-secure-store`, `react-native`, `expo-local-authentication`, `routes/services.ts`, `expo-notifications`, `expo-print`, `expo-secure-store`, `expo-sharing`, `expo-sqlite`, `@expo/vector-icons`, `react-dom`, `@react-native-async-storage/async-storage`, `@react-navigation/bottom-tabs`, `@react-navigation/native`, `@react-navigation/native-stack`, `yjs`, `zod`, `songsRepository.ts`, `expo`, `@noble/hashes`, `react-native-web`, `expo-image-manipulator`?**
+- **Why does `dependencies` connect `expo-secure-store` to `devDependencies`, `ServicesRepository`, `expo-print`, `react-native`, `expo-local-authentication`, `routes/services.ts`, `expo-notifications`, `expo-secure-store`, `expo-sharing`, `expo-sqlite`, `@expo/vector-icons`, `react-dom`, `@react-native-async-storage/async-storage`, `@react-navigation/bottom-tabs`, `@react-navigation/native`, `@react-navigation/native-stack`, `yjs`, `zod`, `songsRepository.ts`, `expo`, `@noble/hashes`, `react-native-web`, `expo-file-system`, `react-native-safe-area-context`, `expo-image-manipulator`?**
   _High betweenness centrality (0.082) - this node is a cross-community bridge._
-- **Why does `react` connect `SearchScreen.tsx` to `ServicesRepository`?**
+- **Why does `SearchScreen()` connect `SearchScreen.tsx` to `expo-secure-store`?**
+  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+- **Why does `react` connect `expo-secure-store` to `SearchScreen.tsx`?**
   _High betweenness centrality (0.078) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
   _365 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `middleware/auth.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.0582731889869019 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13636363636363635 - nodes in this community are weakly interconnected._
 - **Should `expo` be split into smaller, more focused modules?**
   _Cohesion score 0.05405405405405406 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
-- **Should `NativeFileStorage` be split into smaller, more focused modules?**
-  _Cohesion score 0.05272108843537415 - nodes in this community are weakly interconnected._

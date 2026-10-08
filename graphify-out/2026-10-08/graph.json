@@ -714,8 +714,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "backend_package_devdependencies_types_morgan",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 19,
+      "community_name": "devDependencies",
       "norm_label": "@types/morgan"
     },
     {
@@ -725,8 +725,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "types_morgan",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 19,
+      "community_name": "devDependencies",
       "norm_label": "@types/morgan"
     },
     {
@@ -846,8 +846,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "backend_package_devdependencies_prisma",
-      "community": 19,
-      "community_name": "devDependencies",
+      "community": 109,
+      "community_name": "prisma",
       "norm_label": "prisma"
     },
     {
@@ -857,8 +857,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "prisma",
-      "community": 19,
-      "community_name": "devDependencies",
+      "community": 109,
+      "community_name": "prisma",
       "norm_label": "prisma"
     },
     {
@@ -1055,8 +1055,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_tests_validation_test",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "src/__tests__/validation.test.ts"
     },
     {
@@ -1066,8 +1066,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "backend_src_tests_validation_test_expectvalid",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "expectvalid()"
     },
     {
@@ -1077,8 +1077,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "backend_src_tests_validation_test_expectinvalid",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "expectinvalid()"
     },
     {
@@ -1209,8 +1209,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_middleware_validate",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "validate.ts"
     },
     {
@@ -1220,8 +1220,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "backend_src_middleware_validate_validate",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "validate()"
     },
     {
@@ -1297,8 +1297,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_auth",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "routes/auth.ts"
     },
     {
@@ -1308,8 +1308,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_auth_router",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "router"
     },
     {
@@ -1319,8 +1319,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "backend_src_routes_auth_slugify",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "slugify()"
     },
     {
@@ -1330,8 +1330,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_churches",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 57,
+      "community_name": "push.ts",
       "norm_label": "routes/churches.ts"
     },
     {
@@ -1341,8 +1341,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_churches_router",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 57,
+      "community_name": "push.ts",
       "norm_label": "router"
     },
     {
@@ -1352,8 +1352,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_files",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "routes/files.ts"
     },
     {
@@ -1363,8 +1363,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_files_router",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "router"
     },
     {
@@ -1374,8 +1374,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_ministries",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 68,
+      "community_name": "@types/morgan",
       "norm_label": "routes/ministries.ts"
     },
     {
@@ -1385,8 +1385,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_ministries_router",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 68,
+      "community_name": "@types/morgan",
       "norm_label": "router"
     },
     {
@@ -1462,8 +1462,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_services",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "routes/services.ts"
     },
     {
@@ -1473,8 +1473,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_services_router",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "router"
     },
     {
@@ -1484,8 +1484,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_songs",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 100,
+      "community_name": "routes/songs.ts",
       "norm_label": "routes/songs.ts"
     },
     {
@@ -1495,8 +1495,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_songs_router",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 100,
+      "community_name": "routes/songs.ts",
       "norm_label": "router"
     },
     {
@@ -1550,8 +1550,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_templates",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 79,
+      "community_name": "expo-print",
       "norm_label": "routes/templates.ts"
     },
     {
@@ -1561,8 +1561,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_templates_router",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 79,
+      "community_name": "expo-print",
       "norm_label": "router"
     },
     {
@@ -1682,8 +1682,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue",
-      "community": 30,
-      "community_name": "server.ts",
+      "community": 88,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "backgroundjobqueue"
     },
     {
@@ -1693,8 +1693,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_register",
-      "community": 30,
-      "community_name": "server.ts",
+      "community": 88,
+      "community_name": "BackgroundJobQueue",
       "norm_label": ".register()"
     },
     {
@@ -1704,8 +1704,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_on",
-      "community": 30,
-      "community_name": "server.ts",
+      "community": 88,
+      "community_name": "BackgroundJobQueue",
       "norm_label": ".on()"
     },
     {
@@ -1715,8 +1715,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_emit",
-      "community": 30,
-      "community_name": "server.ts",
+      "community": 88,
+      "community_name": "BackgroundJobQueue",
       "norm_label": ".emit()"
     },
     {
@@ -1726,8 +1726,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_enqueue",
-      "community": 30,
-      "community_name": "server.ts",
+      "community": 88,
+      "community_name": "BackgroundJobQueue",
       "norm_label": ".enqueue()"
     },
     {
@@ -1737,8 +1737,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_processnext",
-      "community": 30,
-      "community_name": "server.ts",
+      "community": 88,
+      "community_name": "BackgroundJobQueue",
       "norm_label": ".processnext()"
     },
     {
@@ -1748,8 +1748,8 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_pendingcount",
-      "community": 30,
-      "community_name": "server.ts",
+      "community": 88,
+      "community_name": "BackgroundJobQueue",
       "norm_label": ".pendingcount()"
     },
     {
@@ -1891,8 +1891,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_auth",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "src/validation/auth.ts"
     },
     {
@@ -1902,8 +1902,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_auth_loginschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "loginschema"
     },
     {
@@ -1913,8 +1913,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "backend_src_validation_auth_inviteschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "inviteschema"
     },
     {
@@ -1924,8 +1924,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "backend_src_validation_auth_changepasswordschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "changepasswordschema"
     },
     {
@@ -1935,8 +1935,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "backend_src_validation_auth_registerschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "registerschema"
     },
     {
@@ -1946,8 +1946,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "backend_src_validation_auth_updateprofileschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "updateprofileschema"
     },
     {
@@ -1957,8 +1957,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_churches",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 57,
+      "community_name": "push.ts",
       "norm_label": "src/validation/churches.ts"
     },
     {
@@ -1968,8 +1968,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_churches_createchurchschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 57,
+      "community_name": "push.ts",
       "norm_label": "createchurchschema"
     },
     {
@@ -1979,8 +1979,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "backend_src_validation_churches_updatechurchschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 57,
+      "community_name": "push.ts",
       "norm_label": "updatechurchschema"
     },
     {
@@ -1990,8 +1990,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "backend_src_validation_churches_addmemberschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 57,
+      "community_name": "push.ts",
       "norm_label": "addmemberschema"
     },
     {
@@ -2001,8 +2001,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "backend_src_validation_churches_updatememberschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 57,
+      "community_name": "push.ts",
       "norm_label": "updatememberschema"
     },
     {
@@ -2012,8 +2012,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_files",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "src/validation/files.ts"
     },
     {
@@ -2023,8 +2023,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_files_allowed_types",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "allowed_types"
     },
     {
@@ -2034,8 +2034,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "backend_src_validation_files_uploadfileschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "uploadfileschema"
     },
     {
@@ -2045,8 +2045,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "backend_src_validation_files_deletefileschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "deletefileschema"
     },
     {
@@ -2056,8 +2056,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_ministries",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 68,
+      "community_name": "@types/morgan",
       "norm_label": "src/validation/ministries.ts"
     },
     {
@@ -2067,8 +2067,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_createministryschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 68,
+      "community_name": "@types/morgan",
       "norm_label": "createministryschema"
     },
     {
@@ -2078,8 +2078,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_updateministryschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 68,
+      "community_name": "@types/morgan",
       "norm_label": "updateministryschema"
     },
     {
@@ -2089,8 +2089,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_createroleschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 68,
+      "community_name": "@types/morgan",
       "norm_label": "createroleschema"
     },
     {
@@ -2100,8 +2100,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_updateroleschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 68,
+      "community_name": "@types/morgan",
       "norm_label": "updateroleschema"
     },
     {
@@ -2111,8 +2111,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_services",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "src/validation/services.ts"
     },
     {
@@ -2122,8 +2122,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_services_createserviceschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "createserviceschema"
     },
     {
@@ -2133,8 +2133,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "backend_src_validation_services_updateserviceschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "updateserviceschema"
     },
     {
@@ -2144,8 +2144,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "backend_src_validation_services_createteammemberschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "createteammemberschema"
     },
     {
@@ -2155,8 +2155,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "backend_src_validation_services_updateteammemberschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "updateteammemberschema"
     },
     {
@@ -2166,8 +2166,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "backend_src_validation_services_createsegmentschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 50,
+      "community_name": "MemberCard.tsx",
       "norm_label": "createsegmentschema"
     },
     {
@@ -2177,8 +2177,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_songs",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 100,
+      "community_name": "routes/songs.ts",
       "norm_label": "src/validation/songs.ts"
     },
     {
@@ -2188,8 +2188,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_songs_createsongschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 100,
+      "community_name": "routes/songs.ts",
       "norm_label": "createsongschema"
     },
     {
@@ -2199,8 +2199,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "backend_src_validation_songs_updatesongschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 100,
+      "community_name": "routes/songs.ts",
       "norm_label": "updatesongschema"
     },
     {
@@ -2210,8 +2210,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_templates",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 79,
+      "community_name": "expo-print",
       "norm_label": "src/validation/templates.ts"
     },
     {
@@ -2221,8 +2221,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_templates_createtemplateschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 79,
+      "community_name": "expo-print",
       "norm_label": "createtemplateschema"
     },
     {
@@ -2232,8 +2232,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "backend_src_validation_templates_updatetemplateschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 79,
+      "community_name": "expo-print",
       "norm_label": "updatetemplateschema"
     },
     {
@@ -2243,8 +2243,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "backend_src_validation_templates_applytemplateschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 79,
+      "community_name": "expo-print",
       "norm_label": "applytemplateschema"
     },
     {
@@ -2254,8 +2254,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "backend_src_validation_templates_reordersegmentsschema",
-      "community": 0,
-      "community_name": "middleware/auth.ts",
+      "community": 79,
+      "community_name": "expo-print",
       "norm_label": "reordersegmentsschema"
     },
     {
@@ -3398,8 +3398,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_package_dependencies",
-      "community": 40,
-      "community_name": "ServicesRepository",
+      "community": 63,
+      "community_name": "expo-secure-store",
       "norm_label": "dependencies"
     },
     {
@@ -3409,8 +3409,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_package_dependencies_expo_metro_runtime",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 63,
+      "community_name": "expo-secure-store",
       "norm_label": "@expo/metro-runtime"
     },
     {
@@ -3420,8 +3420,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "expo_metro_runtime",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 63,
+      "community_name": "expo-secure-store",
       "norm_label": "@expo/metro-runtime"
     },
     {
@@ -3607,8 +3607,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "mobile_package_dependencies_expo_file_system",
-      "community": 40,
-      "community_name": "ServicesRepository",
+      "community": 110,
+      "community_name": "expo-file-system",
       "norm_label": "expo-file-system"
     },
     {
@@ -3618,8 +3618,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "expo_file_system",
-      "community": 40,
-      "community_name": "ServicesRepository",
+      "community": 110,
+      "community_name": "expo-file-system",
       "norm_label": "expo-file-system"
     },
     {
@@ -3827,8 +3827,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "mobile_package_dependencies_react",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 63,
+      "community_name": "expo-secure-store",
       "norm_label": "react"
     },
     {
@@ -3838,8 +3838,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "react",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 63,
+      "community_name": "expo-secure-store",
       "norm_label": "react"
     },
     {
@@ -3893,8 +3893,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "mobile_package_dependencies_react_native_safe_area_context",
-      "community": 40,
-      "community_name": "ServicesRepository",
+      "community": 111,
+      "community_name": "react-native-safe-area-context",
       "norm_label": "react-native-safe-area-context"
     },
     {
@@ -3904,8 +3904,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "react_native_safe_area_context",
-      "community": 40,
-      "community_name": "ServicesRepository",
+      "community": 111,
+      "community_name": "react-native-safe-area-context",
       "norm_label": "react-native-safe-area-context"
     },
     {
@@ -4195,6 +4195,72 @@
       "norm_label": "private"
     },
     {
+      "label": "BandSessionModal.styles.ts",
+      "file_type": "code",
+      "source_file": "mobile/src/components/BandSessionModal.styles.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "mobile_src_components_bandsessionmodal_styles",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessionmodal.styles.ts"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "mobile/src/components/BandSessionModal.styles.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "mobile_src_components_bandsessionmodal_styles_styles",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "styles"
+    },
+    {
+      "label": "BandSessionModal.tsx",
+      "file_type": "code",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "mobile_src_components_bandsessionmodal",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessionmodal.tsx"
+    },
+    {
+      "label": "BandSessionModalProps",
+      "file_type": "code",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "mobile_src_components_bandsessionmodal_bandsessionmodalprops",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessionmodalprops"
+    },
+    {
+      "label": "AVAILABLE_ROLES",
+      "file_type": "code",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "mobile_src_components_bandsessionmodal_available_roles",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "available_roles"
+    },
+    {
+      "label": "BandSessionModal()",
+      "file_type": "code",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "mobile_src_components_bandsessionmodal_bandsessionmodal",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessionmodal()"
+    },
+    {
       "label": "ChordViewer.styles.ts",
       "file_type": "code",
       "source_file": "mobile/src/components/ChordViewer.styles.ts",
@@ -4454,8 +4520,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_filecard",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "filecard.tsx"
     },
     {
@@ -4465,8 +4531,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_filecardprops",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "filecardprops"
     },
     {
@@ -4476,8 +4542,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_formatdate",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "formatdate()"
     },
     {
@@ -4487,8 +4553,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_filecard",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "filecard()"
     },
     {
@@ -4498,8 +4564,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_styles",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "styles"
     },
     {
@@ -4509,8 +4575,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_filterbar",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 101,
+      "community_name": "FilterBar.tsx",
       "norm_label": "filterbar.tsx"
     },
     {
@@ -4520,8 +4586,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_filterbar_filteroption",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 101,
+      "community_name": "FilterBar.tsx",
       "norm_label": "filteroption"
     },
     {
@@ -4531,8 +4597,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_components_filterbar_filterbarprops",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 101,
+      "community_name": "FilterBar.tsx",
       "norm_label": "filterbarprops"
     },
     {
@@ -4542,8 +4608,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_components_filterbar_filterbar",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 101,
+      "community_name": "FilterBar.tsx",
       "norm_label": "filterbar()"
     },
     {
@@ -4553,8 +4619,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "mobile_src_components_filterbar_styles",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 101,
+      "community_name": "FilterBar.tsx",
       "norm_label": "styles"
     },
     {
@@ -4564,8 +4630,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "loadingscreen.tsx"
     },
     {
@@ -4575,8 +4641,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen_loadingscreenprops",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "loadingscreenprops"
     },
     {
@@ -4586,8 +4652,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen_loadingscreen",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "loadingscreen()"
     },
     {
@@ -4597,8 +4663,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_src_components_loadingscreen_styles",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "styles"
     },
     {
@@ -4608,8 +4674,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_membercard",
-      "community": 12,
-      "community_name": "types/index.ts",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "membercard.tsx"
     },
     {
@@ -4619,8 +4685,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_status_config",
-      "community": 12,
-      "community_name": "types/index.ts",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "status_config"
     },
     {
@@ -4630,8 +4696,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_membercardprops",
-      "community": 12,
-      "community_name": "types/index.ts",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "membercardprops"
     },
     {
@@ -4641,8 +4707,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_membercard",
-      "community": 12,
-      "community_name": "types/index.ts",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "membercard()"
     },
     {
@@ -4652,8 +4718,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_styles",
-      "community": 12,
-      "community_name": "types/index.ts",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "styles"
     },
     {
@@ -4663,8 +4729,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 96,
+      "community_name": "ResponsiveContainer.tsx",
       "norm_label": "responsivecontainer.tsx"
     },
     {
@@ -4674,8 +4740,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer_props",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 96,
+      "community_name": "ResponsiveContainer.tsx",
       "norm_label": "props"
     },
     {
@@ -4685,8 +4751,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer_responsivecontainer",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 96,
+      "community_name": "ResponsiveContainer.tsx",
       "norm_label": "responsivecontainer()"
     },
     {
@@ -4696,8 +4762,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer_styles",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 96,
+      "community_name": "ResponsiveContainer.tsx",
       "norm_label": "styles"
     },
     {
@@ -4806,8 +4872,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "servicecard.tsx"
     },
     {
@@ -4817,8 +4883,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_formatdate",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "formatdate()"
     },
     {
@@ -4828,8 +4894,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_servicecardprops",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "servicecardprops"
     },
     {
@@ -4839,8 +4905,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_servicecard",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "servicecard()"
     },
     {
@@ -4850,8 +4916,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_styles",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "styles"
     },
     {
@@ -4960,8 +5026,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "statusbadge.tsx"
     },
     {
@@ -4971,8 +5037,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_colors",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "colors"
     },
     {
@@ -4982,8 +5048,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_labels",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "labels"
     },
     {
@@ -4993,8 +5059,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_statusbadgeprops",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "statusbadgeprops"
     },
     {
@@ -5004,8 +5070,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_statusbadge",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "statusbadge()"
     },
     {
@@ -5015,8 +5081,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_styles",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "styles"
     },
     {
@@ -5026,8 +5092,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_toast",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 98,
+      "community_name": "Toast.tsx",
       "norm_label": "toast.tsx"
     },
     {
@@ -5037,8 +5103,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_components_toast_toastprops",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 98,
+      "community_name": "Toast.tsx",
       "norm_label": "toastprops"
     },
     {
@@ -5048,8 +5114,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_components_toast_icons",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 98,
+      "community_name": "Toast.tsx",
       "norm_label": "icons"
     },
     {
@@ -5059,8 +5125,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "mobile_src_components_toast_colors",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 98,
+      "community_name": "Toast.tsx",
       "norm_label": "colors"
     },
     {
@@ -5070,8 +5136,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mobile_src_components_toast_toast",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 98,
+      "community_name": "Toast.tsx",
       "norm_label": "toast()"
     },
     {
@@ -5081,8 +5147,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "mobile_src_components_toast_styles",
-      "community": 24,
-      "community_name": "dependencies",
+      "community": 98,
+      "community_name": "Toast.tsx",
       "norm_label": "styles"
     },
     {
@@ -5180,8 +5246,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_exposqliteadapter",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "exposqliteadapter.ts"
     },
     {
@@ -6203,8 +6269,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_reportsrepository_reportsrepository",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": "reportsrepository"
     },
     {
@@ -6214,8 +6280,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_reportsrepository_reportsrepository_constructor",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": ".constructor()"
     },
     {
@@ -6225,8 +6291,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_reportsrepository_reportsrepository_db",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": ".db()"
     },
     {
@@ -6236,8 +6302,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_reportsrepository_reportsrepository_getdashboard",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": ".getdashboard()"
     },
     {
@@ -6247,8 +6313,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_reportsrepository_reportsrepository_getmonthly",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": ".getmonthly()"
     },
     {
@@ -6280,8 +6346,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": "searchrepository"
     },
     {
@@ -6291,8 +6357,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_constructor",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": ".constructor()"
     },
     {
@@ -6302,8 +6368,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_db",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": ".db()"
     },
     {
@@ -6313,8 +6379,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_search",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 17,
+      "community_name": "Database",
       "norm_label": ".search()"
     },
     {
@@ -6324,8 +6390,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_segmentsrepository",
-      "community": 18,
-      "community_name": "segmentsRepository.ts",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "segmentsrepository.ts"
     },
     {
@@ -6335,8 +6401,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_segmentsrepository_servicesegmentrecord",
-      "community": 18,
-      "community_name": "segmentsRepository.ts",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "servicesegmentrecord"
     },
     {
@@ -6962,8 +7028,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_usersrepository",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "usersrepository.ts"
     },
     {
@@ -6973,8 +7039,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_usersrepository_userrecord",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "userrecord"
     },
     {
@@ -7193,8 +7259,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "crypto.ts"
     },
     {
@@ -7281,8 +7347,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_generatesalthex",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "generatesalthex()"
     },
     {
@@ -7292,8 +7358,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_generateuuid",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "generateuuid()"
     },
     {
@@ -7303,8 +7369,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_hashpasswordwithpbkdf2",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "hashpasswordwithpbkdf2()"
     },
     {
@@ -7314,8 +7380,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_verifypasswordwithpbkdf2",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "verifypasswordwithpbkdf2()"
     },
     {
@@ -7325,8 +7391,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_defaultcrypto",
-      "community": 28,
-      "community_name": "UsersRepository",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "defaultcrypto"
     },
     {
@@ -7336,8 +7402,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "filesystem.ts"
     },
     {
@@ -7347,8 +7413,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "filestorageinterface"
     },
     {
@@ -7358,8 +7424,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_savefile",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".savefile()"
     },
     {
@@ -7369,8 +7435,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_readfile",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".readfile()"
     },
     {
@@ -7380,8 +7446,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_deletefile",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".deletefile()"
     },
     {
@@ -7391,8 +7457,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_listlocalfiles",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".listlocalfiles()"
     },
     {
@@ -7402,8 +7468,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "webfilestorage"
     },
     {
@@ -7413,8 +7479,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_savefile",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".savefile()"
     },
     {
@@ -7424,8 +7490,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_readfile",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".readfile()"
     },
     {
@@ -7435,8 +7501,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_deletefile",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".deletefile()"
     },
     {
@@ -7446,8 +7512,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_listlocalfiles",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": ".listlocalfiles()"
     },
     {
@@ -7457,7 +7523,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage",
-      "community": 4,
+      "community": 97,
       "community_name": "NativeFileStorage",
       "norm_label": "nativefilestorage"
     },
@@ -7468,7 +7534,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_getdir",
-      "community": 4,
+      "community": 97,
       "community_name": "NativeFileStorage",
       "norm_label": ".getdir()"
     },
@@ -7479,7 +7545,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_ensuredir",
-      "community": 4,
+      "community": 97,
       "community_name": "NativeFileStorage",
       "norm_label": ".ensuredir()"
     },
@@ -7490,7 +7556,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_savefile",
-      "community": 4,
+      "community": 97,
       "community_name": "NativeFileStorage",
       "norm_label": ".savefile()"
     },
@@ -7501,7 +7567,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_readfile",
-      "community": 4,
+      "community": 97,
       "community_name": "NativeFileStorage",
       "norm_label": ".readfile()"
     },
@@ -7512,7 +7578,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_deletefile",
-      "community": 4,
+      "community": 97,
       "community_name": "NativeFileStorage",
       "norm_label": ".deletefile()"
     },
@@ -7523,7 +7589,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_listlocalfiles",
-      "community": 4,
+      "community": 97,
       "community_name": "NativeFileStorage",
       "norm_label": ".listlocalfiles()"
     },
@@ -7534,8 +7600,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_index",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "platform/index.ts"
     },
     {
@@ -7677,8 +7743,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 107,
+      "community_name": "NativeLanTransport",
       "norm_label": "nativelantransport"
     },
     {
@@ -7688,8 +7754,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_ishostsupported",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 107,
+      "community_name": "NativeLanTransport",
       "norm_label": ".ishostsupported()"
     },
     {
@@ -7699,8 +7765,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_starthost",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 107,
+      "community_name": "NativeLanTransport",
       "norm_label": ".starthost()"
     },
     {
@@ -7710,8 +7776,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_stophost",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 107,
+      "community_name": "NativeLanTransport",
       "norm_label": ".stophost()"
     },
     {
@@ -7721,8 +7787,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_connecttopeer",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 107,
+      "community_name": "NativeLanTransport",
       "norm_label": ".connecttopeer()"
     },
     {
@@ -7732,8 +7798,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "mdns.ts"
     },
     {
@@ -7743,8 +7809,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_discoveredpeer",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "discoveredpeer"
     },
     {
@@ -7754,8 +7820,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_mdnsdiscoveryinterface",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "mdnsdiscoveryinterface"
     },
     {
@@ -7765,8 +7831,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_mdnsdiscoveryinterface_startdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".startdiscovery()"
     },
     {
@@ -7776,8 +7842,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_mdnsdiscoveryinterface_stopdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".stopdiscovery()"
     },
     {
@@ -7787,8 +7853,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_mdnsdiscoveryinterface_parseqrcode",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".parseqrcode()"
     },
     {
@@ -7798,8 +7864,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_mdnsdiscoveryinterface_generateqrpayload",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".generateqrpayload()"
     },
     {
@@ -7809,8 +7875,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_webmdnsdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "webmdnsdiscovery"
     },
     {
@@ -7820,8 +7886,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_webmdnsdiscovery_startdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".startdiscovery()"
     },
     {
@@ -7831,8 +7897,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_webmdnsdiscovery_stopdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".stopdiscovery()"
     },
     {
@@ -7842,8 +7908,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_webmdnsdiscovery_parseqrcode",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".parseqrcode()"
     },
     {
@@ -7853,8 +7919,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_webmdnsdiscovery_generateqrpayload",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".generateqrpayload()"
     },
     {
@@ -7864,8 +7930,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 108,
+      "community_name": "NativeMdnsDiscovery",
       "norm_label": "nativemdnsdiscovery"
     },
     {
@@ -7875,8 +7941,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_startdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 108,
+      "community_name": "NativeMdnsDiscovery",
       "norm_label": ".startdiscovery()"
     },
     {
@@ -7886,8 +7952,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_stopdiscovery",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 108,
+      "community_name": "NativeMdnsDiscovery",
       "norm_label": ".stopdiscovery()"
     },
     {
@@ -7897,8 +7963,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_parseqrcode",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 108,
+      "community_name": "NativeMdnsDiscovery",
       "norm_label": ".parseqrcode()"
     },
     {
@@ -7908,8 +7974,8 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_generateqrpayload",
-      "community": 4,
-      "community_name": "NativeFileStorage",
+      "community": 108,
+      "community_name": "NativeMdnsDiscovery",
       "norm_label": ".generateqrpayload()"
     },
     {
@@ -8359,8 +8425,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "dashboardscreen.tsx"
     },
     {
@@ -8370,8 +8436,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen_dashboarddata",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "dashboarddata"
     },
     {
@@ -8381,8 +8447,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen_dashboardscreen",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "dashboardscreen()"
     },
     {
@@ -8392,8 +8458,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "mobile_src_screens_dashboardscreen_styles",
-      "community": 32,
-      "community_name": "DashboardScreen.tsx",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "styles"
     },
     {
@@ -8436,8 +8502,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_homescreen",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "homescreen.tsx"
     },
     {
@@ -8447,8 +8513,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "mobile_src_screens_homescreen_homescreen",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "homescreen()"
     },
     {
@@ -8458,8 +8524,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "mobile_src_screens_homescreen_styles",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "styles"
     },
     {
@@ -8532,7 +8598,7 @@
       "label": "LiveStageScreenProps",
       "file_type": "code",
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L30",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "mobile_src_screens_livestagescreen_livestagescreenprops",
       "community": 47,
@@ -8543,7 +8609,7 @@
       "label": "LiveStageScreen()",
       "file_type": "code",
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L47",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "mobile_src_screens_livestagescreen_livestagescreen",
       "community": 46,
@@ -9228,8 +9294,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_src_types_index_service",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "service"
     },
     {
@@ -9250,8 +9316,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "mobile_src_types_index_serviceteammember",
-      "community": 12,
-      "community_name": "types/index.ts",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "serviceteammember"
     },
     {
@@ -9272,8 +9338,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "mobile_src_types_index_file",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 14,
+      "community_name": "MdnsDiscoveryInterface",
       "norm_label": "file"
     },
     {
@@ -9470,8 +9536,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 96,
+      "community_name": "ResponsiveContainer.tsx",
       "norm_label": "responsive.ts"
     },
     {
@@ -9481,8 +9547,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive_breakpoints",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 96,
+      "community_name": "ResponsiveContainer.tsx",
       "norm_label": "breakpoints"
     },
     {
@@ -9492,8 +9558,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive_useresponsive",
-      "community": 31,
-      "community_name": "ErrorBoundary.tsx",
+      "community": 96,
+      "community_name": "ResponsiveContainer.tsx",
       "norm_label": "useresponsive()"
     },
     {
@@ -9904,6 +9970,17 @@
       "norm_label": "bandsessioncontroller.test.ts"
     },
     {
+      "label": "bandSessionModalHelper.test.ts",
+      "file_type": "code",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "shared_tests_bandsessionmodalhelper_test",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessionmodalhelper.test.ts"
+    },
+    {
       "label": "bandSync.test.ts",
       "file_type": "code",
       "source_file": "shared/__tests__/bandSync.test.ts",
@@ -9987,8 +10064,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_tests_stagemode_test",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "stagemode.test.ts"
     },
     {
@@ -10366,6 +10443,61 @@
       "norm_label": ".exportallsetlistslides()"
     },
     {
+      "label": "bandSessionModalHelper.ts",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessionmodalhelper",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessionmodalhelper.ts"
+    },
+    {
+      "label": "BandSessionStatusInfo",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessionmodalhelper_bandsessionstatusinfo",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "bandsessionstatusinfo"
+    },
+    {
+      "label": "formatBandRole()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessionmodalhelper_formatbandrole",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "formatbandrole()"
+    },
+    {
+      "label": "createLocalBandMember()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessionmodalhelper_createlocalbandmember",
+      "community": 46,
+      "community_name": "crypto.ts",
+      "norm_label": "createlocalbandmember()"
+    },
+    {
+      "label": "getBandSessionStatus()",
+      "file_type": "code",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "shared_domain_bandsessionmodalhelper_getbandsessionstatus",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
+      "norm_label": "getbandsessionstatus()"
+    },
+    {
       "label": "bandSync.ts",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
@@ -10391,7 +10523,7 @@
       "label": "BandMember",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L23",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandmember",
       "community": 35,
@@ -10402,7 +10534,7 @@
       "label": "BandSessionState",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L34",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandsessionstate",
       "community": 35,
@@ -10413,7 +10545,7 @@
       "label": "BandSyncMessageType",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L52",
+      "source_location": "L60",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandsyncmessagetype",
       "community": 35,
@@ -10424,7 +10556,7 @@
       "label": "BandSyncMessage",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L64",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "shared_domain_bandsync_bandsyncmessage",
       "community": 35,
@@ -10435,7 +10567,7 @@
       "label": "createBandSession()",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L79",
+      "source_location": "L87",
       "_origin": "ast",
       "id": "shared_domain_bandsync_createbandsession",
       "community": 35,
@@ -10446,7 +10578,7 @@
       "label": "createSyncMessage()",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L109",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "shared_domain_bandsync_createsyncmessage",
       "community": 35,
@@ -10457,7 +10589,7 @@
       "label": "serializeSyncPacket()",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L130",
+      "source_location": "L138",
       "_origin": "ast",
       "id": "shared_domain_bandsync_serializesyncpacket",
       "community": 35,
@@ -10468,7 +10600,7 @@
       "label": "VALID_MESSAGE_TYPES",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L134",
+      "source_location": "L142",
       "_origin": "ast",
       "id": "shared_domain_bandsync_valid_message_types",
       "community": 35,
@@ -10479,7 +10611,7 @@
       "label": "parseSyncPacket()",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L151",
+      "source_location": "L159",
       "_origin": "ast",
       "id": "shared_domain_bandsync_parsesyncpacket",
       "community": 35,
@@ -10490,7 +10622,7 @@
       "label": "reduceBandSession()",
       "file_type": "code",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L177",
+      "source_location": "L185",
       "_origin": "ast",
       "id": "shared_domain_bandsync_reducebandsession",
       "community": 35,
@@ -11230,8 +11362,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_domain_stagemode",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "stagemode.ts"
     },
     {
@@ -11241,8 +11373,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "shared_domain_stagemode_calculateautoscrollinterval",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "calculateautoscrollinterval()"
     },
     {
@@ -11252,8 +11384,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "shared_domain_stagemode_calculatemetronomeinterval",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "calculatemetronomeinterval()"
     },
     {
@@ -11263,8 +11395,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "shared_domain_stagemode_getnextsongindex",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "getnextsongindex()"
     },
     {
@@ -11274,8 +11406,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "shared_domain_stagemode_getprevsongindex",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "getprevsongindex()"
     },
     {
@@ -11450,8 +11582,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_validation_index",
-      "community": 18,
-      "community_name": "segmentsRepository.ts",
+      "community": 55,
+      "community_name": "shared/validation/auth.ts",
       "norm_label": "validation/index.ts"
     },
     {
@@ -11571,8 +11703,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "shared_validation_services_createsegmentschema",
-      "community": 18,
-      "community_name": "segmentsRepository.ts",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "createsegmentschema"
     },
     {
@@ -11582,8 +11714,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "shared_validation_services_updatesegmentschema",
-      "community": 18,
-      "community_name": "segmentsRepository.ts",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "updatesegmentschema"
     },
     {
@@ -11670,8 +11802,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "shared_validation_templates_reordersegmentsschema",
-      "community": 18,
-      "community_name": "segmentsRepository.ts",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "reordersegmentsschema"
     },
     {
@@ -18837,6 +18969,242 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "mobile_src_components_bandsessionmodal_styles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.styles.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal_styles",
+      "target": "mobile_src_components_bandsessionmodal_styles_styles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "mobile_src_components_bandsessionmodal_styles_styles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "mobile_src_components_bandsessionmodal_available_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "mobile_src_components_bandsessionmodal_bandsessionmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "mobile_src_components_bandsessionmodal_bandsessionmodalprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "shared_domain_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "shared_domain_bandsessionmodalhelper",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "shared_domain_bandsessionmodalhelper_formatbandrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "shared_domain_bandsessionmodalhelper_getbandsessionstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "shared_domain_bandsync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal",
+      "target": "shared_domain_bandsync_bandmemberrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/index.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_index",
+      "target": "mobile_src_components_bandsessionmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal_bandsessionmodalprops",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal_bandsessionmodalprops",
+      "target": "shared_domain_bandsync_bandmemberrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal_bandsessionmodal",
+      "target": "shared_domain_bandsessionmodalhelper_formatbandrole"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/components/BandSessionModal.tsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_bandsessionmodal_bandsessionmodal",
+      "target": "shared_domain_bandsessionmodalhelper_getbandsessionstatus"
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/components/index.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_components_index",
+      "target": "mobile_src_components_bandsessionmodal_bandsessionmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "mobile_src_components_bandsessionmodal_bandsessionmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "mobile/src/components/ChordViewer.tsx",
       "source_location": "L11",
       "weight": 1.0,
@@ -19393,18 +19761,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "mobile_src_screens_livestagescreen",
-      "target": "mobile_src_components_exportslidesmodal",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "references",
       "context": "field",
       "confidence": "EXTRACTED",
@@ -19457,7 +19813,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen",
@@ -20209,7 +20565,7 @@
       "context": "export",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/components/index.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_components_index",
@@ -20265,7 +20621,7 @@
       "context": "re-export",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/components/index.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_components_index",
@@ -20277,7 +20633,7 @@
       "context": "re-export",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/components/index.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_components_index",
@@ -20289,7 +20645,7 @@
       "context": "re-export",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/components/index.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_components_index",
@@ -20568,6 +20924,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_homescreen",
+      "target": "mobile_src_components_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
       "target": "mobile_src_components_index",
       "confidence_score": 1.0
     },
@@ -28148,7 +28516,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L19",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen",
@@ -28167,10 +28535,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "mobile_src_screens_livestagescreen_styles_styles",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen",
@@ -28181,7 +28561,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L30",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen",
@@ -28210,6 +28590,78 @@
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen",
       "target": "mobile_src_types_index_song",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_bandsessionmodalhelper",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_bandsessionmodalhelper_createlocalbandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_bandsync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_bandsync_bandmemberrole",
       "confidence_score": 1.0
     },
     {
@@ -28273,11 +28725,71 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_stagemode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_stagemode_calculateautoscrollinterval",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_stagemode_calculatemetronomeinterval",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_stagemode_getnextsongindex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen",
+      "target": "shared_domain_stagemode_getprevsongindex",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L31",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen_livestagescreenprops",
@@ -28290,7 +28802,31 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L107",
+      "source_location": "L130",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen_livestagescreen",
+      "target": "shared_domain_bandsessioncontroller_bandsessioncontroller_setscrollspeed"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen_livestagescreen",
+      "target": "shared_domain_bandsessionmodalhelper_createlocalbandmember"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen_livestagescreen",
@@ -28302,7 +28838,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L266",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen_livestagescreen",
@@ -28314,11 +28850,59 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "mobile/src/screens/LiveStageScreen.tsx",
-      "source_location": "L111",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_src_screens_livestagescreen_livestagescreen",
       "target": "shared_domain_music_transposekey"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen_livestagescreen",
+      "target": "shared_domain_stagemode_calculateautoscrollinterval"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen_livestagescreen",
+      "target": "shared_domain_stagemode_calculatemetronomeinterval"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen_livestagescreen",
+      "target": "shared_domain_stagemode_getnextsongindex"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/src/screens/LiveStageScreen.tsx",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_src_screens_livestagescreen_livestagescreen",
+      "target": "shared_domain_stagemode_getprevsongindex"
     },
     {
       "relation": "contains",
@@ -30361,6 +30945,114 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_bandsessionmodalhelper",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_bandsessionmodalhelper_createlocalbandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_bandsessionmodalhelper_formatbandrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_bandsessionmodalhelper_getbandsessionstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_bandsync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_bandsync_bandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_bandsync_createbandsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_setlistexport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/__tests__/bandSessionModalHelper.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_tests_bandsessionmodalhelper_test",
+      "target": "shared_domain_setlistexport_exportablesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "shared/__tests__/bandSync.test.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -32202,8 +32894,124 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsessionmodalhelper_bandsessionstatusinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsessionmodalhelper_createlocalbandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsessionmodalhelper_formatbandrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsessionmodalhelper_getbandsessionstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsync_bandmember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsync_bandmemberrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_bandsync_bandsessionstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_setlistexport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/domain/bandSessionModalHelper.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "shared_domain_bandsessionmodalhelper",
+      "target": "shared_domain_setlistexport_exportablesong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L23",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32225,7 +33033,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L34",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32236,7 +33044,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L64",
+      "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32247,7 +33055,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L52",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32258,7 +33066,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L79",
+      "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32269,7 +33077,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L109",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32280,7 +33088,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L151",
+      "source_location": "L159",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32291,7 +33099,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L177",
+      "source_location": "L185",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32302,7 +33110,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L130",
+      "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32313,7 +33121,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L134",
+      "source_location": "L142",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync",
@@ -32326,7 +33134,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shared/domain/bandSync.ts",
-      "source_location": "L155",
+      "source_location": "L163",
       "weight": 1.0,
       "_origin": "ast",
       "source": "shared_domain_bandsync_parsesyncpacket",
@@ -34623,5 +35431,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "460bd27049b23ce7e232a8af6e24131e8bf5ea02"
+  "built_at_commit": "e285549a20400fce86f5ad8bcf581dc1ba9c1ac4"
 }

@@ -714,8 +714,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "backend_package_devdependencies_types_morgan",
-      "community": 19,
-      "community_name": "devDependencies",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "@types/morgan"
     },
     {
@@ -725,8 +725,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "types_morgan",
-      "community": 19,
-      "community_name": "devDependencies",
+      "community": 37,
+      "community_name": "SqlJsMemoryDatabase",
       "norm_label": "@types/morgan"
     },
     {
@@ -824,8 +824,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "backend_package_devdependencies_jest",
-      "community": 65,
-      "community_name": "@types/bcryptjs",
+      "community": 19,
+      "community_name": "devDependencies",
       "norm_label": "jest"
     },
     {
@@ -835,8 +835,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "backend_package_json_jest",
-      "community": 65,
-      "community_name": "@types/bcryptjs",
+      "community": 19,
+      "community_name": "devDependencies",
       "norm_label": "jest"
     },
     {
@@ -1055,8 +1055,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_tests_validation_test",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/__tests__/validation.test.ts"
     },
     {
@@ -1066,8 +1066,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "backend_src_tests_validation_test_expectvalid",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "expectvalid()"
     },
     {
@@ -1077,8 +1077,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "backend_src_tests_validation_test_expectinvalid",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "expectinvalid()"
     },
     {
@@ -1209,8 +1209,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_middleware_validate",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "validate.ts"
     },
     {
@@ -1220,8 +1220,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "backend_src_middleware_validate_validate",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "validate()"
     },
     {
@@ -1297,8 +1297,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_auth",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "routes/auth.ts"
     },
     {
@@ -1308,8 +1308,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_auth_router",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "router"
     },
     {
@@ -1319,8 +1319,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "backend_src_routes_auth_slugify",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "slugify()"
     },
     {
@@ -1330,8 +1330,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_churches",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "routes/churches.ts"
     },
     {
@@ -1341,8 +1341,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_churches_router",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "router"
     },
     {
@@ -1352,8 +1352,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_files",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "routes/files.ts"
     },
     {
@@ -1363,8 +1363,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_files_router",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "router"
     },
     {
@@ -1374,8 +1374,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_ministries",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "routes/ministries.ts"
     },
     {
@@ -1385,8 +1385,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_ministries_router",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "router"
     },
     {
@@ -1462,8 +1462,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_services",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "routes/services.ts"
     },
     {
@@ -1473,8 +1473,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_services_router",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "router"
     },
     {
@@ -1484,8 +1484,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_songs",
-      "community": 100,
-      "community_name": "routes/songs.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "routes/songs.ts"
     },
     {
@@ -1495,8 +1495,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_songs_router",
-      "community": 100,
-      "community_name": "routes/songs.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "router"
     },
     {
@@ -1550,8 +1550,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_routes_templates",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "routes/templates.ts"
     },
     {
@@ -1561,8 +1561,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "backend_src_routes_templates_router",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "router"
     },
     {
@@ -1682,8 +1682,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue",
-      "community": 88,
-      "community_name": "BackgroundJobQueue",
+      "community": 30,
+      "community_name": "server.ts",
       "norm_label": "backgroundjobqueue"
     },
     {
@@ -1693,8 +1693,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_register",
-      "community": 88,
-      "community_name": "BackgroundJobQueue",
+      "community": 30,
+      "community_name": "server.ts",
       "norm_label": ".register()"
     },
     {
@@ -1704,8 +1704,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_on",
-      "community": 88,
-      "community_name": "BackgroundJobQueue",
+      "community": 30,
+      "community_name": "server.ts",
       "norm_label": ".on()"
     },
     {
@@ -1715,8 +1715,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_emit",
-      "community": 88,
-      "community_name": "BackgroundJobQueue",
+      "community": 30,
+      "community_name": "server.ts",
       "norm_label": ".emit()"
     },
     {
@@ -1726,8 +1726,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_enqueue",
-      "community": 88,
-      "community_name": "BackgroundJobQueue",
+      "community": 30,
+      "community_name": "server.ts",
       "norm_label": ".enqueue()"
     },
     {
@@ -1737,8 +1737,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_processnext",
-      "community": 88,
-      "community_name": "BackgroundJobQueue",
+      "community": 30,
+      "community_name": "server.ts",
       "norm_label": ".processnext()"
     },
     {
@@ -1748,8 +1748,8 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "backend_src_services_background_backgroundjobqueue_pendingcount",
-      "community": 88,
-      "community_name": "BackgroundJobQueue",
+      "community": 30,
+      "community_name": "server.ts",
       "norm_label": ".pendingcount()"
     },
     {
@@ -1891,8 +1891,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_auth",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/validation/auth.ts"
     },
     {
@@ -1902,8 +1902,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_auth_loginschema",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "loginschema"
     },
     {
@@ -1913,8 +1913,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "backend_src_validation_auth_inviteschema",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "inviteschema"
     },
     {
@@ -1924,8 +1924,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "backend_src_validation_auth_changepasswordschema",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "changepasswordschema"
     },
     {
@@ -1935,8 +1935,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "backend_src_validation_auth_registerschema",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "registerschema"
     },
     {
@@ -1946,8 +1946,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "backend_src_validation_auth_updateprofileschema",
-      "community": 13,
-      "community_name": "LanTransportInterface",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updateprofileschema"
     },
     {
@@ -1957,8 +1957,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_churches",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/validation/churches.ts"
     },
     {
@@ -1968,8 +1968,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_churches_createchurchschema",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createchurchschema"
     },
     {
@@ -1979,8 +1979,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "backend_src_validation_churches_updatechurchschema",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updatechurchschema"
     },
     {
@@ -1990,8 +1990,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "backend_src_validation_churches_addmemberschema",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "addmemberschema"
     },
     {
@@ -2001,8 +2001,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "backend_src_validation_churches_updatememberschema",
-      "community": 57,
-      "community_name": "push.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updatememberschema"
     },
     {
@@ -2012,8 +2012,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_files",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/validation/files.ts"
     },
     {
@@ -2023,8 +2023,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_files_allowed_types",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "allowed_types"
     },
     {
@@ -2034,8 +2034,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "backend_src_validation_files_uploadfileschema",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "uploadfileschema"
     },
     {
@@ -2045,8 +2045,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "backend_src_validation_files_deletefileschema",
-      "community": 37,
-      "community_name": "SqlJsMemoryDatabase",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "deletefileschema"
     },
     {
@@ -2056,8 +2056,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_ministries",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/validation/ministries.ts"
     },
     {
@@ -2067,8 +2067,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_createministryschema",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createministryschema"
     },
     {
@@ -2078,8 +2078,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_updateministryschema",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updateministryschema"
     },
     {
@@ -2089,8 +2089,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_createroleschema",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createroleschema"
     },
     {
@@ -2100,8 +2100,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "backend_src_validation_ministries_updateroleschema",
-      "community": 68,
-      "community_name": "@types/morgan",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updateroleschema"
     },
     {
@@ -2111,8 +2111,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_services",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/validation/services.ts"
     },
     {
@@ -2122,8 +2122,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_services_createserviceschema",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createserviceschema"
     },
     {
@@ -2133,8 +2133,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "backend_src_validation_services_updateserviceschema",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updateserviceschema"
     },
     {
@@ -2144,8 +2144,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "backend_src_validation_services_createteammemberschema",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createteammemberschema"
     },
     {
@@ -2155,8 +2155,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "backend_src_validation_services_updateteammemberschema",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updateteammemberschema"
     },
     {
@@ -2166,8 +2166,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "backend_src_validation_services_createsegmentschema",
-      "community": 50,
-      "community_name": "MemberCard.tsx",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createsegmentschema"
     },
     {
@@ -2177,8 +2177,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_songs",
-      "community": 100,
-      "community_name": "routes/songs.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/validation/songs.ts"
     },
     {
@@ -2188,8 +2188,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_songs_createsongschema",
-      "community": 100,
-      "community_name": "routes/songs.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createsongschema"
     },
     {
@@ -2199,8 +2199,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "backend_src_validation_songs_updatesongschema",
-      "community": 100,
-      "community_name": "routes/songs.ts",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updatesongschema"
     },
     {
@@ -2210,8 +2210,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "backend_src_validation_templates",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "src/validation/templates.ts"
     },
     {
@@ -2221,8 +2221,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "backend_src_validation_templates_createtemplateschema",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "createtemplateschema"
     },
     {
@@ -2232,8 +2232,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "backend_src_validation_templates_updatetemplateschema",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "updatetemplateschema"
     },
     {
@@ -2243,8 +2243,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "backend_src_validation_templates_applytemplateschema",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "applytemplateschema"
     },
     {
@@ -2254,8 +2254,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "backend_src_validation_templates_reordersegmentsschema",
-      "community": 79,
-      "community_name": "expo-print",
+      "community": 0,
+      "community_name": "middleware/auth.ts",
       "norm_label": "reordersegmentsschema"
     },
     {
@@ -3563,8 +3563,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "mobile_package_dependencies_expo",
-      "community": 77,
-      "community_name": "routes/services.ts",
+      "community": 63,
+      "community_name": "expo-secure-store",
       "norm_label": "expo"
     },
     {
@@ -3574,8 +3574,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "expo",
-      "community": 77,
-      "community_name": "routes/services.ts",
+      "community": 63,
+      "community_name": "expo-secure-store",
       "norm_label": "expo"
     },
     {
@@ -3827,8 +3827,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "mobile_package_dependencies_react",
-      "community": 63,
-      "community_name": "expo-secure-store",
+      "community": 47,
+      "community_name": "CryptoService",
       "norm_label": "react"
     },
     {
@@ -3838,8 +3838,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "react",
-      "community": 63,
-      "community_name": "expo-secure-store",
+      "community": 47,
+      "community_name": "CryptoService",
       "norm_label": "react"
     },
     {
@@ -4520,8 +4520,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_filecard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": "filecard.tsx"
     },
     {
@@ -4531,8 +4531,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_filecardprops",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": "filecardprops"
     },
     {
@@ -4542,8 +4542,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_formatdate",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": "formatdate()"
     },
     {
@@ -4553,8 +4553,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_filecard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": "filecard()"
     },
     {
@@ -4564,8 +4564,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "mobile_src_components_filecard_styles",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": "styles"
     },
     {
@@ -4674,8 +4674,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_membercard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "membercard.tsx"
     },
     {
@@ -4685,8 +4685,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_status_config",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "status_config"
     },
     {
@@ -4696,8 +4696,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_membercardprops",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "membercardprops"
     },
     {
@@ -4707,8 +4707,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_membercard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "membercard()"
     },
     {
@@ -4718,8 +4718,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "mobile_src_components_membercard_styles",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "styles"
     },
     {
@@ -4729,8 +4729,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer",
-      "community": 96,
-      "community_name": "ResponsiveContainer.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "responsivecontainer.tsx"
     },
     {
@@ -4740,8 +4740,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer_props",
-      "community": 96,
-      "community_name": "ResponsiveContainer.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "props"
     },
     {
@@ -4751,8 +4751,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer_responsivecontainer",
-      "community": 96,
-      "community_name": "ResponsiveContainer.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "responsivecontainer()"
     },
     {
@@ -4762,8 +4762,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mobile_src_components_responsivecontainer_styles",
-      "community": 96,
-      "community_name": "ResponsiveContainer.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "styles"
     },
     {
@@ -4872,8 +4872,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "servicecard.tsx"
     },
     {
@@ -4883,8 +4883,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_formatdate",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "formatdate()"
     },
     {
@@ -4894,8 +4894,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_servicecardprops",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "servicecardprops"
     },
     {
@@ -4905,8 +4905,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_servicecard",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "servicecard()"
     },
     {
@@ -4916,8 +4916,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "mobile_src_components_servicecard_styles",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "styles"
     },
     {
@@ -4982,8 +4982,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_songcard",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "songcard.tsx"
     },
     {
@@ -4993,8 +4993,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_components_songcard_songcardprops",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "songcardprops"
     },
     {
@@ -5004,8 +5004,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_components_songcard_songcard",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "songcard()"
     },
     {
@@ -5015,8 +5015,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "mobile_src_components_songcard_styles",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "styles"
     },
     {
@@ -5026,8 +5026,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "statusbadge.tsx"
     },
     {
@@ -5037,8 +5037,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_colors",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "colors"
     },
     {
@@ -5048,8 +5048,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_labels",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "labels"
     },
     {
@@ -5059,8 +5059,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_statusbadgeprops",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "statusbadgeprops"
     },
     {
@@ -5070,8 +5070,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_statusbadge",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "statusbadge()"
     },
     {
@@ -5081,8 +5081,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "mobile_src_components_statusbadge_styles",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "styles"
     },
     {
@@ -5092,8 +5092,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_components_toast",
-      "community": 98,
-      "community_name": "Toast.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "toast.tsx"
     },
     {
@@ -5103,8 +5103,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_components_toast_toastprops",
-      "community": 98,
-      "community_name": "Toast.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "toastprops"
     },
     {
@@ -5114,8 +5114,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_components_toast_icons",
-      "community": 98,
-      "community_name": "Toast.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "icons"
     },
     {
@@ -5125,8 +5125,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "mobile_src_components_toast_colors",
-      "community": 98,
-      "community_name": "Toast.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "colors"
     },
     {
@@ -5136,8 +5136,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mobile_src_components_toast_toast",
-      "community": 98,
-      "community_name": "Toast.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "toast()"
     },
     {
@@ -5147,8 +5147,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "mobile_src_components_toast_styles",
-      "community": 98,
-      "community_name": "Toast.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "styles"
     },
     {
@@ -5169,8 +5169,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_contexts_toastcontext",
-      "community": 6,
-      "community_name": "AdminScreen.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "toastcontext.tsx"
     },
     {
@@ -5180,8 +5180,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_contexts_toastcontext_toastcontexttype",
-      "community": 6,
-      "community_name": "AdminScreen.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "toastcontexttype"
     },
     {
@@ -5191,8 +5191,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "mobile_src_contexts_toastcontext_toastcontext",
-      "community": 6,
-      "community_name": "AdminScreen.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "toastcontext"
     },
     {
@@ -5356,8 +5356,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "memoryadapter.ts"
     },
     {
@@ -5367,8 +5367,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_database",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": "database"
     },
     {
@@ -5378,8 +5378,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_database_execasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": ".execasync()"
     },
     {
@@ -5389,8 +5389,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_database_runasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": ".runasync()"
     },
     {
@@ -5400,8 +5400,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_database_getallasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": ".getallasync()"
     },
     {
@@ -5411,8 +5411,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_database_getfirstasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": ".getfirstasync()"
     },
     {
@@ -5422,8 +5422,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_database_withtransactionasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": ".withtransactionasync()"
     },
     {
@@ -5433,8 +5433,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_database_closeasync",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": ".closeasync()"
     },
     {
@@ -5444,8 +5444,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "sqljsmemorydatabase"
     },
     {
@@ -5455,8 +5455,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_init",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": ".init()"
     },
     {
@@ -5466,8 +5466,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_execasync",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": ".execasync()"
     },
     {
@@ -5477,8 +5477,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_runasync",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": ".runasync()"
     },
     {
@@ -5488,8 +5488,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_getallasync",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": ".getallasync()"
     },
     {
@@ -5499,8 +5499,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_getfirstasync",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": ".getfirstasync()"
     },
     {
@@ -5510,8 +5510,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_withtransactionasync",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": ".withtransactionasync()"
     },
     {
@@ -5521,8 +5521,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "mobile_src_db_adapters_memoryadapter_sqljsmemorydatabase_closeasync",
-      "community": 16,
-      "community_name": "components/index.ts",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": ".closeasync()"
     },
     {
@@ -5565,8 +5565,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_001_initial_schema",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "001_initial_schema.ts"
     },
     {
@@ -5576,8 +5576,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_001_initial_schema_migration_001",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "migration_001"
     },
     {
@@ -5587,8 +5587,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_002_song_chords_and_blackouts",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "002_song_chords_and_blackouts.ts"
     },
     {
@@ -5598,8 +5598,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_002_song_chords_and_blackouts_migration_002",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "migration_002"
     },
     {
@@ -5609,8 +5609,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_index",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "migrations/index.ts"
     },
     {
@@ -5620,8 +5620,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_index_migration",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "migration"
     },
     {
@@ -5631,8 +5631,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_index_migrations",
-      "community": 17,
-      "community_name": "Database",
+      "community": 33,
+      "community_name": "ExpoSqliteDatabase",
       "norm_label": "migrations"
     },
     {
@@ -5642,8 +5642,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_db_migrations_index_runmigrations",
-      "community": 17,
-      "community_name": "Database",
+      "community": 9,
+      "community_name": "generateUUID",
       "norm_label": "runmigrations()"
     },
     {
@@ -6346,8 +6346,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository",
-      "community": 17,
-      "community_name": "Database",
+      "community": 36,
+      "community_name": "SearchScreen.tsx",
       "norm_label": "searchrepository"
     },
     {
@@ -6357,8 +6357,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_constructor",
-      "community": 17,
-      "community_name": "Database",
+      "community": 36,
+      "community_name": "SearchScreen.tsx",
       "norm_label": ".constructor()"
     },
     {
@@ -6368,8 +6368,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_db",
-      "community": 17,
-      "community_name": "Database",
+      "community": 36,
+      "community_name": "SearchScreen.tsx",
       "norm_label": ".db()"
     },
     {
@@ -6379,8 +6379,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_searchrepository_searchrepository_search",
-      "community": 17,
-      "community_name": "Database",
+      "community": 36,
+      "community_name": "SearchScreen.tsx",
       "norm_label": ".search()"
     },
     {
@@ -6390,8 +6390,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_segmentsrepository",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "segmentsrepository.ts"
     },
     {
@@ -6401,8 +6401,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_segmentsrepository_servicesegmentrecord",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "servicesegmentrecord"
     },
     {
@@ -6610,8 +6610,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_songsrepository",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "songsrepository.ts"
     },
     {
@@ -6621,8 +6621,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_songsrepository_songrecord",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "songrecord"
     },
     {
@@ -6632,8 +6632,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_songsrepository_songhistoryrecord",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "songhistoryrecord"
     },
     {
@@ -7028,8 +7028,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_usersrepository",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 55,
+      "community_name": "shared/validation/auth.ts",
       "norm_label": "usersrepository.ts"
     },
     {
@@ -7039,8 +7039,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_db_repositories_usersrepository_userrecord",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 55,
+      "community_name": "shared/validation/auth.ts",
       "norm_label": "userrecord"
     },
     {
@@ -7204,8 +7204,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "mobile_src_navigation_appnavigator_linking",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "linking"
     },
     {
@@ -7259,8 +7259,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "crypto.ts"
     },
     {
@@ -7347,8 +7347,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_generatesalthex",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "generatesalthex()"
     },
     {
@@ -7358,8 +7358,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_generateuuid",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 34,
+      "community_name": "TemplatesRepository",
       "norm_label": "generateuuid()"
     },
     {
@@ -7369,8 +7369,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_hashpasswordwithpbkdf2",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "hashpasswordwithpbkdf2()"
     },
     {
@@ -7380,8 +7380,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_verifypasswordwithpbkdf2",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "verifypasswordwithpbkdf2()"
     },
     {
@@ -7391,8 +7391,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "mobile_src_platform_crypto_defaultcrypto",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "defaultcrypto"
     },
     {
@@ -7402,8 +7402,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "filesystem.ts"
     },
     {
@@ -7413,8 +7413,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "filestorageinterface"
     },
     {
@@ -7424,8 +7424,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_savefile",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".savefile()"
     },
     {
@@ -7435,8 +7435,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_readfile",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".readfile()"
     },
     {
@@ -7446,8 +7446,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_deletefile",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".deletefile()"
     },
     {
@@ -7457,8 +7457,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_filestorageinterface_listlocalfiles",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".listlocalfiles()"
     },
     {
@@ -7468,8 +7468,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "webfilestorage"
     },
     {
@@ -7479,8 +7479,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_savefile",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".savefile()"
     },
     {
@@ -7490,8 +7490,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_readfile",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".readfile()"
     },
     {
@@ -7501,8 +7501,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_deletefile",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".deletefile()"
     },
     {
@@ -7512,8 +7512,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_webfilestorage_listlocalfiles",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".listlocalfiles()"
     },
     {
@@ -7523,7 +7523,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage",
-      "community": 97,
+      "community": 4,
       "community_name": "NativeFileStorage",
       "norm_label": "nativefilestorage"
     },
@@ -7534,7 +7534,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_getdir",
-      "community": 97,
+      "community": 4,
       "community_name": "NativeFileStorage",
       "norm_label": ".getdir()"
     },
@@ -7545,7 +7545,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_ensuredir",
-      "community": 97,
+      "community": 4,
       "community_name": "NativeFileStorage",
       "norm_label": ".ensuredir()"
     },
@@ -7556,7 +7556,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_savefile",
-      "community": 97,
+      "community": 4,
       "community_name": "NativeFileStorage",
       "norm_label": ".savefile()"
     },
@@ -7567,7 +7567,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_readfile",
-      "community": 97,
+      "community": 4,
       "community_name": "NativeFileStorage",
       "norm_label": ".readfile()"
     },
@@ -7578,7 +7578,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_deletefile",
-      "community": 97,
+      "community": 4,
       "community_name": "NativeFileStorage",
       "norm_label": ".deletefile()"
     },
@@ -7589,7 +7589,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "mobile_src_platform_filesystem_nativefilestorage_listlocalfiles",
-      "community": 97,
+      "community": 4,
       "community_name": "NativeFileStorage",
       "norm_label": ".listlocalfiles()"
     },
@@ -7600,8 +7600,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_index",
-      "community": 29,
-      "community_name": "AppNavigator.tsx",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "platform/index.ts"
     },
     {
@@ -7611,8 +7611,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "lantransport.ts"
     },
     {
@@ -7622,8 +7622,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_peerinfo",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "peerinfo"
     },
     {
@@ -7633,8 +7633,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_lantransportinterface",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "lantransportinterface"
     },
     {
@@ -7644,8 +7644,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_lantransportinterface_ishostsupported",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".ishostsupported()"
     },
     {
@@ -7655,8 +7655,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_lantransportinterface_starthost",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".starthost()"
     },
     {
@@ -7666,8 +7666,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_lantransportinterface_stophost",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".stophost()"
     },
     {
@@ -7677,8 +7677,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_lantransportinterface_connecttopeer",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".connecttopeer()"
     },
     {
@@ -7688,8 +7688,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_weblantransport",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "weblantransport"
     },
     {
@@ -7699,8 +7699,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_weblantransport_ishostsupported",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".ishostsupported()"
     },
     {
@@ -7710,8 +7710,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_weblantransport_starthost",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".starthost()"
     },
     {
@@ -7721,8 +7721,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_weblantransport_stophost",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".stophost()"
     },
     {
@@ -7732,8 +7732,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_weblantransport_connecttopeer",
-      "community": 75,
-      "community_name": "expo-image-manipulator",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".connecttopeer()"
     },
     {
@@ -7743,8 +7743,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport",
-      "community": 107,
-      "community_name": "NativeLanTransport",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": "nativelantransport"
     },
     {
@@ -7754,8 +7754,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_ishostsupported",
-      "community": 107,
-      "community_name": "NativeLanTransport",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".ishostsupported()"
     },
     {
@@ -7765,8 +7765,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_starthost",
-      "community": 107,
-      "community_name": "NativeLanTransport",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".starthost()"
     },
     {
@@ -7776,8 +7776,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_stophost",
-      "community": 107,
-      "community_name": "NativeLanTransport",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".stophost()"
     },
     {
@@ -7787,8 +7787,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "mobile_src_platform_lantransport_nativelantransport_connecttopeer",
-      "community": 107,
-      "community_name": "NativeLanTransport",
+      "community": 4,
+      "community_name": "NativeFileStorage",
       "norm_label": ".connecttopeer()"
     },
     {
@@ -7930,8 +7930,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery",
-      "community": 108,
-      "community_name": "NativeMdnsDiscovery",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": "nativemdnsdiscovery"
     },
     {
@@ -7941,8 +7941,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_startdiscovery",
-      "community": 108,
-      "community_name": "NativeMdnsDiscovery",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".startdiscovery()"
     },
     {
@@ -7952,8 +7952,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_stopdiscovery",
-      "community": 108,
-      "community_name": "NativeMdnsDiscovery",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".stopdiscovery()"
     },
     {
@@ -7963,8 +7963,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_parseqrcode",
-      "community": 108,
-      "community_name": "NativeMdnsDiscovery",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".parseqrcode()"
     },
     {
@@ -7974,8 +7974,8 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "mobile_src_platform_mdns_nativemdnsdiscovery_generateqrpayload",
-      "community": 108,
-      "community_name": "NativeMdnsDiscovery",
+      "community": 32,
+      "community_name": "DashboardScreen.tsx",
       "norm_label": ".generateqrpayload()"
     },
     {
@@ -8502,8 +8502,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_homescreen",
-      "community": 15,
-      "community_name": "EmptyState",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "homescreen.tsx"
     },
     {
@@ -8513,8 +8513,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "mobile_src_screens_homescreen_homescreen",
-      "community": 15,
-      "community_name": "EmptyState",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "homescreen()"
     },
     {
@@ -8524,8 +8524,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "mobile_src_screens_homescreen_styles",
-      "community": 15,
-      "community_name": "EmptyState",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "styles"
     },
     {
@@ -8601,8 +8601,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "mobile_src_screens_livestagescreen_livestagescreenprops",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "livestagescreenprops"
     },
     {
@@ -8755,8 +8755,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_searchscreen",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "searchscreen.tsx"
     },
     {
@@ -8766,8 +8766,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_src_screens_searchscreen_searchresults",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "searchresults"
     },
     {
@@ -8777,8 +8777,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_src_screens_searchscreen_searchscreen",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "searchscreen()"
     },
     {
@@ -8788,8 +8788,8 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "mobile_src_screens_searchscreen_styles",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "styles"
     },
     {
@@ -8843,8 +8843,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_songsscreen_styles",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "songsscreen.styles.ts"
     },
     {
@@ -8854,8 +8854,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_screens_songsscreen_styles_styles",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "styles"
     },
     {
@@ -8865,8 +8865,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_songsscreen",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "songsscreen.tsx"
     },
     {
@@ -8876,8 +8876,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_src_screens_songsscreen_songsscreen",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 20,
+      "community_name": "authAPI",
       "norm_label": "songsscreen()"
     },
     {
@@ -8953,8 +8953,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_screens_templatelistscreen",
-      "community": 15,
-      "community_name": "EmptyState",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "templatelistscreen.tsx"
     },
     {
@@ -8964,8 +8964,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "mobile_src_screens_templatelistscreen_template",
-      "community": 15,
-      "community_name": "EmptyState",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "template"
     },
     {
@@ -8975,8 +8975,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_src_screens_templatelistscreen_templatelistscreen",
-      "community": 15,
-      "community_name": "EmptyState",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "templatelistscreen()"
     },
     {
@@ -8986,8 +8986,8 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "mobile_src_screens_templatelistscreen_styles",
-      "community": 15,
-      "community_name": "EmptyState",
+      "community": 24,
+      "community_name": "dependencies",
       "norm_label": "styles"
     },
     {
@@ -9294,8 +9294,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_src_types_index_service",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 13,
+      "community_name": "LanTransportInterface",
       "norm_label": "service"
     },
     {
@@ -9316,8 +9316,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "mobile_src_types_index_serviceteammember",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 12,
+      "community_name": "types/index.ts",
       "norm_label": "serviceteammember"
     },
     {
@@ -9327,8 +9327,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "mobile_src_types_index_song",
-      "community": 47,
-      "community_name": "CryptoService",
+      "community": 46,
+      "community_name": "crypto.ts",
       "norm_label": "song"
     },
     {
@@ -9338,8 +9338,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "mobile_src_types_index_file",
-      "community": 14,
-      "community_name": "MdnsDiscoveryInterface",
+      "community": 16,
+      "community_name": "components/index.ts",
       "norm_label": "file"
     },
     {
@@ -9536,8 +9536,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive",
-      "community": 96,
-      "community_name": "ResponsiveContainer.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "responsive.ts"
     },
     {
@@ -9547,8 +9547,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive_breakpoints",
-      "community": 96,
-      "community_name": "ResponsiveContainer.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "breakpoints"
     },
     {
@@ -9558,8 +9558,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_src_utils_responsive_useresponsive",
-      "community": 96,
-      "community_name": "ResponsiveContainer.tsx",
+      "community": 31,
+      "community_name": "ErrorBoundary.tsx",
       "norm_label": "useresponsive()"
     },
     {
@@ -9569,8 +9569,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "mobile_src_utils_usedebounce",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "usedebounce.ts"
     },
     {
@@ -9580,8 +9580,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "mobile_src_utils_usedebounce_usedebounce",
-      "community": 36,
-      "community_name": "SearchScreen.tsx",
+      "community": 15,
+      "community_name": "EmptyState",
       "norm_label": "usedebounce()"
     },
     {
@@ -9665,7 +9665,7 @@
       "label": "jsx",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L6",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_jsx",
       "community": 7,
@@ -9676,7 +9676,7 @@
       "label": "strict",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L7",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_strict",
       "community": 7,
@@ -9687,7 +9687,7 @@
       "label": "moduleResolution",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L8",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_moduleresolution",
       "community": 7,
@@ -9698,7 +9698,7 @@
       "label": "esModuleInterop",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L9",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_esmoduleinterop",
       "community": 7,
@@ -9709,7 +9709,7 @@
       "label": "skipLibCheck",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L10",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_skiplibcheck",
       "community": 7,
@@ -9720,7 +9720,7 @@
       "label": "forceConsistentCasingInFileNames",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L11",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_forceconsistentcasinginfilenames",
       "community": 7,
@@ -9731,7 +9731,7 @@
       "label": "resolveJsonModule",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L12",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_resolvejsonmodule",
       "community": 7,
@@ -9742,7 +9742,7 @@
       "label": "allowJs",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L13",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_allowjs",
       "community": 7,
@@ -9753,7 +9753,7 @@
       "label": "baseUrl",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_baseurl",
       "community": 7,
@@ -9764,7 +9764,7 @@
       "label": "paths",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L15",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_paths",
       "community": 7,
@@ -9775,7 +9775,7 @@
       "label": "@shared/*",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L16",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "mobile_tsconfig_paths_shared",
       "community": 7,
@@ -9786,7 +9786,7 @@
       "label": "../shared/*",
       "file_type": "concept",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L16",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "ref_shared",
       "community": 7,
@@ -9797,7 +9797,7 @@
       "label": "noEmit",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L18",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "mobile_tsconfig_compileroptions_noemit",
       "community": 7,
@@ -9808,7 +9808,7 @@
       "label": "include",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "mobile_tsconfig_include",
       "community": 7,
@@ -9819,7 +9819,7 @@
       "label": "**/*.ts",
       "file_type": "concept",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "ref_ts",
       "community": 7,
@@ -9830,7 +9830,7 @@
       "label": "**/*.tsx",
       "file_type": "concept",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "ref_tsx",
       "community": 7,
@@ -9841,7 +9841,7 @@
       "label": "../shared/**/*.ts",
       "file_type": "concept",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "ref_shared_ts",
       "community": 7,
@@ -9852,7 +9852,7 @@
       "label": "exclude",
       "file_type": "code",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L21",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_tsconfig_exclude",
       "community": 7,
@@ -9863,12 +9863,34 @@
       "label": "node_modules",
       "file_type": "concept",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L21",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "mobile_tsconfig_json_ref_node_modules",
       "community": 7,
       "community_name": "compilerOptions",
       "norm_label": "node_modules"
+    },
+    {
+      "label": "extends",
+      "file_type": "code",
+      "source_file": "mobile/tsconfig.json",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "mobile_tsconfig_extends",
+      "community": 7,
+      "community_name": "compilerOptions",
+      "norm_label": "extends"
+    },
+    {
+      "label": "expo/tsconfig.base",
+      "file_type": "concept",
+      "source_file": "mobile/tsconfig.json",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "ref_expo_tsconfig_base",
+      "community": 7,
+      "community_name": "compilerOptions",
+      "norm_label": "expo/tsconfig.base"
     },
     {
       "label": "vercel.json",
@@ -10482,8 +10504,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "shared_domain_bandsessionmodalhelper_createlocalbandmember",
-      "community": 46,
-      "community_name": "crypto.ts",
+      "community": 35,
+      "community_name": "BackgroundJobQueue",
       "norm_label": "createlocalbandmember()"
     },
     {
@@ -11582,8 +11604,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_validation_index",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 45,
+      "community_name": "templatesRepository.ts",
       "norm_label": "validation/index.ts"
     },
     {
@@ -11703,8 +11725,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "shared_validation_services_createsegmentschema",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "createsegmentschema"
     },
     {
@@ -11714,8 +11736,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "shared_validation_services_updatesegmentschema",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "updatesegmentschema"
     },
     {
@@ -11725,8 +11747,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_validation_songs",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "shared/validation/songs.ts"
     },
     {
@@ -11736,8 +11758,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "shared_validation_songs_createsongschema",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "createsongschema"
     },
     {
@@ -11747,8 +11769,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "shared_validation_songs_updatesongschema",
-      "community": 55,
-      "community_name": "shared/validation/auth.ts",
+      "community": 29,
+      "community_name": "AppNavigator.tsx",
       "norm_label": "updatesongschema"
     },
     {
@@ -11802,8 +11824,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "shared_validation_templates_reordersegmentsschema",
-      "community": 45,
-      "community_name": "templatesRepository.ts",
+      "community": 18,
+      "community_name": "segmentsRepository.ts",
       "norm_label": "reordersegmentsschema"
     },
     {
@@ -30499,7 +30521,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L21",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig",
@@ -30510,7 +30532,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "mobile_tsconfig",
+      "target": "mobile_tsconfig_extends",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/tsconfig.json",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig",
@@ -30518,10 +30551,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "mobile/tsconfig.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "mobile_tsconfig",
+      "target": "ref_expo_tsconfig_base",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L13",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30532,7 +30577,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L14",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30543,7 +30588,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L9",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30554,7 +30599,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L11",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30565,7 +30610,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30598,7 +30643,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30609,7 +30654,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L18",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30620,7 +30665,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30631,7 +30676,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L12",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30642,7 +30687,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L10",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30653,7 +30698,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions",
@@ -30699,7 +30744,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "mobile_tsconfig_compileroptions_paths",
@@ -30710,7 +30755,7 @@
       "relation": "extends",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -30722,7 +30767,7 @@
       "relation": "extends",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -30734,7 +30779,7 @@
       "relation": "extends",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -30746,7 +30791,7 @@
       "relation": "extends",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L20",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -30758,7 +30803,7 @@
       "relation": "extends",
       "confidence": "EXTRACTED",
       "source_file": "mobile/tsconfig.json",
-      "source_location": "L21",
+      "source_location": "L32",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -35431,5 +35476,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e285549a20400fce86f5ad8bcf581dc1ba9c1ac4"
+  "built_at_commit": "fdfbfd13db1988676f62ac55cb018159c9a251e9"
 }

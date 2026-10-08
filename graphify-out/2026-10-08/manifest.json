@@ -290,8 +290,8 @@
     "semantic_hash": "4347e28a6568d5747150f097a9644f40"
   },
   "mobile/src/components/index.ts": {
-    "mtime": 1791427567.0084546,
-    "ast_hash": "7e2c1e17a45909a821f813e0baefd13a",
+    "mtime": 1791444338.4771123,
+    "ast_hash": "26326ed6f946e61f5828d800414be94c",
     "semantic_hash": ""
   },
   "mobile/src/contexts/ToastContext.tsx": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "mobile/src/screens/LiveStageScreen.tsx": {
-    "mtime": 1791427619.342757,
-    "ast_hash": "d95c9ef850ba2ff4dc47978fd446d79f",
+    "mtime": 1791444432.9460785,
+    "ast_hash": "e70838aaf689ffc51b02fa3cc3473318",
     "semantic_hash": ""
   },
   "shared/__tests__/stageMode.test.ts": {
@@ -735,8 +735,8 @@
     "semantic_hash": ""
   },
   "mobile/src/screens/LiveStageScreen.styles.ts": {
-    "mtime": 1791427593.5354235,
-    "ast_hash": "f6e0f8e8a7d9be829863145ba5c85ce0",
+    "mtime": 1791444360.812079,
+    "ast_hash": "1c89e447d9adf15e64b8ea74ecdf452b",
     "semantic_hash": ""
   },
   "mobile/src/screens/ServiceDetailScreen.styles.ts": {
@@ -755,8 +755,8 @@
     "semantic_hash": ""
   },
   "shared/domain/bandSync.ts": {
-    "mtime": 1791421246.8110247,
-    "ast_hash": "a98b87396cce986f832de4cf11d85185",
+    "mtime": 1791444171.6050854,
+    "ast_hash": "821dce6dbb0d2c13fbdf56db6bc010db",
     "semantic_hash": ""
   },
   "shared/__tests__/setlistExport.test.ts": {
@@ -817,6 +817,26 @@
   "shared/domain/presentationExportHelper.ts": {
     "mtime": 1791427499.1385565,
     "ast_hash": "cdfd878c0fbf0a3662473d435b9e347e",
+    "semantic_hash": ""
+  },
+  "mobile/src/components/BandSessionModal.styles.ts": {
+    "mtime": 1791444295.3904417,
+    "ast_hash": "735a65d1b0fca8ba700bdec3bdcb6959",
+    "semantic_hash": ""
+  },
+  "mobile/src/components/BandSessionModal.tsx": {
+    "mtime": 1791444316.0968688,
+    "ast_hash": "8b8bdf4e92a2c5466c39b5a1e457faca",
+    "semantic_hash": ""
+  },
+  "shared/__tests__/bandSessionModalHelper.test.ts": {
+    "mtime": 1791444204.735973,
+    "ast_hash": "d61b002cf05dfa4ab0690d834f69f106",
+    "semantic_hash": ""
+  },
+  "shared/domain/bandSessionModalHelper.ts": {
+    "mtime": 1791444191.1126323,
+    "ast_hash": "0d7ebc009a7e2ea83fdd2ff01cdc8f99",
     "semantic_hash": ""
   }
 }
