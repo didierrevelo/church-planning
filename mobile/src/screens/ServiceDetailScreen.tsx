@@ -8,7 +8,6 @@ import { useToast } from '../contexts/ToastContext';
 import {
   calculateSegmentTimes,
   calculateTotalServiceDuration,
-  formatDurationMinutes,
 } from '@shared/domain/servicePlanning';
 
 export default function ServiceDetailScreen({ route, navigation }: any) {
@@ -62,21 +61,27 @@ export default function ServiceDetailScreen({ route, navigation }: any) {
   const scheduledSegments = useMemo(() => {
     if (!service?.segments) return [];
     return calculateSegmentTimes(
-      service.segments.map((s) => ({
+      service.time || '10:00',
+      service.segments.map((s, idx) => ({
         id: s.id,
+        order: s.order ?? idx + 1,
         title: s.title,
         durationMin: s.durationMin || 0,
-      })),
-      service.time
+      }))
     );
   }, [service?.segments, service?.time]);
 
   const totalDurationStr = useMemo(() => {
     if (!service?.segments || service.segments.length === 0) return '';
-    const totalMin = calculateTotalServiceDuration(
-      service.segments.map((s) => ({ durationMin: s.durationMin || 0 }))
+    const { formatted } = calculateTotalServiceDuration(
+      service.segments.map((s, idx) => ({
+        id: s.id,
+        order: s.order ?? idx + 1,
+        title: s.title,
+        durationMin: s.durationMin || 0,
+      }))
     );
-    return formatDurationMinutes(totalMin);
+    return formatted;
   }, [service?.segments]);
 
   if (loading || !service) {
