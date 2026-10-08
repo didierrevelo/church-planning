@@ -24,8 +24,8 @@ import {
   DEFAULT_SCROLL_SPEED,
   MIN_SCROLL_SPEED,
   MAX_SCROLL_SPEED,
-} from '@shared/domain/stageMode';
 import { styles } from './LiveStageScreen.styles';
+import { ExportSlidesModal } from '../components/ExportSlidesModal';
 
 export interface LiveStageScreenProps {
   route: {
@@ -55,6 +55,7 @@ export default function LiveStageScreen({ route, navigation }: LiveStageScreenPr
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
   const [scrollSpeed, setScrollSpeed] = useState<number>(DEFAULT_SCROLL_SPEED);
   const [beatActive, setBeatActive] = useState<boolean>(false);
+  const [showExportModal, setShowExportModal] = useState<boolean>(false);
 
   const scrollRef = useRef<ScrollView>(null);
   const scrollOffsetRef = useRef<number>(0);
@@ -187,6 +188,13 @@ export default function LiveStageScreen({ route, navigation }: LiveStageScreenPr
               color={currentIndex === songs.length - 1 ? '#424242' : '#FFF'}
             />
           </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.iconActionBtn}
+            onPress={() => setShowExportModal(true)}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="tv-outline" size={18} color="#BB86FC" />
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -308,6 +316,12 @@ export default function LiveStageScreen({ route, navigation }: LiveStageScreenPr
           </TouchableOpacity>
         </View>
       </View>
+
+      <ExportSlidesModal
+        visible={showExportModal}
+        onClose={() => setShowExportModal(false)}
+        songs={songs}
+      />
     </SafeAreaView>
   );
 }

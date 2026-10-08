@@ -25,6 +25,11 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
   },
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
   stageModeBtn: {
     flexDirection: 'row',
     alignItems: 'center',

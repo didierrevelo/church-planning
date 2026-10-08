@@ -83,6 +83,15 @@ export const styles = StyleSheet.create({
   navBtnDisabled: {
     opacity: 0.3,
   },
+  iconActionBtn: {
+    backgroundColor: '#262626',
+    width: 32,
+    height: 32,
+    borderRadius: 6,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 4,
+  },
   controlSubBar: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -12,7 +12,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { songsAPI } from '../services/api';
 import { Song } from '../types';
-import { EmptyState, ChordViewer } from '../components';
+import { EmptyState, ChordViewer, ExportSlidesModal } from '../components';
 import { styles } from './SongsScreen.styles';
 
 export default function SongsScreen({ navigation }: any) {
@@ -20,6 +20,7 @@ export default function SongsScreen({ navigation }: any) {
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
   const [isStageMode, setIsStageMode] = useState<boolean>(false);
+  const [showExportModal, setShowExportModal] = useState<boolean>(false);
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
@@ -65,14 +66,24 @@ export default function SongsScreen({ navigation }: any) {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Set List</Text>
         {songs.length > 0 && (
-          <TouchableOpacity
-            style={styles.stageModeBtn}
-            onPress={() => navigation?.navigate('LiveStage', { songs, initialIndex: 0 })}
-            activeOpacity={0.8}
-          >
-            <Ionicons name="tablet-landscape-outline" size={16} color="#FFF" />
-            <Text style={styles.stageModeBtnText}>Modo Atril</Text>
-          </TouchableOpacity>
+          <View style={styles.headerActions}>
+            <TouchableOpacity
+              style={styles.stageModeBtn}
+              onPress={() => setShowExportModal(true)}
+              activeOpacity={0.8}
+            >
+              <Ionicons name="tv-outline" size={16} color="#FFF" />
+              <Text style={styles.stageModeBtnText}>Proyectar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.stageModeBtn}
+              onPress={() => navigation?.navigate('LiveStage', { songs, initialIndex: 0 })}
+              activeOpacity={0.8}
+            >
+              <Ionicons name="tablet-landscape-outline" size={16} color="#FFF" />
+              <Text style={styles.stageModeBtnText}>Modo Atril</Text>
+            </TouchableOpacity>
+          </View>
         )}
       </View>
 
@@ -198,6 +209,12 @@ export default function SongsScreen({ navigation }: any) {
           </SafeAreaView>
         </Modal>
       )}
+
+      <ExportSlidesModal
+        visible={showExportModal}
+        onClose={() => setShowExportModal(false)}
+        songs={songs}
+      />
     </View>
   );
 }
