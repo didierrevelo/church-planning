@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom"],
     "jsx": "react-native",
     "strict": true,
     "moduleResolution": "node",
@@ -11,8 +11,12 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["../shared/*"]
+    },
     "noEmit": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "*.ts", "*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "*.ts", "*.tsx", "../shared/**/*.ts"],
   "exclude": ["node_modules"]
 }
