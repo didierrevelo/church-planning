@@ -778,5 +778,15 @@
     "mtime": 1791423034.1379566,
     "ast_hash": "b796210ee54021a7a7930819ad6fc89d",
     "semantic_hash": ""
+  },
+  "shared/__tests__/bandSessionController.test.ts": {
+    "mtime": 1791425366.4831355,
+    "ast_hash": "7e0c31b8f16d2c4d4cb5572f89256dfc",
+    "semantic_hash": ""
+  },
+  "shared/domain/bandSessionController.ts": {
+    "mtime": 1791425530.2149782,
+    "ast_hash": "cde77bc77a8df1793589549c36ec1e7b",
+    "semantic_hash": ""
   }
 }

@@ -788,5 +788,15 @@
     "mtime": 1791425530.2149782,
     "ast_hash": "cde77bc77a8df1793589549c36ec1e7b",
     "semantic_hash": ""
+  },
+  "shared/__tests__/p2pSync.test.ts": {
+    "mtime": 1791426773.2266562,
+    "ast_hash": "f6a7efdcc4311b88039f98e2d99f61f7",
+    "semantic_hash": ""
+  },
+  "shared/domain/p2pSync.ts": {
+    "mtime": 1791426799.064104,
+    "ast_hash": "870392e44e946b3a22254149dac4973f",
+    "semantic_hash": ""
   }
 }
